@@ -33,10 +33,15 @@
                             <a href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                     @else
-                        <li class="font-semibold text-gray-700">
-                            <a href="">{{ Auth::user()->name }}</a>
+                        <li class="font-semibold text-gray-700 hover:text-teal-400">
+                            <a href="{{ route('patients.index') }}">Pacientes</a>
                         </li>
-                        <li class="font-semibold text-gray-700">
+
+                        <li class="font-semibold text-gray-700 hover:text-teal-400">
+                            <a href="{{ route('login') }}">Background</a>
+                        </li>
+
+                        <li class="px-6 py-2 text-white bg-teal-400 rounded-lg hover:bg-teal-300">
                             <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
@@ -50,7 +55,7 @@
             </div>
         </nav>
 
-        <main>
+        <main class="flex h-screen justify-center mt-24 mb-32">
             @yield('content')
         </main>
     </div>
