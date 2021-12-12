@@ -32,7 +32,7 @@ html {
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
      tab-size: 4; /* 3 */
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-family: Poppins; /* 4 */
 }
 
 /*
@@ -454,10 +454,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: auto;
   margin-right: auto;
 }
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -512,9 +508,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-16 {
   height: 4rem;
 }
-.h-6 {
-  height: 1.5rem;
-}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -529,9 +522,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-full {
   width: 100%;
-}
-.w-6 {
-  width: 1.5rem;
 }
 .max-w-6xl {
   max-width: 72rem;
@@ -583,32 +573,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
-.bg-blue-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
-}
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
 .bg-teal-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(45 212 191 / var(--tw-bg-opacity));
 }
-.bg-teal-600 {
+.bg-black {
   --tw-bg-opacity: 1;
-  background-color: rgb(13 148 136 / var(--tw-bg-opacity));
-}
-.bg-teal-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(204 251 241 / var(--tw-bg-opacity));
-}
-.bg-teal-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(94 234 212 / var(--tw-bg-opacity));
-}
-.bg-transparent {
-  background-color: transparent;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 .p-6 {
   padding: 1.5rem;
@@ -650,12 +621,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-8 {
   padding-top: 2rem;
-}
-.pt-0\.5 {
-  padding-top: 0.125rem;
-}
-.pt-0 {
-  padding-top: 0px;
 }
 .text-left {
   text-align: left;
@@ -723,25 +688,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-.text-blue-600 {
-  --tw-text-opacity: 1;
-  color: rgb(37 99 235 / var(--tw-text-opacity));
-}
-.text-teal-400 {
-  --tw-text-opacity: 1;
-  color: rgb(45 212 191 / var(--tw-text-opacity));
-}
-.text-teal-600 {
-  --tw-text-opacity: 1;
-  color: rgb(13 148 136 / var(--tw-text-opacity));
-}
 .text-teal-300 {
   --tw-text-opacity: 1;
   color: rgb(94 234 212 / var(--tw-text-opacity));
-}
-.text-neutral-600 {
-  --tw-text-opacity: 1;
-  color: rgb(82 82 82 / var(--tw-text-opacity));
 }
 .text-gray-800 {
   --tw-text-opacity: 1;
@@ -769,21 +718,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-.outline-none {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-.hover\:bg-blue-900:hover {
+.hover\:bg-teal-300:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(30 58 138 / var(--tw-bg-opacity));
-}
-.hover\:bg-teal-900:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(19 78 74 / var(--tw-bg-opacity));
-}
-.hover\:bg-teal-400:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(45 212 191 / var(--tw-bg-opacity));
+  background-color: rgb(94 234 212 / var(--tw-bg-opacity));
 }
 .hover\:text-teal-400:hover {
   --tw-text-opacity: 1;
@@ -800,14 +737,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-.focus\:ring-blue-600:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(37 99 235 / var(--tw-ring-opacity));
-}
-.focus\:ring-teal-600:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(13 148 136 / var(--tw-ring-opacity));
 }
 .focus\:ring-teal-300:focus {
   --tw-ring-opacity: 1;
