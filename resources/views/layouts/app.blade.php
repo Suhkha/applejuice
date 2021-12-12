@@ -55,7 +55,7 @@
             </div>
         </nav>
 
-        <main>
+        <main class="flex h-screen justify-center mt-24 mb-32">
             @yield('content')
         </main>
     </div>

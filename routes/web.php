@@ -20,9 +20,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::prefix('admin')->group(function () {
-
-    Route::resource('patients', UserDetailsController::class);
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    
+    Route::resource('patients', UserDetailsController::class); 
 });
