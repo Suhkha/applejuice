@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserDetailsController;
+use App\Http\Controllers\BackgroundController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,5 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     
     Route::resource('patients', UserDetailsController::class); 
+    Route::resource('background', BackgroundController::class); 
 });
