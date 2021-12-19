@@ -38,14 +38,13 @@ class BackgroundController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'details' => 'required',
             'type' => 'required',
             'status' => 'required'
         ]);
 
         $background = new Background;
         $background->name = request('name');
-        $background->details = request('details');
+        $background->details = request('details') == "" ? "Sin detalles" : request('details');
         $background->type = request('type');
         $background->status = request('status');
 
