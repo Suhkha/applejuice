@@ -23,5 +23,9 @@
         "tailwindcss": "^3.0.1",
         "vue": "^2.6.12",
         "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "jquery": "^3.6.0",
+        "jquery.add-input-area": "^4.11.0"
     }
 }

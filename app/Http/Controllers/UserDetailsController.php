@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\UserDetails;
+use App\Models\User;
+use DB;
+use Hash;
 
 class UserDetailsController extends Controller
 {
@@ -46,7 +49,15 @@ class UserDetailsController extends Controller
             'education_level' => 'required'
         ]);
 
+        //Create User Account 
+        $user = new User;
+        $user->email = request('email');
+        $user->phone = request('phone');
+        $user->password = Hash::make('pacientes.svelfit.2022');
+        $user->save();
+
         $userDetail = new UserDetails;
+        $userDetail->user_id = DB::getPdo()->lastInsertId();
         $userDetail->name = request('name');
         $userDetail->last_name = request('last_name');
         $userDetail->second_last_name = request('second_last_name');
@@ -58,7 +69,8 @@ class UserDetailsController extends Controller
 
         $userDetail->save();
 
-        return redirect()->route('background.create');
+        $userId = $userDetail->user_id;
+        return redirect()->route('pathologic', ['user_id' => $userId]);
     }
 
     /**

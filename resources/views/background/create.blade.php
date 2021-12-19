@@ -29,8 +29,8 @@
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Activo</label>
                 <select name="status" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300">
                     <option>Selecciona</option>
-                    <option value="0">No</option>
                     <option value="1">Sí</option>
+                    <option value="0">No</option>
                 </select>
             </div>
         </div>
