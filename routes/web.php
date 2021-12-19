@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserDetailsController;
 use App\Http\Controllers\BackgroundController;
 use App\Http\Controllers\BackgroundHistoryController;
+use App\Http\Controllers\MedicineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +35,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     });
 
     Route::resource('history', BackgroundHistoryController::class);
+
+    Route::group(['prefix' => 'medicines'], function () {
+        Route::get('/create/{user_id}', [MedicineController::class, 'create'])->name('medicine');
+    });
+
+    Route::resource('medicines', MedicineController::class);
 });

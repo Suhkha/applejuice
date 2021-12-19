@@ -3,32 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Background;
-use App\Models\BackgroundHistory;
+use App\Models\Medicine;
 
-class BackgroundHistoryController extends Controller
+class MedicineController extends Controller
 {
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function createPathologicHistory($user_id)
+    public function create($user_id)
     {
-        $pathologics = Background::where('type', 0)
-                                ->where('status', 1)
-                                ->get();
-        return view('background-history.pathologic-form', compact('pathologics', 'user_id'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function createNoPathologicHistory()
-    {
-        //
+        return view('medicines.create', compact('user_id'));
     }
 
     /**
@@ -42,15 +28,26 @@ class BackgroundHistoryController extends Controller
         $data = $request->except('_token');
 
         for ($i=0; $i < ((count($data) / 2) - 1); $i++) { 
-            $pathologic = new BackgroundHistory;
-            $pathologic->user_id = request('user_id');
-            $pathologic->background_id = request('list-pathologic_'.$i);
-            $pathologic->comments = request('list-comments_'.$i) == "" ? "" : request('list-comments_'.$i);
-            $pathologic->save();
+            $medicine = new Medicine;
+            $medicine->user_id = request('user_id');
+            $medicine->name = request('list-name_'.$i) == "" ? "" : request('list-name_'.$i);;
+            $medicine->comments = request('list-comments_'.$i) == "" ? "" : request('list-comments_'.$i);
+            $medicine->save();
         }
 
-        $userId = request('user_id');
-        return redirect()->route('medicine', ['user_id' => $userId]);
+        return $userId = request('user_id');
+        //return redirect()->route('medicine', ['user_id' => $userId]);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
     }
 
     /**
