@@ -23,8 +23,8 @@ class CreateHereditaryFamilyHistoryTable extends Migration
             $table->foreign('background_id')
                 ->references('id')
                 ->on('background');
-            $table->string('name');
-            $table->text('comments');
+            $table->string('name')->nullable();
+            $table->text('comments')->nullable();
             $table->timestamps();
         });
     }

@@ -22,8 +22,8 @@ class CreateGoalsTable extends Migration
             $table->string('goal_weight');
             $table->text('favorite_aliments');
             $table->text('main_goal');
-            $table->text('additional_method');
-            $table->text('comments');
+            $table->text('additional_method')->nullable();
+            $table->text('comments')->nullable();
             $table->timestamps();
         });
     }

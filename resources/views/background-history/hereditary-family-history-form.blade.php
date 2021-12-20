@@ -1,16 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('partials.hero-form', ['sectionTitle' => 'Antecedents patológicos'])
+    @include('partials.hero-form', ['sectionTitle' => 'Antecedents heredo familiares'])
 
-    <form action="{{ route('history.store') }}" method="POST" class="form-serialize">
+    <form action="{{ route('history.store-hereditary-family-history') }}" method="POST" class="form-serialize">
         @csrf
         <input type="hidden" name="user_id" value="{{ $user_id }}">
-        <input type="hidden" name="no-pathologic-form" value="false">
         <div id="list">
             <div class="list_var">
                 <div class="grid grid-cols-1 mt-5 mx-7">
-                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Antecedentes patológicos disponibles</label>
+                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Antecedentes heredo familiares</label>
                     <select data-name-format="list-background_%d" name="" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300 ">
                         <option>Selecciona</option>
                         @foreach ($pathologics as $pathologic)
@@ -20,7 +19,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 mt-5 mx-7">
-                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Comentarios del antecedente del paciente</label>
+                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Comentarios del antecedente heredo familiar</label>
                     <textarea class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300"  data-name-format="list-comments_%d" name="comments[]" placeholder="Detalles"></textarea>
                 </div>
                 <div class='flex items-center justify-end pt-10 mx-7'>

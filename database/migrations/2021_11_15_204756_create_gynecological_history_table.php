@@ -20,14 +20,16 @@ class CreateGynecologicalHistoryTable extends Migration
                 ->references('id')
                 ->on('users');
             $table->string('menarche');
-            $table->text('menarche_comments');
+            $table->text('menarche_comments')->nullable();
+            $table->string('pregnacies');
+            $table->text('pregnacies_comments')->nullable();
             $table->string('abortion');
-            $table->text('abortion_comments');
+            $table->text('abortion_comments')->nullable();
             $table->string('menstruation');
-            $table->text('menstruation_comments');
+            $table->text('menstruation_comments')->nullable();
             $table->string('contraceptive_method');
-            $table->text('contraceptive_method_comments');
-            $table->text('medicines');
+            $table->text('contraceptive_method_comments')->nullable();
+            $table->text('medicines')->nullable();
             $table->timestamps();
         });
     }
