@@ -5,6 +5,8 @@ use App\Http\Controllers\UserDetailsController;
 use App\Http\Controllers\BackgroundController;
 use App\Http\Controllers\BackgroundHistoryController;
 use App\Http\Controllers\MedicineController;
+use App\Http\Controllers\GynecologicalHistoryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,14 +33,21 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
 
     Route::group(['prefix' => 'history'], function () {
         Route::get('/pathologic/{user_id}', [BackgroundHistoryController::class, 'createPathologicHistory'])->name('pathologic');
-        Route::get('/no-pathologic', [BackgroundHistoryController::class, 'createNoPathologicHistory'])->name('no-pathologic');
-    });
+        
+        Route::get('/hereditary-family-history/{user_id}', [BackgroundHistoryController::class, 'createHereditaryFamilyHistory'])->name('hereditary-family-history');
+        Route::post('/store-hereditary-family-history', [BackgroundHistoryController::class, 'storeHereditaryFamilyHistory'])->name('history.store-hereditary-family-history');
 
+        Route::get('/no-pathologic/{user_id}', [BackgroundHistoryController::class, 'createNoPathologicHistory'])->name('no-pathologic');
+    });
     Route::resource('history', BackgroundHistoryController::class);
 
     Route::group(['prefix' => 'medicines'], function () {
         Route::get('/create/{user_id}', [MedicineController::class, 'create'])->name('medicine');
     });
-
     Route::resource('medicines', MedicineController::class);
+
+    Route::group(['prefix' => 'gynecological-history'], function () {
+        Route::get('/create/{user_id}', [GynecologicalHistoryController::class, 'create'])->name('gynecological-history');
+    });
+    Route::resource('gynecological-history', GynecologicalHistoryController::class);
 });

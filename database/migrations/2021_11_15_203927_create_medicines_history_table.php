@@ -20,7 +20,7 @@ class CreateMedicinesHistoryTable extends Migration
                 ->references('id')
                 ->on('users');
             $table->string('name');
-            $table->text('comments');
+            $table->text('comments')->nullable();
             $table->timestamps();
         });
     }

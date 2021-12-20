@@ -22,7 +22,7 @@ class CreateUsersDetailsTable extends Migration
                 ->onDelete('CASCADE');
             $table->string('name');
             $table->string('last_name');
-            $table->string('second_last_name');
+            $table->string('second_last_name')->nullable();
             $table->integer('age');
             $table->date('birthday');
             $table->string('religion');

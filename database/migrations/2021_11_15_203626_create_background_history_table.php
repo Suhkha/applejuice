@@ -23,7 +23,7 @@ class CreateBackgroundHistoryTable extends Migration
             $table->foreign('background_id')
                 ->references('id')
                 ->on('background');
-            $table->text('comments');
+            $table->text('comments')->nullable();
             $table->timestamps();
         });
     }

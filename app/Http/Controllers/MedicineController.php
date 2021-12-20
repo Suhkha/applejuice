@@ -35,8 +35,8 @@ class MedicineController extends Controller
             $medicine->save();
         }
 
-        return $userId = request('user_id');
-        //return redirect()->route('medicine', ['user_id' => $userId]);
+        $userId = request('user_id');
+        return redirect()->route('hereditary-family-history', ['user_id' => $userId]);
     }
 
     /**
