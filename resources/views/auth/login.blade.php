@@ -2,11 +2,14 @@
 
 @section('content')
 <div class="px-8 py-6 mt-4 text-left bg-white shadow-lg">
-    <h3 class="text-2xl font-bold text-center">Ingresa a {{ config('app.name', 'Laravel') }}</h3>
+    <div class="flex mb-6 justify-center">
+        <img src="{{URL::asset('/img/svelfit-logo.png')}}" width="150" alt="">
+    </div>
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
         <div class="mt-8">
+            
             <div>
                 <label class="block" for="email">Email<label>
                         <input type="email" id="email" name="email"         
