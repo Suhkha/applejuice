@@ -6,6 +6,9 @@ use App\Http\Controllers\BackgroundController;
 use App\Http\Controllers\BackgroundHistoryController;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\GynecologicalHistoryController;
+use App\Http\Controllers\GoalsController;
+use App\Http\Controllers\AnthropometricController;
+
 
 
 /*
@@ -50,4 +53,14 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         Route::get('/create/{user_id}', [GynecologicalHistoryController::class, 'create'])->name('gynecological-history');
     });
     Route::resource('gynecological-history', GynecologicalHistoryController::class);
+
+    Route::group(['prefix' => 'goals'], function () {
+        Route::get('/create/{user_id}', [GoalsController::class, 'create'])->name('goals');
+    });
+    Route::resource('goals', GoalsController::class);
+
+    Route::group(['prefix' => 'anthropometric'], function () {
+        Route::get('/create/{user_id}', [AnthropometricController::class, 'create'])->name('anthropometric');
+    });
+    Route::resource('anthropometric', AnthropometricController::class);
 });

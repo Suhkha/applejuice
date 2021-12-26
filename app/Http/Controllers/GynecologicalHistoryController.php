@@ -60,7 +60,7 @@ class GynecologicalHistoryController extends Controller
         $gynecologicalHistory->save();
 
         $userId = request('user_id');
-        return redirect()->route('anthropometric', ['user_id' => $userId]);
+        return redirect()->route('goals', ['user_id' => $userId]);
     }
 
     /**
