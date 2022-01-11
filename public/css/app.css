@@ -380,7 +380,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
-.border, .border-0, .border-t, .border-l-0, .border-r-0, .border-t-0, .md\:border-t-0, .md\:border-l {
+.border, .border-0, .border-2, .border-t, .border-l-0, .border-r-0, .border-t-0, .md\:border-t-0, .md\:border-l {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
@@ -467,6 +467,28 @@ table.dataTable thead th, table.dataTable thead td {
     margin-top: 8px !important;
 }
 
+.swiper-button-next, .swiper-button-prev {
+    color: #2dd4bf !important;
+}
+
+a[aria-selected="true"] {
+    background: #2dd4bf !important;
+}
+
+.dz-button {
+    color: #fff !important;
+    background: #2dd4bf !important;
+    border: 1px solid transparent !important;
+    margin-bottom: 16px !important;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    padding: 10px;
+}
+
+.dz-filename, .dz-success-mark, .dz-error-mark, .dz-remove {
+    display: none;
+}
+
 .container {
   width: 100%;
 }
@@ -517,6 +539,9 @@ table.dataTable thead th, table.dataTable thead td {
 .right-0 {
   right: 0px;
 }
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
 .m-0 {
   margin: 0px;
 }
@@ -527,6 +552,10 @@ table.dataTable thead th, table.dataTable thead td {
 .mx-7 {
   margin-left: 1.75rem;
   margin-right: 1.75rem;
+}
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }
 .ml-1 {
   margin-left: 0.25rem;
@@ -558,6 +587,9 @@ table.dataTable thead th, table.dataTable thead td {
 .mt-5 {
   margin-top: 1.25rem;
 }
+.mb-12 {
+  margin-bottom: 3rem;
+}
 .mr-1 {
   margin-right: 0.25rem;
 }
@@ -573,17 +605,20 @@ table.dataTable thead th, table.dataTable thead td {
 .mb-0 {
   margin-bottom: 0px;
 }
-.mb-12 {
-  margin-bottom: 3rem;
-}
 .mt-24 {
   margin-top: 6rem;
 }
 .mb-32 {
   margin-bottom: 8rem;
 }
+.mb-4 {
+  margin-bottom: 1rem;
+}
 .block {
   display: block;
+}
+.inline-block {
+  display: inline-block;
 }
 .flex {
   display: flex;
@@ -608,6 +643,11 @@ table.dataTable thead th, table.dataTable thead td {
 }
 .h-full {
   height: 100%;
+}
+.h-fit {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -683,6 +723,11 @@ table.dataTable thead th, table.dataTable thead td {
   margin-right: calc(1.5rem * var(--tw-space-x-reverse));
   margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
 .overflow-hidden {
   overflow: hidden;
 }
@@ -714,6 +759,9 @@ table.dataTable thead th, table.dataTable thead td {
 .border-0 {
   border-width: 0px;
 }
+.border-2 {
+  border-width: 2px;
+}
 .border-t {
   border-top-width: 1px;
 }
@@ -729,6 +777,9 @@ table.dataTable thead th, table.dataTable thead td {
 .border-solid {
   border-style: solid;
 }
+.border-dotted {
+  border-style: dotted;
+}
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
@@ -737,6 +788,10 @@ table.dataTable thead th, table.dataTable thead td {
   --tw-border-opacity: 1;
   border-color: rgb(153 246 228 / var(--tw-border-opacity));
 }
+.border-teal-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(45 212 191 / var(--tw-border-opacity));
+}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -744,6 +799,10 @@ table.dataTable thead th, table.dataTable thead td {
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+.bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
 .bg-teal-400 {
   --tw-bg-opacity: 1;
@@ -763,6 +822,14 @@ table.dataTable thead th, table.dataTable thead td {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+.bg-teal-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(204 251 241 / var(--tw-bg-opacity));
+}
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .p-6 {
   padding: 1.5rem;
@@ -817,6 +884,14 @@ table.dataTable thead th, table.dataTable thead td {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
 }
+.px-9 {
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+}
+.py-9 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
 .pt-8 {
   padding-top: 2rem;
 }
@@ -825,6 +900,9 @@ table.dataTable thead th, table.dataTable thead td {
 }
 .pb-10 {
   padding-bottom: 2.5rem;
+}
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
 .text-left {
   text-align: left;
@@ -860,6 +938,10 @@ table.dataTable thead th, table.dataTable thead td {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 .font-semibold {
   font-weight: 600;
@@ -919,6 +1001,10 @@ table.dataTable thead th, table.dataTable thead td {
 .text-gray-800 {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+.text-teal-400 {
+  --tw-text-opacity: 1;
+  color: rgb(45 212 191 / var(--tw-text-opacity));
 }
 .underline {
   text-decoration: underline;

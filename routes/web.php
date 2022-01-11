@@ -8,8 +8,8 @@ use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\GynecologicalHistoryController;
 use App\Http\Controllers\GoalsController;
 use App\Http\Controllers\AnthropometricController;
-
-
+use App\Http\Controllers\AdminPatientProfileController;
+use App\Http\Controllers\DropzoneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,4 +63,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         Route::get('/create/{user_id}', [AnthropometricController::class, 'create'])->name('anthropometric');
     });
     Route::resource('anthropometric', AnthropometricController::class);
+
+    Route::resource('profile', AdminPatientProfileController::class);
+
+    Route::get('gallery/{user_id}', [DropzoneController::class, 'dropzone'])->name('gallery');
+    Route::post('gallery/store/{user_id}', [DropzoneController::class, 'dropzoneStore'])->name('dropzone.store');
+
+    
 });
