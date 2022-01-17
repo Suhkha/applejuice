@@ -18,7 +18,8 @@ class CreateGalleryTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
                 ->references('id')
-                ->on('users');
+                ->on('users')
+                ->onDelete('cascade');
             $table->string('image');
             $table->timestamps();
         });

@@ -12,9 +12,9 @@ class GoalsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($user_id)
+    public function create($user_id, $type)
     {
-        return view('goals.create', compact('user_id'));
+        return view('goals.create', compact('user_id', 'type'));
     }
 
     /**
@@ -43,18 +43,13 @@ class GoalsController extends Controller
         $goal->save();
 
         $userId = request('user_id');
-        return redirect()->route('anthropometric', ['user_id' => $userId]);
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        if(request('type') == 'new') {
+            return redirect()->route('anthropometric', ['user_id' => $userId, 'type' => 'new']);
+
+        }else{
+            return redirect()->route('profile.show', $userId);
+        }
     }
 
     /**
@@ -63,9 +58,10 @@ class GoalsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, $profile_id)
     {
-        //
+        $goal = Goal::find($id);
+        return view('goals.edit', compact('goal', 'profile_id'));
     }
 
     /**
@@ -77,7 +73,23 @@ class GoalsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'goal_weight' => 'required',
+            'favorite_aliments' => 'required',
+            'main_goal' => 'required',
+            'additional_method' => 'required',
+        ]);
+
+        $goal = Goal::find($id);
+        $goal->goal_weight = request('goal_weight');
+        $goal->favorite_aliments = request('favorite_aliments');
+        $goal->main_goal = request('main_goal');
+        $goal->additional_method = request('additional_method');
+        $goal->comments = request('comments') == "" ? "" : request('comments');
+
+        $goal->save();
+
+        return redirect()->route('profile.show', request('profile_id'));
     }
 
     /**

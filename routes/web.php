@@ -10,6 +10,7 @@ use App\Http\Controllers\GoalsController;
 use App\Http\Controllers\AnthropometricController;
 use App\Http\Controllers\AdminPatientProfileController;
 use App\Http\Controllers\DropzoneController;
+use App\Http\Controllers\TreatmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,39 +36,65 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::resource('background', BackgroundController::class);  
 
     Route::group(['prefix' => 'history'], function () {
-        Route::get('/pathologic/{user_id}', [BackgroundHistoryController::class, 'createPathologicHistory'])->name('pathologic');
+        Route::get('/pathologic/{user_id}/{type}', [BackgroundHistoryController::class, 'createPathologicHistory'])->name('pathologic');
+        Route::get('/pathologic/editPathologic/{id}/{profile_id}', [BackgroundHistoryController::class, 'editPathologic'])->name('edit-pathologic');;
         
-        Route::get('/hereditary-family-history/{user_id}', [BackgroundHistoryController::class, 'createHereditaryFamilyHistory'])->name('hereditary-family-history');
+        Route::get('/hereditary-family-history/{user_id}/{type}', [BackgroundHistoryController::class, 'createHereditaryFamilyHistory'])->name('hereditary-family-history');
         Route::post('/store-hereditary-family-history', [BackgroundHistoryController::class, 'storeHereditaryFamilyHistory'])->name('history.store-hereditary-family-history');
+        Route::get('/editHereditary/{id}/{profile_id}', [BackgroundHistoryController::class, 'editHereditary'])->name('edit-hereditary');
+        Route::post('/updateHereditary/{id}', [BackgroundHistoryController::class, 'updateHereditary'])->name('update-hereditary');
+        Route::get('/deleteHereditary/{id}', [BackgroundHistoryController::class, 'deleteHereditary'])->name('delete-hereditary');
 
-        Route::get('/no-pathologic/{user_id}', [BackgroundHistoryController::class, 'createNoPathologicHistory'])->name('no-pathologic');
+        Route::get('/no-pathologic/{user_id}/{type}', [BackgroundHistoryController::class, 'createNoPathologicHistory'])->name('no-pathologic');
+        Route::get('/pathologic/editNoPathologic/{id}/{profile_id}', [BackgroundHistoryController::class, 'editNoPathologic'])->name('edit-no-pathologic');
+
+        Route::post('/pathologic/updateBackground/{id}', [BackgroundHistoryController::class, 'updateBackground'])->name('update-background');
+        Route::get('/deleteBackground/{id}', [BackgroundHistoryController::class, 'deleteBackground'])->name('delete-background');
     });
     Route::resource('history', BackgroundHistoryController::class);
 
     Route::group(['prefix' => 'medicines'], function () {
-        Route::get('/create/{user_id}', [MedicineController::class, 'create'])->name('medicine');
+        Route::get('/create/{user_id}/{type}', [MedicineController::class, 'create'])->name('medicine');
+        Route::get('/edit/{id}/{profile_id}', [MedicineController::class, 'edit'])->name('edit-medicine');
+        Route::get('/deleteMedicine/{id}', [MedicineController::class, 'deleteMedicine'])->name('delete-medicine');
     });
     Route::resource('medicines', MedicineController::class);
 
     Route::group(['prefix' => 'gynecological-history'], function () {
-        Route::get('/create/{user_id}', [GynecologicalHistoryController::class, 'create'])->name('gynecological-history');
+        Route::get('/create/{user_id}/{type}', [GynecologicalHistoryController::class, 'create'])->name('gynecological-history');
+        Route::get('/edit/{id}/{profile_id}', [GynecologicalHistoryController::class, 'edit'])->name('edit-gynecological');
     });
     Route::resource('gynecological-history', GynecologicalHistoryController::class);
 
     Route::group(['prefix' => 'goals'], function () {
-        Route::get('/create/{user_id}', [GoalsController::class, 'create'])->name('goals');
+        Route::get('/create/{user_id}/{type}', [GoalsController::class, 'create'])->name('goals');
+        Route::get('/edit/{id}/{profile_id}', [GoalsController::class, 'edit'])->name('edit-goal');
     });
     Route::resource('goals', GoalsController::class);
 
     Route::group(['prefix' => 'anthropometric'], function () {
-        Route::get('/create/{user_id}', [AnthropometricController::class, 'create'])->name('anthropometric');
+        Route::get('/create/{user_id}/{type}', [AnthropometricController::class, 'create'])->name('anthropometric');
+        Route::get('/edit/{id}/{profile_id}', [AnthropometricController::class, 'edit'])->name('edit-anthropometric');
+        Route::get('/deleteAnthropometric/{id}', [AnthropometricController::class, 'deleteAnthropometric'])->name('delete-anthropometric');
     });
     Route::resource('anthropometric', AnthropometricController::class);
 
+    Route::group(['prefix' => 'profile'], function () {
+        Route::get('/delete-user/{id}', [AdminPatientProfileController::class, 'deleteUser'])->name('delete-user');
+    });
     Route::resource('profile', AdminPatientProfileController::class);
 
-    Route::get('gallery/{user_id}', [DropzoneController::class, 'dropzone'])->name('gallery');
-    Route::post('gallery/store/{user_id}', [DropzoneController::class, 'dropzoneStore'])->name('dropzone.store');
+    Route::get('gallery/{user_id}', [DropzoneController::class, 'gallery'])->name('gallery');
+    Route::post('gallery/store/{user_id}', [DropzoneController::class, 'galleryStore'])->name('gallery.store');
 
-    
+    Route::get('pdf/{user_id}', [DropzoneController::class, 'pdf'])->name('pdf');
+    Route::post('pdf/store/{user_id}', [DropzoneController::class, 'pdfStore'])->name('pdf.store');
+    Route::get('/pdf/delete/{id}', [DropzoneController::class, 'deletePdf'])->name('delete-pdf');
+
+    Route::group(['prefix' => 'treatment'], function () {
+        Route::get('/create/{user_id}/{type}', [TreatmentController::class, 'create'])->name('treatment');
+        Route::get('/edit/{id}/{profile_id}', [TreatmentController::class, 'edit'])->name('edit-treatment');
+    });
+    Route::resource('treatment', TreatmentController::class);
+
 });

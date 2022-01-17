@@ -87,5 +87,33 @@ a[aria-selected="true"] {
     display: none;
 }
 
+#pdf-upload .dz-size {
+    display: none;
+}
+
+.plans-pdf svg {
+    width: 30px;
+    display: inline-block;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+  
+::-webkit-scrollbar-button {
+    width: 5px;
+    height: 5px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #edf2f7;
+}
+    
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #2dd4bf;
+}
+
 @tailwind components;
 @tailwind utilities;

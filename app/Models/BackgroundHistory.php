@@ -21,12 +21,6 @@ class BackgroundHistory extends Model
     ];
 
     public function background(){
-        return $this->hasMany('App\Models\Background', 'id');
+        return $this->hasMany('App\Models\Background', 'id', 'background_id');
     }
-
-    public function medicine(){
-        return $this->hasMany('App\Models\Medicine', 'id');
-    }
-
-    
 }

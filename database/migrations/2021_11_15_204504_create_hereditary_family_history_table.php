@@ -19,7 +19,8 @@ class CreateHereditaryFamilyHistoryTable extends Migration
             $table->unsignedBigInteger('background_id');
             $table->foreign('user_id')
                 ->references('id')
-                ->on('users');
+                ->on('users')
+                ->onDelete('cascade');
             $table->foreign('background_id')
                 ->references('id')
                 ->on('background');

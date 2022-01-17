@@ -9,7 +9,7 @@
                 </div>
             </div>
         </div>
-        <form action="{{ route('dropzone.store', $id) }}" method="post" enctype="multipart/form-data" id="image-upload" class="dropzone bg-teal-100 px-9 py-9 w-full h-fit text-center border-dotted border-2 border-teal-400">
+        <form action="{{ route('gallery.store', $userId) }}" method="post" enctype="multipart/form-data" id="image-upload" class="dropzone bg-teal-100 px-9 py-9 w-full h-fit text-center border-dotted border-2 border-teal-400">
             @csrf
             <div>
                 <span class="text-gray-800 block mb-4">Arrastra las fotos al recuadro o da clic al botón</h3>

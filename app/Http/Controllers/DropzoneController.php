@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\UserDetails;
 use App\Models\Gallery;
+use App\Models\Pdf;
 
 class DropzoneController extends Controller
 {
@@ -13,10 +14,13 @@ class DropzoneController extends Controller
      *
      * @return void
      */
-    public function dropzone($id)
+    public function gallery($id)
     {   
-        $name = UserDetails::find($id)->first(['name'])->name;
-        return view('admin-profile.gallery.index', compact('id', 'name'));
+        $userDetails = UserDetails::find($id)->first();
+        $name = $userDetails->name;
+        $userId = $userDetails->user_id;
+
+        return view('admin-profile.gallery.index', compact('id', 'name', 'userId'));
     }
 
     /**
@@ -24,7 +28,7 @@ class DropzoneController extends Controller
      *
      * @return void
     */
-    public function dropzoneStore(Request $request, $id)
+    public function galleryStore(Request $request, $id)
     {
         $file = $request->file('file');
         $path = public_path() . '/patients';
@@ -39,5 +43,47 @@ class DropzoneController extends Controller
             $gallery->save();
     
         return "yes";
+    }
+
+    public function pdf($id)
+    {   
+        $name = UserDetails::find($id)->first(['name'])->name;
+        return view('admin-profile.pdf.index', compact('id', 'name'));
+    }
+
+    /**
+     * Image Upload Code
+     *
+     * @return void
+    */
+    public function pdfStore(Request $request, $id)
+    {
+        $file = $request->file('file');
+        $path = public_path() . '/pdf';
+        $fileName = uniqid() . $file->getClientOriginalName();
+
+        $file->move($path, $fileName);
+        
+            $pdf = new Pdf;
+            $pdf->pdf = $fileName;
+            $pdf->user_id = $id;
+
+            $pdf->save();
+    
+        return "yes";
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function deletePdf($id)
+    {
+        $pdf = Pdf::find($id);
+        $pdf->delete();
+
+        return redirect()->back();
     }
 }

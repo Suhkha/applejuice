@@ -24,6 +24,8 @@ class Anthropometric extends Model
         'bone_mass',
         'visceral',
         'metabolic_age',
+        'imc',
+        'water',
         'waist',
         'thigh',
         'hips',

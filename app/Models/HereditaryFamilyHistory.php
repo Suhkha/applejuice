@@ -19,4 +19,8 @@ class HereditaryFamilyHistory extends Model
         'background_id',
         'comments',
     ];
+
+    public function hereditary(){
+        return $this->hasMany('App\Models\Background', 'id', 'background_id');
+    }
 }
