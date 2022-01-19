@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Anthropometric;
+use App\Models\UserDetails;
 
 use Illuminate\Http\Request;
 
@@ -12,9 +13,9 @@ class AnthropometricController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($user_id)
+    public function create($user_id, $type)
     {
-        return view('anthropometric.create', compact('user_id'));
+        return view('anthropometric.create', compact('user_id', 'type'));
     }
 
     /**
@@ -34,6 +35,8 @@ class AnthropometricController extends Controller
             'bone_mass' => 'required',
             'visceral' => 'required',
             'metabolic_age' => 'required',
+            'imc' => 'required',
+            'water' => 'required',
             'waist' => 'required',
             'thigh' => 'required',
             'hips' => 'required',
@@ -50,6 +53,8 @@ class AnthropometricController extends Controller
         $anthropometric->bone_mass = request('bone_mass');
         $anthropometric->visceral = request('visceral');
         $anthropometric->metabolic_age = request('metabolic_age');
+        $anthropometric->imc = request('imc');
+        $anthropometric->water = request('water');
         $anthropometric->waist = request('waist');
         $anthropometric->thigh = request('thigh');
         $anthropometric->hips = request('hips');
@@ -58,7 +63,14 @@ class AnthropometricController extends Controller
         $anthropometric->save();
 
         $userId = request('user_id');
-        return view('patients.index');
+
+        if(request('type') == 'new') {
+            return redirect()->route('patients.index');
+            
+        }else{
+            $user = UserDetails::where('user_id', $userId)->first();
+            return redirect()->route('profile.show', $user->id);
+        }
     }
 
     /**
@@ -67,9 +79,10 @@ class AnthropometricController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, $profile_id)
     {
-        //
+        $anthropometric = Anthropometric::find($id);
+        return view('anthropometric.edit', compact('anthropometric', 'profile_id'));
     }
 
     /**
@@ -81,6 +94,55 @@ class AnthropometricController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'size' => 'required',
+            'weight' => 'required',
+            'average_fat' => 'required',
+            'muscle_mass_kilo' => 'required',
+            'muscle_quality' => 'required',
+            'bone_mass' => 'required',
+            'visceral' => 'required',
+            'metabolic_age' => 'required',
+            'imc' => 'required',
+            'water' => 'required',
+            'waist' => 'required',
+            'thigh' => 'required',
+            'hips' => 'required',
+            'biceps' => 'required',
+        ]);
+
+        $anthropometric = Anthropometric::find($id);
+        $anthropometric->size = request('size');
+        $anthropometric->weight = request('weight');
+        $anthropometric->average_fat = request('average_fat');
+        $anthropometric->muscle_mass_kilo = request('muscle_mass_kilo');
+        $anthropometric->muscle_quality = request('muscle_quality');
+        $anthropometric->bone_mass = request('bone_mass');
+        $anthropometric->visceral = request('visceral');
+        $anthropometric->metabolic_age = request('metabolic_age');
+        $anthropometric->imc = request('imc');
+        $anthropometric->water = request('water');
+        $anthropometric->waist = request('waist');
+        $anthropometric->thigh = request('thigh');
+        $anthropometric->hips = request('hips');
+        $anthropometric->biceps = request('biceps');
+
+        $anthropometric->save();
+
+        return redirect()->route('profile.show', request('profile_id'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteAnthropometric($id)
+    {
+        $medicine = Anthropometric::find($id);
+        $medicine->delete();
+
+        return redirect()->back();
     }
 }

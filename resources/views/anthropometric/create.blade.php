@@ -5,7 +5,10 @@
 
     <form action="{{ route('anthropometric.store') }}" method="POST" class="form-serialize">
         @csrf
+        
         <input type="hidden" name="user_id" value="{{ $user_id }}">
+        <input type="hidden" name="type" value="{{ $type }}">
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
             <div class="grid grid-cols-1">
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Talla</label>
@@ -47,6 +50,17 @@
             <div class="grid grid-cols-1">
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Edad metabólica</label>
                 <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="metabolic_age" placeholder="Edad metabólica" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
+            <div class="grid grid-cols-1">
+                <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">IMC</label>
+                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="imc" placeholder="IMC" />
+            </div>
+            <div class="grid grid-cols-1">
+                <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Agua</label>
+                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="water" placeholder="Agua" />
             </div>
         </div>
 

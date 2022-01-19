@@ -53,7 +53,7 @@
             </div>
         </nav>
 
-        <main class="flex h-full justify-center mt-24 mb-32">
+        <main class="flex h-full justify-center mt-24 mb-32 px-20">
             @yield('content')
         </main>
     </div>
@@ -69,6 +69,7 @@
             $('table').DataTable();
         });
     </script>
-    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+    <script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>

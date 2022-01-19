@@ -380,7 +380,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
-.border, .border-0, .border-t, .border-l-0, .border-r-0, .border-t-0, .md\:border-t-0, .md\:border-l {
+.border, .border-0, .border-4, .border-2, .border-t, .border-l-0, .border-r-0, .border-t-0, .md\:border-t-0, .md\:border-l {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
@@ -467,6 +467,56 @@ table.dataTable thead th, table.dataTable thead td {
     margin-top: 8px !important;
 }
 
+.swiper-button-next, .swiper-button-prev {
+    color: #2dd4bf !important;
+}
+
+a[aria-selected="true"] {
+    background: #2dd4bf !important;
+}
+
+.dz-button {
+    color: #fff !important;
+    background: #2dd4bf !important;
+    border: 1px solid transparent !important;
+    margin-bottom: 16px !important;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    padding: 10px;
+}
+
+.dz-filename, .dz-success-mark, .dz-error-mark, .dz-remove {
+    display: none;
+}
+
+#pdf-upload .dz-size {
+    display: none;
+}
+
+.plans-pdf svg {
+    width: 30px;
+    display: inline-block;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+  
+::-webkit-scrollbar-button {
+    width: 5px;
+    height: 5px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #edf2f7;
+}
+    
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #2dd4bf;
+}
+
 .container {
   width: 100%;
 }
@@ -508,6 +558,9 @@ table.dataTable thead th, table.dataTable thead td {
 .fixed {
   position: fixed;
 }
+.absolute {
+  position: absolute;
+}
 .relative {
   position: relative;
 }
@@ -516,6 +569,9 @@ table.dataTable thead th, table.dataTable thead td {
 }
 .right-0 {
   right: 0px;
+}
+.col-span-2 {
+  grid-column: span 2 / span 2;
 }
 .m-0 {
   margin: 0px;
@@ -527,6 +583,10 @@ table.dataTable thead th, table.dataTable thead td {
 .mx-7 {
   margin-left: 1.75rem;
   margin-right: 1.75rem;
+}
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }
 .ml-1 {
   margin-left: 0.25rem;
@@ -558,6 +618,12 @@ table.dataTable thead th, table.dataTable thead td {
 .mt-5 {
   margin-top: 1.25rem;
 }
+.mb-12 {
+  margin-bottom: 3rem;
+}
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
 .mr-1 {
   margin-right: 0.25rem;
 }
@@ -567,14 +633,8 @@ table.dataTable thead th, table.dataTable thead td {
 .mb-6 {
   margin-bottom: 1.5rem;
 }
-.mb-3 {
-  margin-bottom: 0.75rem;
-}
 .mb-0 {
   margin-bottom: 0px;
-}
-.mb-12 {
-  margin-bottom: 3rem;
 }
 .mt-24 {
   margin-top: 6rem;
@@ -582,8 +642,14 @@ table.dataTable thead th, table.dataTable thead td {
 .mb-32 {
   margin-bottom: 8rem;
 }
+.mb-4 {
+  margin-bottom: 1rem;
+}
 .block {
   display: block;
+}
+.inline-block {
+  display: inline-block;
 }
 .flex {
   display: flex;
@@ -606,8 +672,16 @@ table.dataTable thead th, table.dataTable thead td {
 .h-16 {
   height: 4rem;
 }
+.h-6 {
+  height: 1.5rem;
+}
 .h-full {
   height: 100%;
+}
+.h-fit {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -623,6 +697,12 @@ table.dataTable thead th, table.dataTable thead td {
 }
 .w-full {
   width: 100%;
+}
+.w-10 {
+  width: 2.5rem;
+}
+.w-6 {
+  width: 1.5rem;
 }
 .w-11\/12 {
   width: 91.666667%;
@@ -644,6 +724,20 @@ table.dataTable thead th, table.dataTable thead td {
 }
 .border-collapse {
   border-collapse: collapse;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.select-none {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.appearance-none {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -683,6 +777,11 @@ table.dataTable thead th, table.dataTable thead td {
   margin-right: calc(1.5rem * var(--tw-space-x-reverse));
   margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
 .overflow-hidden {
   overflow: hidden;
 }
@@ -704,6 +803,9 @@ table.dataTable thead th, table.dataTable thead td {
 .rounded-lg {
   border-radius: 0.5rem;
 }
+.rounded-full {
+  border-radius: 9999px;
+}
 .rounded-t {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
@@ -713,6 +815,12 @@ table.dataTable thead th, table.dataTable thead td {
 }
 .border-0 {
   border-width: 0px;
+}
+.border-4 {
+  border-width: 4px;
+}
+.border-2 {
+  border-width: 2px;
 }
 .border-t {
   border-top-width: 1px;
@@ -729,6 +837,9 @@ table.dataTable thead th, table.dataTable thead td {
 .border-solid {
   border-style: solid;
 }
+.border-dotted {
+  border-style: dotted;
+}
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
@@ -737,6 +848,10 @@ table.dataTable thead th, table.dataTable thead td {
   --tw-border-opacity: 1;
   border-color: rgb(153 246 228 / var(--tw-border-opacity));
 }
+.border-teal-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(45 212 191 / var(--tw-border-opacity));
+}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -744,6 +859,10 @@ table.dataTable thead th, table.dataTable thead td {
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+.bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
 .bg-teal-400 {
   --tw-bg-opacity: 1;
@@ -760,9 +879,21 @@ table.dataTable thead th, table.dataTable thead td {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+.bg-teal-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(204 251 241 / var(--tw-bg-opacity));
+}
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .p-6 {
   padding: 1.5rem;
@@ -817,6 +948,14 @@ table.dataTable thead th, table.dataTable thead td {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
 }
+.px-9 {
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+}
+.py-9 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
 .pt-8 {
   padding-top: 2rem;
 }
@@ -825,6 +964,12 @@ table.dataTable thead th, table.dataTable thead td {
 }
 .pb-10 {
   padding-bottom: 2.5rem;
+}
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
 .text-left {
   text-align: left;
@@ -860,6 +1005,10 @@ table.dataTable thead th, table.dataTable thead td {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 .font-semibold {
   font-weight: 600;
@@ -920,6 +1069,10 @@ table.dataTable thead th, table.dataTable thead td {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
+.text-teal-400 {
+  --tw-text-opacity: 1;
+  color: rgb(45 212 191 / var(--tw-text-opacity));
+}
 .underline {
   text-decoration: underline;
 }
@@ -956,11 +1109,24 @@ table.dataTable thead th, table.dataTable thead td {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+.transition {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
 .duration-150 {
   transition-duration: 150ms;
 }
+.duration-200 {
+  transition-duration: 200ms;
+}
 .ease-linear {
   transition-timing-function: linear;
+}
+.ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 .hover\:bg-teal-300:hover {
   --tw-bg-opacity: 1;

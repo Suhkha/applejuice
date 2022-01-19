@@ -6,6 +6,7 @@
     <form action="{{ route('goals.store') }}" method="POST" class="form-serialize">
         @csrf
         <input type="hidden" name="user_id" value="{{ $user_id }}">
+        <input type="hidden" name="type" value="{{ $type }}">
         
         <div class="grid grid-cols-1 mt-5 mx-7">
             <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Peso meta</label>

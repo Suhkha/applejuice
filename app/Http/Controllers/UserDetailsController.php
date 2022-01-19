@@ -17,7 +17,8 @@ class UserDetailsController extends Controller
      */
     public function index()
     {
-        return view('patients.index');
+        $users = UserDetails::all();
+        return view('patients.index', compact('users'));
     }
 
     /**
@@ -70,7 +71,7 @@ class UserDetailsController extends Controller
         $userDetail->save();
 
         $userId = $userDetail->user_id;
-        return redirect()->route('pathologic', ['user_id' => $userId]);
+        return redirect()->route('pathologic', ['user_id' => $userId, 'type' => 'new']);
     }
 
     /**

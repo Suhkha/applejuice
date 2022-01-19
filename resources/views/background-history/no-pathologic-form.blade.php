@@ -1,12 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('partials.hero-form', ['sectionTitle' => 'Antecedents patológicos'])
+    @include('partials.hero-form', ['sectionTitle' => 'Antecedentes no patológicos'])
 
     <form action="{{ route('history.store') }}" method="POST" class="form-serialize">
         @csrf
+        
         <input type="hidden" name="user_id" value="{{ $user_id }}">
         <input type="hidden" name="no-pathologic-form" value="true">
+        <input type="hidden" name="type" value="{{ $type }}">
+
         <div id="list">
             <div class="list_var">
                 <div class="grid grid-cols-1 mt-5 mx-7">

@@ -28,4 +28,9 @@ class GynecologicalHistory extends Model
         'contraceptive_method_comments',
         'medicines'
     ];
+
+
+    public function gynecological(){
+        return $this->belongsTo('App\Models\UserDetails', 'id');
+    }
 }

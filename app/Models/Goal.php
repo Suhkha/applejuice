@@ -22,4 +22,8 @@ class Goal extends Model
         'additional_method',
         'comments'
     ];
+
+    public function goal(){
+        return $this->belongsTo('App\Models\UserDetails', 'id');
+    }
 }

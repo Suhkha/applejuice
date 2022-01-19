@@ -18,7 +18,8 @@ class CreateMedicinesHistoryTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
                 ->references('id')
-                ->on('users');
+                ->on('users')
+                ->onDelete('cascade');
             $table->string('name');
             $table->text('comments')->nullable();
             $table->timestamps();

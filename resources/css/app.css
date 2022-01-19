@@ -64,5 +64,56 @@ table.dataTable thead th, table.dataTable thead td {
     margin-top: 8px !important;
 }
 
+.swiper-button-next, .swiper-button-prev {
+    color: #2dd4bf !important;
+}
+
+a[aria-selected="true"] {
+    background: #2dd4bf !important;
+}
+
+.dz-button {
+    color: #fff !important;
+    border-radius: 0 !important;
+    background: #2dd4bf !important;
+    border: 1px solid transparent !important;
+    margin-bottom: 16px !important;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    padding: 10px;
+}
+
+.dz-filename, .dz-success-mark, .dz-error-mark, .dz-remove {
+    display: none;
+}
+
+#pdf-upload .dz-size {
+    display: none;
+}
+
+.plans-pdf svg {
+    width: 30px;
+    display: inline-block;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+  
+::-webkit-scrollbar-button {
+    width: 5px;
+    height: 5px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #edf2f7;
+}
+    
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #2dd4bf;
+}
+
 @tailwind components;
 @tailwind utilities;

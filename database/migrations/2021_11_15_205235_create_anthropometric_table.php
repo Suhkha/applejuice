@@ -18,7 +18,8 @@ class CreateAnthropometricTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
                 ->references('id')
-                ->on('users');
+                ->on('users')
+                ->onDelete('cascade');
             $table->float('size');
             $table->float('weight');
             $table->float('average_fat');
@@ -26,6 +27,8 @@ class CreateAnthropometricTable extends Migration
             $table->string('muscle_quality');
             $table->float('bone_mass');
             $table->float('visceral');
+            $table->float('imc');
+            $table->float('water');
             $table->integer('metabolic_age');
             $table->float('waist');
             $table->float('thigh');

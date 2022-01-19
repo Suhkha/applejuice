@@ -19,4 +19,8 @@ class BackgroundHistory extends Model
         'background_id',
         'comments',
     ];
+
+    public function background(){
+        return $this->hasMany('App\Models\Background', 'id', 'background_id');
+    }
 }

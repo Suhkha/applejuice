@@ -4,27 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\GynecologicalHistory;
+use App\Models\UserDetails;
 
 class GynecologicalHistoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($user_id)
+    public function create($user_id, $type)
     {
-        return view('gynecological-history.create', compact('user_id'));
+        return view('gynecological-history.create', compact('user_id', 'type'));
     }
 
     /**
@@ -35,43 +26,44 @@ class GynecologicalHistoryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'menarche' => 'required',
-            'pregnancies' => 'required',
-            'abortion' => 'required',
-            'menstruation' => 'required',
-            'contraceptive_method' => 'required',
-        ]);
-
-        $gynecologicalHistory = new GynecologicalHistory;
-        $gynecologicalHistory->user_id = request('user_id');
-        $gynecologicalHistory->menarche = request('menarche');
-        $gynecologicalHistory->menarche_comments = request('menarche_comments');
-        $gynecologicalHistory->pregnacies = request('pregnancies');
-        $gynecologicalHistory->pregnacies_comments = request('pregnancies_comments');
-        $gynecologicalHistory->abortion = request('abortion');
-        $gynecologicalHistory->abortion_comments = request('abortion_comments');
-        $gynecologicalHistory->menstruation = request('menstruation');
-        $gynecologicalHistory->menstruation_comments = request('menstruation_comments');
-        $gynecologicalHistory->contraceptive_method = request('contraceptive_method');
-        $gynecologicalHistory->contraceptive_method_comments = request('contraceptive_method_comments');
-        $gynecologicalHistory->medicines = request('medicines');
-
-        $gynecologicalHistory->save();
-
         $userId = request('user_id');
-        return redirect()->route('goals', ['user_id' => $userId]);
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        if(request('toggle') == false) {
+            $request->validate([
+                'menarche' => 'required',
+                'pregnancies' => 'required',
+                'abortion' => 'required',
+                'menstruation' => 'required',
+                'contraceptive_method' => 'required',
+            ]);
+
+            $gynecologicalHistory = new GynecologicalHistory;
+            $gynecologicalHistory->user_id = request('user_id');
+            $gynecologicalHistory->menarche = request('menarche');
+            $gynecologicalHistory->menarche_comments = request('menarche_comments');
+            $gynecologicalHistory->pregnacies = request('pregnancies');
+            $gynecologicalHistory->pregnacies_comments = request('pregnancies_comments');
+            $gynecologicalHistory->abortion = request('abortion');
+            $gynecologicalHistory->abortion_comments = request('abortion_comments');
+            $gynecologicalHistory->menstruation = request('menstruation');
+            $gynecologicalHistory->menstruation_comments = request('menstruation_comments');
+            $gynecologicalHistory->contraceptive_method = request('contraceptive_method');
+            $gynecologicalHistory->contraceptive_method_comments = request('contraceptive_method_comments');
+            $gynecologicalHistory->medicines = request('medicines');
+
+            $gynecologicalHistory->save();
+
+            if(request('type') == 'new') {
+                return redirect()->route('goals', ['user_id' => $userId, 'type' => 'new']);
+                
+            }else{
+                $user = UserDetails::where('user_id', $userId)->first();
+                return redirect()->route('profile.show', $user->id);
+            }
+            
+        }else{
+            return redirect()->route('goals', ['user_id' => $userId, 'type' => 'new']);
+        }
     }
 
     /**
@@ -80,9 +72,10 @@ class GynecologicalHistoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, $profile_id)
     {
-        //
+        $gynecological = GynecologicalHistory::find($id);
+        return view('gynecological-history.edit', compact('gynecological', 'profile_id'));
     }
 
     /**
@@ -94,7 +87,30 @@ class GynecologicalHistoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'menarche' => 'required',
+            'pregnancies' => 'required',
+            'abortion' => 'required',
+            'menstruation' => 'required',
+            'contraceptive_method' => 'required',
+        ]);
+
+        $gynecological = GynecologicalHistory::find($id);
+        $gynecological->menarche = request('menarche');
+        $gynecological->menarche_comments = request('menarche_comments');
+        $gynecological->pregnacies = request('pregnancies');
+        $gynecological->pregnacies_comments = request('pregnancies_comments');
+        $gynecological->abortion = request('abortion');
+        $gynecological->abortion_comments = request('abortion_comments');
+        $gynecological->menstruation = request('menstruation');
+        $gynecological->menstruation_comments = request('menstruation_comments');
+        $gynecological->contraceptive_method = request('contraceptive_method');
+        $gynecological->contraceptive_method_comments = request('contraceptive_method_comments');
+        $gynecological->medicines = request('medicines');
+
+        $gynecological->save();
+
+        return redirect()->route('profile.show', request('profile_id'));
     }
 
     /**

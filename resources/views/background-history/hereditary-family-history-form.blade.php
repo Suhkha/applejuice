@@ -5,7 +5,10 @@
 
     <form action="{{ route('history.store-hereditary-family-history') }}" method="POST" class="form-serialize">
         @csrf
+        
         <input type="hidden" name="user_id" value="{{ $user_id }}">
+        <input type="hidden" name="type" value="{{ $type }}">
+
         <div id="list">
             <div class="list_var">
                 <div class="grid grid-cols-1 mt-5 mx-7">

@@ -5,13 +5,16 @@
 
     <form action="{{ route('history.store') }}" method="POST" class="form-serialize">
         @csrf
+        
         <input type="hidden" name="user_id" value="{{ $user_id }}">
         <input type="hidden" name="no-pathologic-form" value="false">
+        <input type="hidden" name="type" value="{{ $type }}">
+
         <div id="list">
             <div class="list_var">
                 <div class="grid grid-cols-1 mt-5 mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Antecedentes patológicos disponibles</label>
-                    <select data-name-format="list-background_%d" name="" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300 ">
+                    <select data-name-format="list-background_%d" name="background[]" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300 ">
                         <option>Selecciona</option>
                         @foreach ($pathologics as $pathologic)
                             <option value="{{ $pathologic->id }}">{{ $pathologic->name }}</option>
