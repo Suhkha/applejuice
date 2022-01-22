@@ -17,7 +17,7 @@ class UserDetailsController extends Controller
      */
     public function index()
     {
-        $users = UserDetails::all();
+        $users = UserDetails::with('agenda')->get();
         return view('patients.index', compact('users'));
     }
 

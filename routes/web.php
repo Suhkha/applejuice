@@ -11,6 +11,7 @@ use App\Http\Controllers\AnthropometricController;
 use App\Http\Controllers\AdminPatientProfileController;
 use App\Http\Controllers\DropzoneController;
 use App\Http\Controllers\TreatmentController;
+use App\Http\Controllers\AgendaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +25,8 @@ use App\Http\Controllers\TreatmentController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('patients.index');
+})->middleware('auth');
 
 Auth::routes();
 
@@ -97,4 +98,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     });
     Route::resource('treatment', TreatmentController::class);
 
+    Route::group(['prefix' => 'agenda'], function () {
+        Route::get('/create/{user_id}', [AgendaController::class, 'create'])->name('agenda');
+    });
+    Route::resource('agenda', AgendaController::class);
 });

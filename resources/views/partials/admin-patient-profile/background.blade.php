@@ -41,7 +41,7 @@
                     </td>
 
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-                        {{ $item->comments ? $item->comments : "Sin comentarios" }}
+                        {!! $item->comments ? $item->comments : "Sin comentarios" !!}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
                         @if ($item->background[0]->type == 0)
