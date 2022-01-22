@@ -45,7 +45,7 @@
                                     {{ $item->name }}
                                 </td>
                                 <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-                                    {{ $item->details }}
+                                    {!! $item->details !!}
                                 </td>
                                 <td class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                     {{ $item->type == 0 ? 'Patológico' : 'No patológico' }}

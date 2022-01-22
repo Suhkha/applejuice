@@ -22,7 +22,7 @@
                 <span class="block md:text-sm text-xs text-light mb-3">{{ $goal->additional_methods }}</span>
                 
                 <label class="block uppercase md:text-sm text-xs text-light font-semibold">Comentarios: </label>
-                <span class="block md:text-sm text-xs text-light mb-3">{{ $goal->comments }}</span>
+                <span class="block md:text-sm text-xs text-light mb-3">{!! $goal->comments !!}</span>
             </div>
 
             <div class="relative w-full max-w-full flex-grow flex-1">

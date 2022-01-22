@@ -25,4 +25,8 @@ class UserDetails extends Model
         'job_position',
         'level_education'
     ];
+
+    public function agenda(){
+        return $this->hasOne('App\Models\Agenda', 'user_id', 'user_id');
+    }
 }

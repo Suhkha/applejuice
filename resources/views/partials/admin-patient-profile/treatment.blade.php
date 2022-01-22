@@ -10,7 +10,7 @@
         <div class="card__copy w-full px-4 max-w-full flex-grow flex-1">
             <div class="card__body text-base pb-2">
                 <label class="block uppercase md:text-sm text-xs text-light font-semibold">Tratamiento: </label>
-                <span class="block md:text-sm text-xs text-light mb-3">{{ $treatment->treatment }}</span>
+                <span class="block md:text-sm text-xs text-light mb-3">{!! $treatment->treatment !!}</span>
             </div>
 
             <div class="relative w-full max-w-full flex-grow flex-1">
