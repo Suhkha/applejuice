@@ -1,5 +1,5 @@
 <div class="card inline-block overflow-hidden">
-	<div class="card__copy space-y-4 px-4 py-2">
+	<div class="card__copy space-y-4 px-4 pb-2">
 		<div class="card__title text-2xl mb-3 px-4 py-3 border-0 text-white bg-teal-400 ">Datos personales</div>
 		<div class="card__body text-base pb-2">
 			<label class="block uppercase md:text-sm text-xs text-light font-semibold">Nombre: </label>

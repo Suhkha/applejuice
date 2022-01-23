@@ -502,12 +502,12 @@ a[aria-selected="true"] {
     width: 5px;
     height: 5px;
 }
-  
+
 ::-webkit-scrollbar-button {
     width: 5px;
     height: 5px;
 }
-  
+
 ::-webkit-scrollbar-track {
     background: #edf2f7;
 }
@@ -515,6 +515,11 @@ a[aria-selected="true"] {
 ::-webkit-scrollbar-thumb {
     border-radius: 5px;
     background-color: #2dd4bf;
+}
+
+.recipes ul, .recipes ol{
+    list-style: auto !important;
+    margin-left: 25px !important;
 }
 
 .container {
@@ -950,6 +955,10 @@ a[aria-selected="true"] {
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+}
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .px-9 {
   padding-left: 2.25rem;
