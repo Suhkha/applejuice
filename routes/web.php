@@ -12,6 +12,7 @@ use App\Http\Controllers\AdminPatientProfileController;
 use App\Http\Controllers\DropzoneController;
 use App\Http\Controllers\TreatmentController;
 use App\Http\Controllers\AgendaController;
+use App\Http\Controllers\RecipeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +26,8 @@ use App\Http\Controllers\AgendaController;
 */
 
 Route::get('/', function () {
-    return view('patients.index');
-})->middleware('auth');
+    return view('welcome');
+});
 
 Auth::routes();
 
@@ -102,4 +103,9 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         Route::get('/create/{user_id}', [AgendaController::class, 'create'])->name('agenda');
     });
     Route::resource('agenda', AgendaController::class);
+
+    Route::group(['prefix' => 'recipes'], function () {
+        Route::get('/delete-recipe/{id}', [RecipeController::class, 'deleteRecipe'])->name('delete-recipe');
+    });
+    Route::resource('recipes', RecipeController::class);
 });
