@@ -13,6 +13,8 @@ use App\Http\Controllers\DropzoneController;
 use App\Http\Controllers\TreatmentController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\CategoryProductsController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -108,4 +110,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         Route::get('/delete-recipe/{id}', [RecipeController::class, 'deleteRecipe'])->name('delete-recipe');
     });
     Route::resource('recipes', RecipeController::class);
+
+    Route::group(['prefix' => 'category-products'], function () {
+        Route::get('/delete-category-product/{id}', [CategoryProductsController::class, 'deleteCategoryProduct'])->name('delete-category-product');
+    });
+    Route::resource('category-products', CategoryProductsController::class);
+    Route::resource('products', ProductController::class);
 });

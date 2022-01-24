@@ -43,6 +43,10 @@
                             <a href="{{ route('recipes.index') }}">Recetas</a>
                         </li>
 
+                        <li class="font-semibold text-gray-700 hover:text-teal-400">
+                            <a href="{{ route('recipes.index') }}">Productos</a>
+                        </li>
+
                         <li class="px-6 py-2 text-white bg-teal-400 rounded-lg hover:bg-teal-300">
                             <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();

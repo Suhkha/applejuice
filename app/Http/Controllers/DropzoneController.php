@@ -36,11 +36,10 @@ class DropzoneController extends Controller
 
         $file->move($path, $fileName);
         
-            $gallery = new Gallery;
-            $gallery->image = $fileName;
-            $gallery->user_id = $id;
-
-            $gallery->save();
+        $gallery = new Gallery;
+        $gallery->image = $fileName;
+        $gallery->user_id = $id;
+        $gallery->save();
     
         return "yes";
     }

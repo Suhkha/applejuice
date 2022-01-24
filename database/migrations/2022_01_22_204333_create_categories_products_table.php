@@ -15,6 +15,8 @@ class CreateCategoriesProductsTable extends Migration
     {
         Schema::create('categories_products', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('cover');
             $table->timestamps();
         });
     }

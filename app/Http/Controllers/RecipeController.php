@@ -42,7 +42,6 @@ class RecipeController extends Controller
             'preparation' => 'required',
         ]);
 
-        //Create User Account 
         $recipe = new Recipe;
         $recipe->title = request('title');
         $recipe->difficulty = request('difficulty');
