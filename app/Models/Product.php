@@ -20,4 +20,8 @@ class Product extends Model
         'image',
         'comments',
     ];
+
+    public function category(){
+        return $this->hasOne('App\Models\CategoryProduct', 'id', 'category_id');
+    }
 }

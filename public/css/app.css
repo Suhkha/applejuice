@@ -730,6 +730,9 @@ a[aria-selected="true"] {
 .w-52 {
   width: 13rem;
 }
+.w-3\/4 {
+  width: 75%;
+}
 .min-w-0 {
   min-width: 0px;
 }
@@ -1099,6 +1102,10 @@ a[aria-selected="true"] {
 .text-teal-400 {
   --tw-text-opacity: 1;
   color: rgb(45 212 191 / var(--tw-text-opacity));
+}
+.text-teal-500 {
+  --tw-text-opacity: 1;
+  color: rgb(20 184 166 / var(--tw-text-opacity));
 }
 .underline {
   text-decoration: underline;

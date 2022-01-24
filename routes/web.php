@@ -115,5 +115,9 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         Route::get('/delete-category-product/{id}', [CategoryProductsController::class, 'deleteCategoryProduct'])->name('delete-category-product');
     });
     Route::resource('category-products', CategoryProductsController::class);
+
+    Route::group(['prefix' => 'products'], function () {
+        Route::get('/delete-product/{id}', [ProductController::class, 'deleteProduct'])->name('delete-product');
+    });
     Route::resource('products', ProductController::class);
 });
