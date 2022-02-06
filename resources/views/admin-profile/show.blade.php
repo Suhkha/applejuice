@@ -12,7 +12,8 @@
 
         <div class="col-span-2 tabs-section">
             <ul data-tabs class="flex mb-12 flex-wrap">
-                <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" data-tabby-default href="#anthropometric">Antropométrico</a></li>
+                <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#graph" data-tabby-default>Gráficas</a></li>
+                <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#anthropometric">Antropométrico</a></li>
                 <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#background">Antecedentes</a></li>
                 <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#hereditary">Antecedentes Familiares</a></li>
                 <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#medicines">Medicamentos</a></li>
@@ -26,13 +27,18 @@
                 <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#plans">Planes (PDF)</a></li>
             </ul>
             
+            <div id="graph">
+                @include('partials.admin-patient-profile.graphics')
+            </div>
+
             <div id="anthropometric">
                 @include('partials.admin-patient-profile.anthropometric')
             </div>
+            
             <div id="background">
                 @include('partials.admin-patient-profile.background')
             </div>
-             <div id="hereditary">
+            <div id="hereditary">
                 @include('partials.admin-patient-profile.hereditary')
             </div>
             <div id="medicines">

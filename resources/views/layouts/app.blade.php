@@ -19,6 +19,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <script src="{{ asset('js/lib/echarts.min.js') }}"></script>
+    <script src="{{ asset('js/lib/chartisan_echarts.js') }}"></script>
+    
 </head>
 <body>
     <div id="app">
@@ -79,6 +83,7 @@
         });
     </script>
     <script src="{{ asset('js/app.js') }}"></script>
+    
 
 </body>
 </html>

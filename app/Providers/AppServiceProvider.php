@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\URL;
+use ConsoleTVs\Charts\Registrar as Charts;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Charts $charts)
     {
         Schema::defaultStringLength(191);
 
@@ -31,5 +32,15 @@ class AppServiceProvider extends ServiceProvider
         if ($this->app->environment() == 'production') {
             URL::forceScheme('https');
         }
+
+        $charts->register([
+            \App\Charts\WeightCharts::class,
+            \App\Charts\MuscleCharts::class,
+            \App\Charts\FatCharts::class,
+            \App\Charts\WaistCharts::class,
+            \App\Charts\ThighCharts::class,
+            \App\Charts\HipsCharts::class,
+            \App\Charts\BicepsCharts::class,
+        ]);
     }
 }
