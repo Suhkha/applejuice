@@ -3,63 +3,63 @@
 @section('content')
     @include('partials.hero-form', ['sectionTitle' => 'Nuevo paciente'])
 
-    <form action="{{ route('patients.store') }}" method="POST">
+    <form action="{{ route('patients.store') }}" class="svelfit-form" data-parsley-validate="" method="POST">
         @csrf
         <div class="grid grid-cols-1 mt-5 mx-7">
             <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Nombre</label>
-            <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="name" placeholder="Nombre" />
+            <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="name" placeholder="Nombre" required/>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
             <div class="grid grid-cols-1">
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Apellido paterno</label>
-                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="last_name" placeholder="Apellido paterno" />
+                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="last_name" placeholder="Apellido paterno" required/>
             </div>
             <div class="grid grid-cols-1">
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Apellido materno</label>
-                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="second_last_name" placeholder="Apellido materno" />
+                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="second_last_name" placeholder="Apellido materno" required/>
             </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
             <div class="grid grid-cols-1">
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Email</label>
-                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="email" placeholder="Email" />
+                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="email" placeholder="Email" required/>
             </div>
             <div class="grid grid-cols-1">
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Teléfono</label>
-                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="phone" placeholder="Teléfono" />
+                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="phone" placeholder="Teléfono" required/>
             </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
             <div class="grid grid-cols-1">
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Edad</label>
-                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="age" placeholder="Edad" />
+                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="age" placeholder="Edad" required/>
             </div>
 
             <div class="grid grid-cols-1">
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Fecha de nacimiento</label>
-                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="date" name="birthday" placeholder="Fecha de nacimiento" />
+                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="date" name="birthday" placeholder="Fecha de nacimiento" required/>
             </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
             <div class="grid grid-cols-1">
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Nivel educativo</label>
-                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="education_level" placeholder="Nivel educativo" />
+                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="education_level" placeholder="Nivel educativo" required/>
             </div>
 
             <div class="grid grid-cols-1">
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Religión</label>
-                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="religion" placeholder="Religión" />
+                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="religion" placeholder="Religión" required/>
             </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
             <div class="grid grid-cols-1">
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Trabajo actual</label>
-                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="job_position" placeholder="Trabajo actual" />
+                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="job_position" placeholder="Trabajo actual" required/>
             </div>
         </div>
         

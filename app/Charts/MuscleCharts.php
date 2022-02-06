@@ -24,12 +24,12 @@ class MuscleCharts extends BaseChart
      */
     public function handler(Request $request): Chartisan
     {
-        $muscle = Anthropometric::where('user_id', 4)
+        $muscle = Anthropometric::where('user_id', $request->id)
                     ->select('muscle_mass_kilo')
                     ->pluck('muscle_mass_kilo')
                     ->toArray();
 
-        $datesPatient = Anthropometric::where('user_id', 4)
+        $datesPatient = Anthropometric::where('user_id', $request->id)
                         ->select('created_at')
                         ->pluck('created_at')
                         ->toArray();

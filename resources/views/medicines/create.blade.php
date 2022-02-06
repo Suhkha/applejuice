@@ -3,7 +3,7 @@
 @section('content')
     @include('partials.hero-form', ['sectionTitle' => 'Medicamentos'])
 
-    <form action="{{ route('medicines.store') }}" method="POST" class="form-serialize">
+    <form action="{{ route('medicines.store') }}" class="svelfit-form" data-parsley-validate="" method="POST">
         @csrf
         <input type="hidden" name="user_id" value="{{ $user_id }}">
         <input type="hidden" name="type" value="{{ $type }}">
@@ -11,7 +11,7 @@
             <div class="list_var">
                 <div class="grid grid-cols-1 mt-5 mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Nombre del medicamento</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" data-name-format="list-name_%d" name="name[]" placeholder="Nombre" />
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" data-name-format="list-name_%d" name="name[]" placeholder="Nombre" required/>
                 </div>
 
                 <div class="grid grid-cols-1 mt-5 mx-7">

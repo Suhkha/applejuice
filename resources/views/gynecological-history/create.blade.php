@@ -3,7 +3,7 @@
 @section('content')
     @include('partials.hero-form', ['sectionTitle' => 'Antecedentes ginecológicos'])
 
-    <form action="{{ route('gynecological-history.store') }}" method="POST" class="form-serialize">
+    <form action="{{ route('gynecological-history.store') }}" class="svelfit-form" data-parsley-validate="" method="POST">
         @csrf
         
         <input type="hidden" name="user_id" value="{{ $user_id }}">
@@ -12,7 +12,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Menarca</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="menarche" placeholder="Menarca" />
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="menarche" placeholder="Menarca" required/>
                 </div>
 
                 <div class="grid grid-cols-1 mt-5 mx-7">
@@ -24,7 +24,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Embarazos</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="pregnancies" placeholder="Embarazos" />
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="pregnancies" placeholder="Embarazos" required/>
                 </div>
 
                 <div class="grid grid-cols-1 mt-5 mx-7">
@@ -36,7 +36,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Abortos</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="abortion" placeholder="Abortos" />
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="abortion" placeholder="Abortos" required/>
                 </div>
 
                 <div class="grid grid-cols-1 mt-5 mx-7">
@@ -48,7 +48,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Menstruación</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="menstruation" placeholder="Menstruación" />
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="menstruation" placeholder="Menstruación" required/>
                 </div>
 
                 <div class="grid grid-cols-1 mt-5 mx-7">
@@ -60,7 +60,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Método anticonceptivo</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="contraceptive_method" placeholder="Método anticonceptivo" />
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="contraceptive_method" placeholder="Método anticonceptivo" required/>
                 </div>
 
                 <div class="grid grid-cols-1 mt-5 mx-7">
@@ -72,7 +72,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Productos</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="medicines" placeholder="Productos" />
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="medicines" placeholder="Productos" required/>
                 </div>
             </div>
         </div>
@@ -81,13 +81,14 @@
             .toggle-checkbox:checked {
                 @apply: right-0 border-teal-400;
                 right: 0;
-                border-color: #68D391;
+                border-color: #2dd4bf;
             }
             .toggle-checkbox:checked + .toggle-label {
                 @apply: bg-teal-400;
-                background-color: #68D391;
+                background-color: #2dd4bf;
             }
         </style>
+
         <div class='flex items-center justify-end pt-10 pb-3 mt-5 mx-7'>
             <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
                 <input type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>

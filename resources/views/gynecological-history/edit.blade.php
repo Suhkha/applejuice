@@ -3,7 +3,7 @@
 @section('content')
     @include('partials.hero-form', ['sectionTitle' => 'Editar antecedentes ginecológicos'])
 
-    <form action="{{ route('gynecological-history.update', $gynecological->id) }}" method="POST" class="form-serialize">
+    <form action="{{ route('gynecological-history.update', $gynecological->id) }}" method="POST" class="svelfit-form" data-parsley-validate="">
         @csrf
         @method('PUT')
         
@@ -12,7 +12,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Menarca</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="menarche" placeholder="Menarca" value="{{ $gynecological->menarche }}" />
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="menarche" placeholder="Menarca" value="{{ $gynecological->menarche }}" required/>
                 </div>
 
                 <div class="grid grid-cols-1 mt-5 mx-7">
@@ -24,7 +24,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Embarazos</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="pregnancies" placeholder="Embarazos" value="{{ $gynecological->pregnancies }}"/>
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="pregnancies" placeholder="Embarazos" value="{{ $gynecological->pregnancies }}" required/>
                 </div>
 
                 <div class="grid grid-cols-1 mt-5 mx-7">
@@ -36,7 +36,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Abortos</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="abortion" placeholder="Abortos" value="{{ $gynecological->abortion }}"/>
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="abortion" placeholder="Abortos" value="{{ $gynecological->abortion }}" required/>
                 </div>
 
                 <div class="grid grid-cols-1 mt-5 mx-7">
@@ -48,7 +48,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Menstruación</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="menstruation" placeholder="Menstruación" value="{{ $gynecological->menstruation }}"/>
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="menstruation" placeholder="Menstruación" value="{{ $gynecological->menstruation }}" required/>
                 </div>
 
                 <div class="grid grid-cols-1 mt-5 mx-7">
@@ -60,7 +60,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Método anticonceptivo</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="contraceptive_method" placeholder="Método anticonceptivo" value="{{ $gynecological->contraceptive_method }}"/>
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="contraceptive_method" placeholder="Método anticonceptivo" value="{{ $gynecological->contraceptive_method }}" required/>
                 </div>
 
                 <div class="grid grid-cols-1 mt-5 mx-7">
@@ -72,7 +72,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Productos</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="medicines" placeholder="Productos" value="{{ $gynecological->medicines }}"/>
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="medicines" placeholder="Productos" value="{{ $gynecological->medicines }}" required/>
                 </div>
             </div>
         </div>

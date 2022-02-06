@@ -72,9 +72,9 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery.add-input-area@4.11.0/dist/jquery.add-input-area.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="{{ asset('js/lib/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('js/lib/jquery.add-input-area.min.js') }}"></script>
+    <script src="{{ asset('js/lib/jquery.dataTables.min.js') }}"></script>
     <script>
         $(function() {
             $('#list').addInputArea();
@@ -83,7 +83,5 @@
         });
     </script>
     <script src="{{ asset('js/app.js') }}"></script>
-    
-
 </body>
 </html>

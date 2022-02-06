@@ -3,7 +3,7 @@
 @section('content')
     @include('partials.hero-form', ['sectionTitle' => 'Editar medicamento'])
 
-    <form action="{{ route('medicines.update', $medicine->id) }}" method="POST" class="form-serialize">
+    <form action="{{ route('medicines.update', $medicine->id) }}" method="POST" class="svelfit-form" data-parsley-validate="">
         @csrf
         @method('PUT')
         
@@ -12,7 +12,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Nombre del medicamento</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="name" placeholder="Nombre" value="{{ $medicine->name}}"/>
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="name" placeholder="Nombre" value="{{ $medicine->name}}" required/>
                 </div>
 
                 <div class="grid grid-cols-1 mt-5 mx-7">

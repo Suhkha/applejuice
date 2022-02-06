@@ -3,18 +3,18 @@
 @section('content')
     @include('partials.hero-form', ['sectionTitle' => 'Editar producto'])
 
-    <form action="{{ route('products.update', $product->id) }}" method="POST" class="form-serialize" enctype="multipart/form-data">
+    <form action="{{ route('products.update', $product->id) }}" method="POST" class="svelfit-form" data-parsley-validate="" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
         <div class="grid grid-cols-1 mt-5 mx-7">
             <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Nombre</label>
-            <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="name" placeholder="Nombre" value="{{ $product->name }}"/>
+            <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="name" placeholder="Nombre" value="{{ $product->name }}" required/>
         </div>
 
         <div class="grid grid-cols-1 mt-5 mx-7">
             <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Categoría</label>
-            <select name="category_id" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300">
+            <select name="category_id" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" required>
                 <option value="{{ $product->category->id }}">{{ $product->category->name }}</option>
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -30,7 +30,7 @@
 
             <div class="grid grid-cols-1">
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Imagen del producto</label>
-                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="file" name="image" placeholder="Imagen del producto" />
+                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="file" name="image" placeholder="Imagen del producto" required/>
             </div>
         </div>
 
