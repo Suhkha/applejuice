@@ -10,7 +10,7 @@
             @include('partials.admin-patient-profile.personal-data')
         </div>
 
-        <div class="col-span-2 tabs-section">
+        <div class="col-span-2 mt-16 tabs-section">
             <ul data-tabs class="flex mb-12 flex-wrap">
                 <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#graph" data-tabby-default>Gráficas</a></li>
                 <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#anthropometric">Antropométrico</a></li>
@@ -30,11 +30,9 @@
             <div id="graph">
                 @include('partials.admin-patient-profile.graphics')
             </div>
-
             <div id="anthropometric">
                 @include('partials.admin-patient-profile.anthropometric')
             </div>
-            
             <div id="background">
                 @include('partials.admin-patient-profile.background')
             </div>
@@ -49,17 +47,14 @@
                     @include('partials.admin-patient-profile.gynecological-history')
                 </div>
             @endif
-
             <div id="goals">
                 @include('partials.admin-patient-profile.goals')
             </div>
-
             @if ($treatment)
                 <div id="treatment">
                     @include('partials.admin-patient-profile.treatment')
                 </div>
             @endif
-            
             <div id="plans">
                 @include('partials.admin-patient-profile.plans')
             </div>
