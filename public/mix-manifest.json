@@ -1,5 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/img/svelfit-logo.png": "/img/svelfit-logo.png"
+    "/img/svelfit-logo.png": "/img/svelfit-logo.png",
+    "/js/lib/chartisan_echarts.js": "/js/lib/chartisan_echarts.js",
+    "/js/lib/echarts.min.js": "/js/lib/echarts.min.js"
 }
