@@ -27,7 +27,7 @@
             url: "@chart('chart_route_weight')"+"?id={{ $userDetail->user_id }}",
             hooks: new ChartisanHooks()
                 .legend()
-                .colors(['#650D1B'])
+                .colors(['#6867AC'])
                 .tooltip(),
         });
 
@@ -36,7 +36,7 @@
             url: "@chart('chart_route_fat')"+"?id={{ $userDetail->user_id }}",
             hooks: new ChartisanHooks()
                 .legend()
-                .colors(['#823200'])
+                .colors(['#A267AC'])
                 .tooltip(),
         });
 
@@ -46,7 +46,7 @@
             url: "@chart('chart_route_muscle')"+"?id={{ $userDetail->user_id }}",
             hooks: new ChartisanHooks()
                 .legend()
-                .colors(['#9B3D12'])
+                .colors(['#CE7BB0'])
                 .tooltip(),
         });
 
@@ -55,7 +55,7 @@
             url: "@chart('chart_route_waist')"+"?id={{ $userDetail->user_id }}",
             hooks: new ChartisanHooks()
                 .legend()
-                .colors(['#AE8E1C'])
+                .colors(['#FFBCD1'])
                 .tooltip(),
         });
 
@@ -64,7 +64,7 @@
             url: "@chart('chart_route_thigh')"+"?id={{ $userDetail->user_id }}",
             hooks: new ChartisanHooks()
                 .legend()
-                .colors(['#C1DF1F'])
+                .colors(['#1572A1'])
                 .tooltip(),
         });
 
@@ -73,7 +73,7 @@
             url: "@chart('chart_route_hips')"+"?id={{ $userDetail->user_id }}",
             hooks: new ChartisanHooks()
                 .legend()
-                .colors(['#90AA86'])
+                .colors(['#5584AC'])
                 .tooltip(),
         });
 
@@ -82,7 +82,7 @@
             url: "@chart('chart_route_biceps')"+"?id={{ $userDetail->user_id }}",
             hooks: new ChartisanHooks()
                 .legend()
-                .colors(['#824C71'])
+                .colors(['#7897AB'])
                 .tooltip(),
         });
             
