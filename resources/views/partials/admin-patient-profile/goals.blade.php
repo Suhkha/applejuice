@@ -7,7 +7,7 @@
 </div>
 <div class="block w-full overflow-x-auto">
     <div class="card inline-block overflow-hidden">
-        <div class="card__copy w-full px-4 max-w-full flex-grow flex-1">
+        <div class="card__copy w-full px-0 md:px-4 max-w-full flex-grow flex-1">
             <div class="card__body text-base pb-2">
                 <label class="block uppercase md:text-sm text-xs text-light font-semibold">Peso: </label>
                 <span class="block md:text-sm text-xs text-light mb-3">{{ $goal->goal_weight }}</span>
@@ -26,7 +26,7 @@
             </div>
 
             <div class="relative w-full max-w-full flex-grow flex-1">
-                <a href="{{ route('edit-goal', ['id' => $goal->id, 'profile_id' => $userDetail->id]) }}" class="bg-teal-400 text-white text-xs font-bold uppercase px-6 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Editar objetivos</a>
+                <a href="{{ route('edit-goal', ['id' => $goal->id, 'profile_id' => $userDetail->id]) }}" class="bg-teal-400 text-white text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Editar objetivos</a>
             </div>
         </div>
     </div>

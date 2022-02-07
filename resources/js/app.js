@@ -15,7 +15,6 @@ function main() {
     Pdf()
     GenericDelete()
     CustomTextarea()
-    
 }
 
 $(document).ready(main)

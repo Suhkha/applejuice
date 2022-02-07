@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var init = function init() {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.svelfit-form').parsley().options.requiredMessage = "Campo obligatorio.";
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.svelfit-form').parsley();
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (init);

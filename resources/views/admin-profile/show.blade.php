@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
-        <div class="grid grid-cols-1">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-3 md:mx-7">
+        <div class="col-span-2 md:col-span-1 md:grid">
             @include('partials.admin-patient-profile.gallery')
         </div>
         
-        <div class="grid grid-cols-1">
+        <div class="col-span-2 md:col-span-1 md:grid">
             @include('partials.admin-patient-profile.personal-data')
         </div>
 

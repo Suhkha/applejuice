@@ -3,9 +3,9 @@
         <div class="relative w-full max-w-full flex-grow flex-1">
             <h3 class="font-semibold text-base text-white">Antecedentes</h3>
         </div>
-        <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
-            <a href="{{ route('pathologic', ['user_id' => $userDetail->user_id, 'type' => 'profile']) }}" class="bg-white text-teal-400 text-xs font-bold uppercase px-6 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Nuevo antecedente patológico</a>
-            <a href="{{ route('no-pathologic', ['user_id' => $userDetail->user_id, 'type' => 'profile']) }}" class="bg-white text-teal-400 text-xs font-bold uppercase px-6 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Nuevo antecedente no patológico</a>
+        <div class="relative w-full px-0 md:px-4 max-w-full flex-grow flex-1 text-right">
+            <a href="{{ route('pathologic', ['user_id' => $userDetail->user_id, 'type' => 'profile']) }}" class="bg-white text-teal-400 text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Nuevo patológico</a>
+            <a href="{{ route('no-pathologic', ['user_id' => $userDetail->user_id, 'type' => 'profile']) }}" class="bg-white text-teal-400 text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Nuevo no patológico</a>
         </div>
     </div>
 </div>

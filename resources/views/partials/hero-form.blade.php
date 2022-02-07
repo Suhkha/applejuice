@@ -7,6 +7,6 @@
 
 <div class="flex justify-center">
     <div class="flex">
-        <h1 class="text-gray-600 font-bold md:text-2xl text-xl">{{ $sectionTitle }}</h1>
+        <h1 class="text-gray-600 font-bold md:text-2xl text-xl px-8 md:px-1">{{ $sectionTitle }}</h1>
     </div>
 </div>
