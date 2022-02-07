@@ -91,7 +91,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var init = function init() {
   tinymce__WEBPACK_IMPORTED_MODULE_0___default().init({
-    selector: 'textarea',
+    selector: '.styled',
     plugins: 'advlist emoticons link lists table',
     toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | ' + 'bullist numlist outdent indent | link | print preview media fullscreen | ' + 'forecolor backcolor emoticons',
     skin: false,

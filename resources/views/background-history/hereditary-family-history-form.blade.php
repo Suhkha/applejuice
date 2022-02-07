@@ -23,6 +23,7 @@
 
                 <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Comentarios del antecedente heredo familiar</label>
+                    {{-- unstyled --}}
                     <textarea class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300"  data-name-format="list-comments_%d" name="comments[]" placeholder="Detalles"></textarea>
                 </div>
                 <div class='flex items-center justify-end pt-10 mx-7'>

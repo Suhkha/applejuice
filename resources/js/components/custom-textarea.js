@@ -20,7 +20,7 @@ import 'tinymce/plugins/table';
 
 const init = function () {
     tinymce.init({
-        selector: 'textarea',
+        selector: '.styled',
         plugins: 'advlist emoticons link lists table',
         toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | ' +
             'bullist numlist outdent indent | link | print preview media fullscreen | ' +

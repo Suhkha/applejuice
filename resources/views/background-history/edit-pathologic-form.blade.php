@@ -22,7 +22,7 @@
 
                 <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Comentarios del antecedente del paciente</label>
-                    <textarea class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" name="comments" placeholder="Detalles" value="{{ $pathologic->comments }}">{{ $pathologic->comments }}</textarea>
+                    <textarea class="styled w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" name="comments" placeholder="Detalles" value="{{ $pathologic->comments }}">{{ $pathologic->comments }}</textarea>
                 </div>
             </div>
         </div>

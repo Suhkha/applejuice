@@ -24,12 +24,12 @@
 
         <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
             <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Ingredientes</label>
-            <textarea class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" name="ingredients" placeholder="Ingredientes" required></textarea>
+            <textarea class="styled w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" name="ingredients" placeholder="Ingredientes" required></textarea>
         </div>
 
         <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
             <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Preparación</label>
-            <textarea class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" name="preparation" placeholder="Preparación" required></textarea>
+            <textarea class="styled w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" name="preparation" placeholder="Preparación" required></textarea>
         </div>
 
         <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
