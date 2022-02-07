@@ -1,7 +1,12 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/img/svelfit-logo-medium.png": "/img/svelfit-logo-medium.png",
     "/img/svelfit-logo.png": "/img/svelfit-logo.png",
     "/js/lib/chartisan_echarts.js": "/js/lib/chartisan_echarts.js",
-    "/js/lib/echarts.min.js": "/js/lib/echarts.min.js"
+    "/js/lib/echarts.min.js": "/js/lib/echarts.min.js",
+    "/js/lib/parsley.min.js": "/js/lib/parsley.min.js",
+    "/js/lib/jquery.add-input-area.min.js": "/js/lib/jquery.add-input-area.min.js",
+    "/js/lib/jquery.dataTables.min.js": "/js/lib/jquery.dataTables.min.js",
+    "/js/lib/jquery-3.6.0.min.js": "/js/lib/jquery-3.6.0.min.js"
 }

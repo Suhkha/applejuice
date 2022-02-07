@@ -120,5 +120,11 @@ a[aria-selected="true"] {
     margin-left: 25px !important;
 }
 
+@media only screen and (max-width: 768px) {
+    .dataTables_wrapper {
+        padding: 20px 0;
+    }
+}
+
 @tailwind components;
 @tailwind utilities;
