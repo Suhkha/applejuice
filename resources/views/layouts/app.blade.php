@@ -43,16 +43,23 @@
     <script>
         $(function() {
             $('#list').addInputArea();
-
-            // function customTextArea() {
-            //     $(".list-comments").each(function(){ 
-            //         tinyMCE.execCommand("mceAddEditor", true, this.id);
-            //     });
-            // }
-
-            // $('#list').bind("DOMSubtreeModified", customTextArea);
-
             $('table').DataTable();
+
+            var maxRand = 4;
+            var randNum = Math.floor( Math.random() * maxRand );
+
+            var img0 = '/img/svelfit-read.svg';
+            var img1 = '/img/svelfit-exercise.svg';
+            var img2 = '/img/svelfit-water.svg';
+            var img3 = '/img/svelfit-win.svg';
+
+            var imgtwo0 = '/img/svelfit-shop.svg';
+            var imgtwo1 = '/img/svelfit-health.svg';
+            var imgtwo2 = '/img/svelfit-options-food.svg';
+            var imgtwo3 = '/img/svelfit-smart-shop.svg';
+
+            $('.hero-img-one').attr('src', eval('img'+randNum));
+            $('.hero-img-two').attr('src', eval('imgtwo'+randNum));
         });
 
         const button = document.querySelector('#menu-button');
@@ -62,7 +69,9 @@
         button.addEventListener('click', () => {
             menu.classList.toggle('hidden');
         });
-    </script>
+
+    
+</script>
 
 </body>
 </html>

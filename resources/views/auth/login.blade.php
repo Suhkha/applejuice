@@ -3,7 +3,7 @@
 @section('content')
 <div class="px-8 py-6 mt-4 text-left bg-white shadow-lg">
     <div class="flex mb-6 justify-center">
-        <img src="{{URL::asset('/img/svelfit-logo.png')}}" width="150" alt="">
+        <img src="{{URL::asset('/img/svelfit-success.svg')}}" width="300" alt="">
     </div>
     <form method="POST" action="{{ route('login') }}">
         @csrf
