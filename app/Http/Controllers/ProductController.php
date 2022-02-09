@@ -90,16 +90,16 @@ class ProductController extends Controller
             $file->move($path, $fileName);
         }
 
-        $category = CategoryProduct::find($id);
+        $product = Product::find($id);
         $product->category_id = request('category_id');
-        $category->name = request('name');
+        $product->name = request('name');
         $product->comments = request('comments');
 
         if($request->file('image')) {
-            $category->cover = $fileName;
+            $product->image = $fileName;
         }
         
-        $category->save();
+        $product->save();
 
         return redirect()->route('products.index');
     }

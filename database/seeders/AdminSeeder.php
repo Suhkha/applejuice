@@ -18,7 +18,8 @@ class AdminSeeder extends Seeder
         DB::table('users')->insert([
             'email' => 'admin@mail.com',
             'password' => Hash::make('svelfit'),
-            'phone' => '1234567890'
+            'phone' => '1234567890',
+            'role' => 'admin'
         ]);
     }
 }

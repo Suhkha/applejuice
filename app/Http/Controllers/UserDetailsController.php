@@ -7,6 +7,7 @@ use App\Models\UserDetails;
 use App\Models\User;
 use DB;
 use Hash;
+use Auth;
 
 class UserDetailsController extends Controller
 {
@@ -55,6 +56,7 @@ class UserDetailsController extends Controller
         $user->email = request('email');
         $user->phone = request('phone');
         $user->password = Hash::make('pacientes.svelfit.2022');
+        $user->role = 'patient';
         $user->save();
 
         $userDetail = new UserDetails;

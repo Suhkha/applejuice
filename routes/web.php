@@ -33,7 +33,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
+Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     
     Route::resource('patients', UserDetailsController::class); 
@@ -120,4 +120,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         Route::get('/delete-product/{id}', [ProductController::class, 'deleteProduct'])->name('delete-product');
     });
     Route::resource('products', ProductController::class);
+});
+
+Route::group(['middleware' => ['auth', 'patient'], 'prefix' => 'patient'], function () {
+    Route::get('/', function () {
+        return "hi";
+    });
 });

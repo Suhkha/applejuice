@@ -1,7 +1,7 @@
 <nav class="flex flex-wrap justify-between px-3 lg:px-20 py-10 items-center text-lg text-gray-700 bg-white">
     <div>
         <a href="{{ url('/') }}">
-            <img src="{{URL::asset('/img/svelfit-logo.png')}}" width="70" alt="">
+            <img src="{{URL::asset('/img/svelfit-logo-small.jpeg')}}" width="100" alt="">
         </a>
     </div>
 
@@ -12,25 +12,25 @@
         <ul class=" pt-4 text-base text-gray-700 md:flex md:justify-between md:pt-0">
             @guest
                 <li>
-                    <a class="md:p-4 py-2 block hover:text-teal-400" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <a class="md:p-4 p-2 block text-teal-400 hover:bg-teal-400 hover:text-white ease-linear transition-all duration-150 rounded outline-none focus:outline-none" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
                 </li>
             @else
-                <li>
+                <li class="md:border-none border-b">
                     <a class="md:p-4 py-2 block hover:text-teal-400" href="{{ route('patients.index') }}">
                         Pacientes
                     </a>
                 </li>
-                <li>
+                <li class="md:border-none border-b">
                     <a class="md:p-4 py-2 block hover:text-teal-400" href="{{ route('background.index') }}">
                         Antecedentes
                     </a>
                 </li>
-                <li>
+                <li class="md:border-none border-b">
                     <a class="md:p-4 py-2 block hover:text-teal-400" href="{{ route('recipes.index') }}">
                         Recetas
                     </a>
                 </li>
-                <li>
+                <li class="md:border-none border-b">
                     <a class="md:p-4 py-2 block hover:text-teal-400" href="{{ route('products.index') }}">
                         Productos
                     </a>
@@ -38,7 +38,7 @@
                 <li>
                     <a class="md:p-4 py-2 block text-teal-400" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                        document.getElementById('logout-form').submit();">{{ __('Salir') }}</a>
                     
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
