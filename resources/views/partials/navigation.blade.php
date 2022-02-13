@@ -1,6 +1,6 @@
 <nav class="flex flex-wrap justify-between px-3 lg:px-20 py-10 items-center text-lg text-gray-700 bg-white">
     <div>
-        <a href="{{ url('/') }}">
+        <a href="{{ route('home') }}">
             <img src="{{URL::asset('/img/svelfit-logo-small.jpeg')}}" width="100" alt="">
         </a>
     </div>

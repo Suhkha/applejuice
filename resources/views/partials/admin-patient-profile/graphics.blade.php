@@ -7,11 +7,15 @@
 </div>
 <div class="block w-full overflow-x-auto">
 
+    <div id="all_one" style="height: 300px;"></div>
+
     <div id="weight" style="height: 300px;"></div>
 
     <div id="fat" style="height: 300px;"></div>
 
     <div id="muscle" style="height: 300px;"></div>
+
+    <div id="all_two" style="height: 300px;"></div>
 
     <div id="waist" style="height: 300px;"></div>
 
@@ -22,13 +26,24 @@
     <div id="biceps" style="height: 300px;"></div>
 
     <script>
+        const allOneChart = new Chartisan({
+            el: '#all_one',
+            url: "@chart('chart_route_user')"+"?id={{ $userDetail->user_id }}",
+            hooks: new ChartisanHooks()
+                .legend()
+                .colors(['#6867AC', '#A267AC', '#CE7BB0'])
+                .tooltip()
+                .datasets([{ type: 'line'}]),
+        });
+
         const weightChart = new Chartisan({
             el: '#weight',
             url: "@chart('chart_route_weight')"+"?id={{ $userDetail->user_id }}",
             hooks: new ChartisanHooks()
                 .legend()
                 .colors(['#6867AC'])
-                .tooltip(),
+                .tooltip()
+                .datasets([{ type: 'line'}]),
         });
 
         const fatChart = new Chartisan({
@@ -37,7 +52,8 @@
             hooks: new ChartisanHooks()
                 .legend()
                 .colors(['#A267AC'])
-                .tooltip(),
+                .tooltip()
+                .datasets([{ type: 'line'}]),
         });
 
 
@@ -47,7 +63,18 @@
             hooks: new ChartisanHooks()
                 .legend()
                 .colors(['#CE7BB0'])
-                .tooltip(),
+                .tooltip()
+                .datasets([{ type: 'line'}]),
+        });
+
+        const allTwoChart = new Chartisan({
+            el: '#all_two',
+            url: "@chart('chart_route_body_measurments')"+"?id={{ $userDetail->user_id }}",
+            hooks: new ChartisanHooks()
+                .legend()
+                .colors(['#FFBCD1', '#1572A1', '#5584AC', '#7897AB'])
+                .tooltip()
+                .datasets([{ type: 'line'}]),
         });
 
         const waistChart = new Chartisan({
@@ -56,7 +83,8 @@
             hooks: new ChartisanHooks()
                 .legend()
                 .colors(['#FFBCD1'])
-                .tooltip(),
+                .tooltip()
+                .datasets([{ type: 'line'}]),
         });
 
         const thighChart = new Chartisan({
@@ -65,7 +93,8 @@
             hooks: new ChartisanHooks()
                 .legend()
                 .colors(['#1572A1'])
-                .tooltip(),
+                .tooltip()
+                .datasets([{ type: 'line'}]),
         });
 
         const hipsChart = new Chartisan({
@@ -74,7 +103,8 @@
             hooks: new ChartisanHooks()
                 .legend()
                 .colors(['#5584AC'])
-                .tooltip(),
+                .tooltip()
+                .datasets([{ type: 'line'}]),
         });
 
         const bicepsChart = new Chartisan({
@@ -83,7 +113,8 @@
             hooks: new ChartisanHooks()
                 .legend()
                 .colors(['#7897AB'])
-                .tooltip(),
+                .tooltip()
+                .datasets([{ type: 'line'}]),
         });
             
     </script>

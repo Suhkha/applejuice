@@ -380,7 +380,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
-.border, .border-0, .border-4, .border-2, .border-l-0, .border-r-0, .border-t-0, .border-b-2, .border-b {
+.border, .border-0, .border-4, .border-2, .border-l-0, .border-r-0, .border-t-0, .border-b {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
@@ -839,9 +839,6 @@ a[aria-selected="true"] {
 .border-t-0 {
   border-top-width: 0px;
 }
-.border-b-2 {
-  border-bottom-width: 2px;
-}
 .border-b {
   border-bottom-width: 1px;
 }
@@ -1264,6 +1261,11 @@ a[aria-selected="true"] {
     padding-right: 0px;
   }
 
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .md\:pr-12 {
     padding-right: 3rem;
   }
@@ -1286,10 +1288,6 @@ a[aria-selected="true"] {
 
   .lg\:w-1\/2 {
     width: 50%;
-  }
-
-  .lg\:border-none {
-    border-style: none;
   }
 
   .lg\:px-20 {

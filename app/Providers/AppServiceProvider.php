@@ -34,6 +34,10 @@ class AppServiceProvider extends ServiceProvider
         }
 
         $charts->register([
+            \App\Charts\TopFat::class,
+            \App\Charts\TopMuscle::class,
+            \App\Charts\UserCharts::class,
+            \App\Charts\BodyMeasurements::class,
             \App\Charts\WeightCharts::class,
             \App\Charts\MuscleCharts::class,
             \App\Charts\FatCharts::class,
