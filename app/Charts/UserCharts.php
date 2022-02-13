@@ -9,6 +9,7 @@ use ConsoleTVs\Charts\BaseChart;
 use Illuminate\Http\Request;
 use App\Models\UserDetails;
 use App\Models\Anthropometric;
+use Carbon\Carbon; 
 
 class UserCharts extends BaseChart
 {
@@ -53,12 +54,21 @@ class UserCharts extends BaseChart
         $weight = Anthropometric::where('user_id', $request->id)->select('weight')->pluck('weight')->toArray();
         $fat = Anthropometric::where('user_id', $request->id)->select('average_fat')->pluck('average_fat')->toArray();
         $muscle = Anthropometric::where('user_id', $request->id)->select('muscle_mass_kilo')->pluck('muscle_mass_kilo')->toArray();
-        $dateWeight = Anthropometric::where('user_id', $request->id)->select('created_at')->pluck('created_at')->toArray();
+
+        $datesPatient = Anthropometric::where('user_id', $request->id)
+                        ->select('created_at')
+                        ->pluck('created_at')
+                        ->toArray();
+
+        $dates = [];
+        foreach( $datesPatient as $value){
+            array_push($dates, Carbon::parse($value)->isoFormat('DD-MMMM-Y'));
+        }
         
         return Chartisan::build()
-            ->labels($dateWeight)
-            ->dataset('Peso', $weight)
-            ->dataset('Grasa', $fat)
-            ->dataset('Músculo', $muscle);
+            ->labels($dates)
+            ->dataset('Peso kg', $weight)
+            ->dataset('Grasa %', $fat)
+            ->dataset('Músculo kg', $muscle);
     }
 }
