@@ -14,8 +14,8 @@ yarn-error.log
 /.idea
 /.vscode
 .DS_Store
-/public/img/*
-/public/patients/*
-/public/products/*
-/public/category-products/*
-/public/pdf/*
+# /public/img/*
+# /public/patients/*
+# /public/products/*
+# /public/category-products/*
+# /public/pdf/*
