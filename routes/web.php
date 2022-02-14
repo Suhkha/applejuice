@@ -123,7 +123,5 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
 });
 
 Route::group(['middleware' => ['auth', 'patient'], 'prefix' => 'patient'], function () {
-    Route::get('/', function () {
-        return "hi";
-    });
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });

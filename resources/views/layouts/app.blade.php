@@ -30,9 +30,15 @@
     <div id="app">
         @include('partials.navigation')
 
-        <main class="flex h-full justify-center mt-0 md:mt-24 mb-32 md:px-20 px-3">
-            @yield('content')
-        </main>
+        @if (Auth::user()->role == 'admin')
+            <main class="flex h-full justify-center mt-0 md:mt-24 mb-32 md:px-20 px-3">
+                @yield('content')
+            </main>
+        @else
+            <main class="flex h-full justify-center mt-0 md:mt-24 mb-32">
+                @yield('content')
+            </main>
+        @endif
     </div>
 
     <!-- Scripts -->
