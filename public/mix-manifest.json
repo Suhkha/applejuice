@@ -21,11 +21,5 @@
     "/js/lib/jquery-3.6.0.min.js": "/js/lib/jquery-3.6.0.min.js",
     "/js/lib/jquery.add-input-area.min.js": "/js/lib/jquery.add-input-area.min.js",
     "/js/lib/jquery.dataTables.min.js": "/js/lib/jquery.dataTables.min.js",
-    "/js/lib/parsley.min.js": "/js/lib/parsley.min.js",
-    "/img/svelfit-doing-great.svg": "/img/svelfit-doing-great.svg",
-    "/img/svelfit-happy-news.svg": "/img/svelfit-happy-news.svg",
-    "/img/weight.svg": "/img/weight.svg",
-    "/img/fat.svg": "/img/fat.svg",
-    "/img/heart-beat.svg": "/img/heart-beat.svg",
-    "/img/muscle.svg": "/img/muscle.svg"
+    "/js/lib/parsley.min.js": "/js/lib/parsley.min.js"
 }

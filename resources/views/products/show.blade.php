@@ -22,7 +22,7 @@
                             <span class="block mb-3 recipes">{!! $product->comments !!}</span>
                         </div>
 
-                        <a href="{{ route('products.edit', $product->id) }}" class="bg-teal-400 text-white text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Editar producto</a>
+                        <a href="{{ route('products.edit', $product->id) }}" class="bg-teal-400 text-white text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"  >Editar producto</a>
 
                     </div>
                 </div> 

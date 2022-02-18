@@ -10,7 +10,7 @@
                             <h3 class="font-semibold text-base text-blueGray-700">Pacientes</h3>
                         </div>
                         <div class="relative w-full px-0 md:px-4 max-w-full flex-grow flex-1 text-right">
-                            <a href="{{ route('patients.create') }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Nuevo paciente</a>
+                            <a href="{{ route('patients.create') }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"  >Nuevo paciente</a>
                         </div>
                     </div>
                 </div>
@@ -53,13 +53,13 @@
                                         {{!isset($user->agenda->location) ? 'Sin ubicación' : $user->agenda->location }}
                                     </td>
                                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                        <a href="{{ route('agenda', $user->user_id) }}" class="bg-blue-400 text-white hover:bg-blue-300 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Agendar</a>
+                                        <a href="{{ route('agenda', $user->user_id) }}" class="bg-blue-400 text-white hover:bg-blue-300 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"  >Agendar</a>
                                     </td>
                                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                        <a href="{{ route('profile.show', $user->id) }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Ver</a>
+                                        <a href="{{ route('profile.show', $user->id) }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"  >Ver</a>
                                     </td>
                                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-                                        <a href="#" data-delete="{{ route('delete-user', $user->id) }}" data-toggle="tooltip" data-placement="top" title="Eliminar registro" class="delete-item bg-red-500 text-white hover:bg-red-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Eliminar</a>
+                                        <a href="#" data-delete="{{ route('delete-user', $user->id) }}" data-toggle="tooltip" data-placement="top" title="Eliminar registro" class="delete-item bg-red-500 text-white hover:bg-red-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"  >Eliminar</a>
                                     </td>
                                 </tr>
                             @endforeach

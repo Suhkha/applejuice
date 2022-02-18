@@ -10,7 +10,7 @@
                             <h3 class="font-semibold text-base text-blueGray-700">Recetas</h3>
                         </div>
                         <div class="relative w-full px-0 md:px-4 max-w-full flex-grow flex-1 text-right">
-                            <a href="{{ route('recipes.create') }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Nueva receta</a>
+                            <a href="{{ route('recipes.create') }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"  >Nueva receta</a>
                         </div>
                     </div>
                 </div>
@@ -44,10 +44,10 @@
                                         {{ $recipe->created_at->isoFormat('DD-MMMM-Y') }}
                                     </td>
                                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                        <a href="{{ route('recipes.show', $recipe->id) }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Ver receta</a>
+                                        <a href="{{ route('recipes.show', $recipe->id) }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"  >Ver receta</a>
                                     </td>
                                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-                                        <a href="#" data-delete="{{ route('delete-recipe', $recipe->id) }}" data-toggle="tooltip" data-placement="top" title="Eliminar registro" class="delete-item bg-red-500 text-white hover:bg-red-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Eliminar</a>
+                                        <a href="#" data-delete="{{ route('delete-recipe', $recipe->id) }}" data-toggle="tooltip" data-placement="top" title="Eliminar registro" class="delete-item bg-red-500 text-white hover:bg-red-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"  >Eliminar</a>
                                     </td>
                                 </tr>
                             @endforeach
