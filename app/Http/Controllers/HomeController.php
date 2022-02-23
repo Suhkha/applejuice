@@ -1,8 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Cache;
+use Auth;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Models\Recipe;
+use App\Models\UserDetails;
+use App\Models\Anthropometric;
+use App\Models\Agenda;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -23,6 +30,28 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if( Auth::user()->role == "admin" ) {
+            return view('home'); 
+
+        }else{
+            setlocale(LC_ALL, 'es_ES');
+            
+            $id = Auth::user()->id;
+            $user = UserDetails::where('user_id', $id)->first();
+
+            $expirationDate = Carbon::now()->addminutes(5);
+            $recipe = Cache::remember('recipe', $expirationDate, function () {
+                return Recipe::inRandomOrder()->first();
+            });
+
+            $product = Cache::remember('product', $expirationDate, function () {
+                return Product::inRandomOrder()->first();
+            });
+        
+            $data = Anthropometric::where('user_id', $id)->latest()->first();
+            $agenda = Agenda::where('user_id', $id)->latest()->first();
+
+            return view('home', compact('user', 'recipe', 'product', 'data', 'agenda'));  
+        }
     }
 }

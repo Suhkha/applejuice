@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b61b350b0d.js" crossorigin="anonymous"></script>
 
 
     <!-- Styles -->
@@ -30,14 +30,20 @@
     <div id="app">
         @include('partials.navigation')
 
-        @if (Auth::user()->role == 'admin')
-            <main class="flex h-full justify-center mt-0 md:mt-24 mb-32 md:px-20 px-3">
-                @yield('content')
-            </main>
-        @else
+        @guest
             <main class="flex h-full justify-center mt-0 md:mt-24 mb-32">
                 @yield('content')
             </main>
+        @else
+            @if (Auth::user()->role == 'admin')
+                <main class="flex h-full justify-center mt-0 md:mt-24 mb-32 md:px-20 px-3">
+                    @yield('content')
+                </main>
+            @else
+                <main class="flex h-full justify-center">
+                    @yield('content')
+                </main>
+            @endif
         @endif
     </div>
 
