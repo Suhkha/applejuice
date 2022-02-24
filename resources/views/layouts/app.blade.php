@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
     <script src="https://kit.fontawesome.com/b61b350b0d.js" crossorigin="anonymous"></script>
 
 
@@ -51,6 +51,8 @@
     <script src="{{ asset('js/lib/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('js/lib/jquery.add-input-area.min.js') }}"></script>
     <script src="{{ asset('js/lib/jquery.dataTables.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
         $(function() {
@@ -82,7 +84,17 @@
             menu.classList.toggle('hidden');
         });
 
-    
+        if ($('.details-wrapper').length) {
+            $('.details').slick({
+                dots: false,
+                arrows: false,
+                infinite: false,
+                speed: 300,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            });
+        }
+        
 </script>
 
 </body>

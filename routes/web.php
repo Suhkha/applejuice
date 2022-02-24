@@ -124,4 +124,5 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
 
 Route::group(['middleware' => ['auth', 'patient'], 'prefix' => 'patient'], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/history', [App\Http\Controllers\HistoryUserController::class, 'index'])->name('history');
 });
