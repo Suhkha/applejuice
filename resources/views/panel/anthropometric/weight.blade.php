@@ -24,7 +24,6 @@
         </div>
     @endforeach
 
-
     <script>
         const weightChart = new Chartisan({
             el: '#weight_chart',

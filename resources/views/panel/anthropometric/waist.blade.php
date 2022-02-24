@@ -1,4 +1,7 @@
 <div id="waist" class="first details-list mt-8 overflow-auto">
+    <div id="waist_chart" style="height: 300px;"></div>
+    
+
     <div class="flex border-olive border-2 mb-4 rounded-lg ">
         <div class="w-3/4 m-auto inline-block py-3">
             <div class="text-sm text-center self-center">
@@ -21,4 +24,17 @@
             </div>
         </div>
     @endforeach
+
+    <script>
+        const waistChart = new Chartisan({
+            el: '#waist_chart',
+            url: "@chart('chart_route_waist')"+"?id={{ Auth::user()->id }}",
+            hooks: new ChartisanHooks()
+                .legend()
+                .colors(['#6867AC'])
+                .tooltip()
+                .datasets([{ type: 'line'}]),
+        });
+    </script>
+
 </div>
