@@ -5,7 +5,7 @@
                 <h1 class="font-bold pt-6 text-4xl">¡Hola <span class="text-teal-500 font-bold">{{ $user->name }}</span>, lo estás haciendo increible!</h1>
                 <span class="block pt-6">Revisa tu progreso y sigue <span class="text-teal-500 font-bold">motivándote</span></span>
 
-                <a href="" class="mt-6 p-2 block text-white bg-pink-400 ease-linear transition-all duration-150 rounded outline-none focus:outline-none w-fit h-fit">¡Quiero ver!</a>
+                <a href="{{ route('history') }}" class="mt-6 p-2 block text-white bg-pink-400 ease-linear transition-all duration-150 rounded outline-none focus:outline-none w-fit h-fit">¡Quiero ver!</a>
             </div>
         </div>
     </div>
