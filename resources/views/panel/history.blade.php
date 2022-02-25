@@ -7,7 +7,13 @@
             <div class="details-wrapper tabs-section relative max-w-screen-sm lg:max-w-screen-md m-auto overflow-x-hidden overflow-y-hidden">
                 <ul data-tabs class="details h-24 box-border whitespace-nowrap overflow-x-auto overflow-y-hidden flex flex-nowrap">
                     <li>
-                        <a class="item cursor-pointer active flex bg-teal-800 rounded-lg mx-1 p-4 box-border border-2 border-transparent relative" href="#weight" data-tabby-default>
+                        <a class="item cursor-pointer active flex bg-teal-800 rounded-lg mx-1 p-4 box-border border-2 border-transparent relative" href="#profile" data-tabby-default>
+                            <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Perfil</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="item cursor-pointer flex bg-teal-800 rounded-lg mx-1 p-4 box-border border-2 border-transparent relative" href="#weight">
                             <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Peso</span>
                         </a>
                     </li>
@@ -90,6 +96,7 @@
         <!--details-->
         <div class="relative">
             <div class="mx-4 lg:w-3/6 lg:mx-auto relative">
+                @include('panel.anthropometric.profile')
                 @include('panel.anthropometric.weight')
                 @include('panel.anthropometric.fat')
                 @include('panel.anthropometric.muscle')
