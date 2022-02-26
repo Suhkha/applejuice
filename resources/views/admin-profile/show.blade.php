@@ -1,16 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="grid grid-cols-1">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5">
-        <div class="col-span-2 md:col-span-1 md:grid">
+        <div class="">
             @include('partials.admin-patient-profile.gallery')
         </div>
         
-        <div class="col-span-2 md:col-span-1 md:grid">
+        <div class="">
             @include('partials.admin-patient-profile.personal-data')
         </div>
+    </div>
 
-        <div class="col-span-2 mt-16 tabs-section">
+    <div class="grid grid-cols-1 gap-5 md:gap-8 mt-5">
+        <div class="mt-16 tabs-section">
             <ul data-tabs class="flex mb-12 flex-wrap">
                 <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#graph" data-tabby-default>Gráficas</a></li>
                 <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#anthropometric">Antropométrico</a></li>
@@ -60,4 +63,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection
