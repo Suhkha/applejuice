@@ -28,10 +28,6 @@
                     </span>
                 @endif
             </div>
-            <div class="flex items-baseline justify-between">
-                <button type="submit" class="px-6 py-2 mt-4 text-white bg-teal-400 rounded-lg hover:bg-teal-300">Login</button>
-                <a href="{{ route('password.request') }}" class="text-sm text-teal-300 hover:underline hover:text-teal-400">Forgot password?</a>
-            </div>
         </div>
     </form>
 </div>
