@@ -52,6 +52,30 @@
                         </form>
                     </li>
                 @else
+                    <li class="md:border-none border-b">
+                        <a class="md:p-4 py-2 block hover:text-teal-400" href="{{ route('history') }}">
+                            Progreso
+                        </a>
+                    </li>
+                    <li class="md:border-none border-b">
+                        <a class="md:p-4 py-2 block hover:text-teal-400" href="">
+                            Recetas
+                        </a>
+                    </li>
+                    <li class="md:border-none border-b">
+                        <a class="md:p-4 py-2 block hover:text-teal-400" href="">
+                            Productos
+                        </a>
+                    </li>
+                    <li>
+                        <a class="md:p-4 py-2 block text-teal-400" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">{{ __('Salir') }}</a>
+                        
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
                 @endif
             @endif
         </ul>

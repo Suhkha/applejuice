@@ -18,10 +18,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
     <script src="https://kit.fontawesome.com/b61b350b0d.js" crossorigin="anonymous"></script>
 
-    @if (Auth::user()->role == 'patient')
-        <link rel="stylesheet" href="{{ url('font/icons/css/icons-1.css') }}" />
-        <link rel="stylesheet" href="{{ url('font/icons/css/icons-2.css') }}" />
-    @endif
+    @auth
+        @if (Auth::user()->role == 'patient')
+            <link rel="stylesheet" href="{{ url('font/icons/css/icons-1.css') }}" />
+            <link rel="stylesheet" href="{{ url('font/icons/css/icons-2.css') }}" />
+        @endif
+    @endauth
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -31,20 +33,22 @@
 </head>
 <body>
     <div id="app">
-        @if (Auth::user()->role == 'patient')
-            @if (isset($agenda->full_date))
-                <div class="grid grid-cols-1">
-                    <a href="" class="bg-orange-500">
-                    <div class="flex flex-col p-6 relative">
-                        <p class="block z-10 text-xs text-white text-center">
-                            <span class="font-bold">Próxima cita: </span>{{ \Carbon\Carbon::parse(strtotime($agenda->full_date))->formatLocalized('%d de %B de %Y') }} {{!isset($agenda->location) ? '' : "en ".$agenda->location }}
-                        </p>
+        @auth
+            @if (Auth::user()->role == 'patient')
+                @if (isset($agenda->full_date))
+                    <div class="grid grid-cols-1">
+                        <a href="" class="bg-orange-500">
+                        <div class="flex flex-col p-6 relative">
+                            <p class="block z-10 text-xs lg:text-base text-white text-center">
+                                <span class="font-bold">Próxima cita: </span>{{ \Carbon\Carbon::parse(strtotime($agenda->full_date))->formatLocalized('%d de %B de %Y') }} {{!isset($agenda->location) ? '' : "en ".$agenda->location }}
+                            </p>
+                        </div>
+                        </a>
                     </div>
-                    </a>
-                </div>
+                @endif
             @endif
-        @endif
-
+        @endauth
+        
         @include('partials.navigation')
 
         @guest

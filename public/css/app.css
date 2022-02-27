@@ -1434,6 +1434,11 @@ a[aria-selected="true"] {
     font-size: 1.5rem;
     line-height: 2rem;
   }
+
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 @media (min-width: 1024px) {
 
@@ -1459,6 +1464,10 @@ a[aria-selected="true"] {
     width: 50%;
   }
 
+  .lg\:w-full {
+    width: 100%;
+  }
+
   .lg\:max-w-screen-md {
     max-width: 768px;
   }
@@ -1475,6 +1484,10 @@ a[aria-selected="true"] {
     align-content: center;
   }
 
+  .lg\:p-2 {
+    padding: 0.5rem;
+  }
+
   .lg\:px-20 {
     padding-left: 5rem;
     padding-right: 5rem;
@@ -1483,6 +1496,11 @@ a[aria-selected="true"] {
   .lg\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .lg\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 @media (min-width: 1280px) {
