@@ -41,6 +41,6 @@ class MetabolicAgeCharts extends BaseChart
 
         return Chartisan::build()
             ->labels($dates)
-            ->dataset('Edad metabolica en años', $metabolicAge);
+            ->dataset('Edad metabólica en años', $metabolicAge);
     }
 }

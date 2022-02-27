@@ -31,36 +31,6 @@
                     </li>
 
                     <li>
-                        <a class="item cursor-pointer flex bg-teal-800 rounded-lg mx-1 p-4 box-border border-2 border-transparent relative" href="#muscle_quality">
-                            <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Calidad del músculo</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="item cursor-pointer flex bg-teal-800 rounded-lg mx-1 p-4 box-border border-2 border-transparent relative" href="#bone_mass">
-                            <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Masa ósea</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="item cursor-pointer flex bg-teal-800 rounded-lg mx-1 p-4 box-border border-2 border-transparent relative" href="#visceral">
-                            <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Grasa visceral</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="item cursor-pointer flex bg-teal-800 rounded-lg mx-1 p-4 box-border border-2 border-transparent relative" href="#imc">
-                            <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">IMC</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="item cursor-pointer flex bg-teal-800 rounded-lg mx-1 p-4 box-border border-2 border-transparent relative" href="#water">
-                            <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Agua</span>
-                        </a>
-                    </li>
-
-                    <li>
                         <a class="item cursor-pointer flex bg-teal-800 rounded-lg mx-1 p-4 box-border border-2 border-transparent relative" href="#metabolic_age">
                             <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Edad metabólica</span>
                         </a>
@@ -100,11 +70,6 @@
                 @include('panel.anthropometric.weight')
                 @include('panel.anthropometric.fat')
                 @include('panel.anthropometric.muscle')
-                @include('panel.anthropometric.muscle_quality')
-                @include('panel.anthropometric.bone_mass')
-                @include('panel.anthropometric.visceral')
-                @include('panel.anthropometric.imc')
-                @include('panel.anthropometric.water')
                 @include('panel.anthropometric.metabolic_age')
                 @include('panel.anthropometric.waist')
                 @include('panel.anthropometric.thigh')
