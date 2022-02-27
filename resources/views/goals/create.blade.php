@@ -3,29 +3,29 @@
 @section('content')
     @include('partials.hero-form', ['sectionTitle' => 'Objetivos'])
 
-    <form action="{{ route('goals.store') }}" class="svelfit-form" data-parsley-validate="" method="POST">
+    <form action="{{ route('goals.store') }}" class="svelfit-form"   method="POST">
         @csrf
         <input type="hidden" name="user_id" value="{{ $user_id }}">
         <input type="hidden" name="type" value="{{ $type }}">
         
         <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
             <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Peso meta</label>
-            <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="goal_weight" placeholder="Peso meta" required/>
+            <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="goal_weight" placeholder="Peso meta"  />
         </div>
 
         <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
             <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Alimentos que no pueda dejar de consumir</label>
-            <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="favorite_aliments" placeholder="Alimentos que no pueda dejar de consumir" required/>
+            <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="favorite_aliments" placeholder="Alimentos que no pueda dejar de consumir"  />
         </div>
 
         <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
             <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Objetivos</label>
-            <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="main_goal" placeholder="Objetivos" required/>
+            <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="main_goal" placeholder="Objetivos"  />
         </div>
 
         <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
             <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Métodos alternativos</label>
-            <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="additional_method" placeholder="Métodos alternativos" required/>
+            <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="additional_method" placeholder="Métodos alternativos"  />
         </div>
 
         <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">

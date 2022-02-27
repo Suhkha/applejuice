@@ -1,5 +1,4 @@
 //require('./bootstrap');
-import FormValidation from './components/form-validation'
 import PicturesProfile from './components/pictures-profile'
 import Tabs from './components/tabs'
 import Gallery from './components/gallery'
