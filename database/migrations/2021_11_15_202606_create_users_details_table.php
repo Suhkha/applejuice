@@ -20,14 +20,14 @@ class CreateUsersDetailsTable extends Migration
                 ->references('id')
                 ->on('users')
                 ->onDelete('CASCADE');
-            $table->string('name');
-            $table->string('last_name');
+            $table->string('name')->nullable();
+            $table->string('last_name')->nullable();
             $table->string('second_last_name')->nullable();
-            $table->integer('age');
-            $table->date('birthday');
-            $table->string('religion');
-            $table->string('job_position');
-            $table->string('education_level');
+            $table->integer('age')->nullable();
+            $table->date('birthday')->nullable();
+            $table->string('religion')->nullable();
+            $table->string('job_position')->nullable();
+            $table->string('education_level')->nullable();
             $table->timestamps();
         });
     }

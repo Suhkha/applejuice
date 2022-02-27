@@ -25,10 +25,6 @@ class TreatmentController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'treatment' => 'required',
-        ]);
-
         $treatment = new Treatment;
         $treatment->user_id = request('user_id');
         $treatment->treatment = request('treatment') == "" ? "" : request('treatment');
@@ -60,10 +56,6 @@ class TreatmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'treatment' => 'required',
-        ]);
-
         $treatment = Treatment::find($id);
         $treatment->treatment = request('treatment') == "" ? "" : request('treatment');
 

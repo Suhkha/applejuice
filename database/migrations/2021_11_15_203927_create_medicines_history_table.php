@@ -20,7 +20,7 @@ class CreateMedicinesHistoryTable extends Migration
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->text('comments')->nullable();
             $table->timestamps();
         });

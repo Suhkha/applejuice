@@ -40,17 +40,6 @@ class UserDetailsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'last_name' => 'required',
-            'second_last_name' => 'required',
-            'age' => 'required',
-            'birthday' => 'required',
-            'religion' => 'required',
-            'job_position' => 'required',
-            'education_level' => 'required'
-        ]);
-
         //Create User Account 
         $user = new User;
         $user->email = request('email');
@@ -97,17 +86,6 @@ class UserDetailsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required',
-            'last_name' => 'required',
-            'second_last_name' => 'required',
-            'age' => 'required',
-            'birthday' => 'required',
-            'religion' => 'required',
-            'job_position' => 'required',
-            'education_level' => 'required'
-        ]);
-
         $userDetail = UserDetails::find($id);
         $userDetail->name = request('name');
         $userDetail->last_name = request('last_name');

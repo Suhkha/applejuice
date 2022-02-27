@@ -29,14 +29,6 @@ class GynecologicalHistoryController extends Controller
         $userId = request('user_id');
 
         if(request('toggle') == false) {
-            $request->validate([
-                'menarche' => 'required',
-                'pregnancies' => 'required',
-                'abortion' => 'required',
-                'menstruation' => 'required',
-                'contraceptive_method' => 'required',
-            ]);
-
             $gynecologicalHistory = new GynecologicalHistory;
             $gynecologicalHistory->user_id = request('user_id');
             $gynecologicalHistory->menarche = request('menarche');
@@ -87,14 +79,6 @@ class GynecologicalHistoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'menarche' => 'required',
-            'pregnancies' => 'required',
-            'abortion' => 'required',
-            'menstruation' => 'required',
-            'contraceptive_method' => 'required',
-        ]);
-
         $gynecological = GynecologicalHistory::find($id);
         $gynecological->menarche = request('menarche');
         $gynecological->menarche_comments = request('menarche_comments');
