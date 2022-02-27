@@ -7,7 +7,6 @@ import GenericDelete from './components/generic-delete'
 import CustomTextarea from './components/custom-textarea'
 
 function main() {
-    FormValidation()
     PicturesProfile()
     Tabs()
     Gallery()

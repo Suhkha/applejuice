@@ -11,14 +11,10 @@
         <div class="w-4/5 inline-block ml-4">
             <div class="text-sm mb-2 self-center">{{ $user->name }} {{ $user->last_name }} {{ $user->second_last_name }}</div>
                 <div class="text-xs text-gray-500 mb-4">
-                    <p class="font-bold mb-2">Objetivos:</p>
-                    <p class="mb-2">{{ ucfirst($goals->goal_weight) }}</p>
-                    <p class="mb-2">{!! ucfirst($goals->main_goal) !!}</p>
-                    <p class="mb-2">{!! ucfirst($goals->additional_method) !!}</p>
                 </div>
             </div>
         
-        <div class="w-1/5 inline-block mr-4 ml-2 self-center">
+        <div class="w-1/5 inline-block mr-4 ml-2 self-start">
             <span class="text-sm text-right block pb-2 mr-1">{{ $user->age }} años</span>
         </div>
     </div>

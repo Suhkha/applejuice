@@ -24,7 +24,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function main() {
-  FormValidation();
   (0,_components_pictures_profile__WEBPACK_IMPORTED_MODULE_0__["default"])();
   (0,_components_tabs__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_components_gallery__WEBPACK_IMPORTED_MODULE_2__["default"])();
