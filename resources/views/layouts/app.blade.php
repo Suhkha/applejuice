@@ -18,7 +18,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
     <script src="https://kit.fontawesome.com/b61b350b0d.js" crossorigin="anonymous"></script>
 
-
+    @if (Auth::user()->role == 'patient')
+        <link rel="stylesheet" href="{{ url('font/icons/css/icons-1.css') }}" />
+        <link rel="stylesheet" href="{{ url('font/icons/css/icons-2.css') }}" />
+    @endif
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -28,6 +31,20 @@
 </head>
 <body>
     <div id="app">
+        @if (Auth::user()->role == 'patient')
+            @if (isset($agenda->full_date))
+                <div class="grid grid-cols-1">
+                    <a href="" class="bg-orange-500">
+                    <div class="flex flex-col p-6 relative">
+                        <p class="block z-10 text-xs text-white text-center">
+                            <span class="font-bold">Próxima cita: </span>{{ \Carbon\Carbon::parse(strtotime($agenda->full_date))->formatLocalized('%d de %B de %Y') }} {{!isset($agenda->location) ? '' : "en ".$agenda->location }}
+                        </p>
+                    </div>
+                    </a>
+                </div>
+            @endif
+        @endif
+
         @include('partials.navigation')
 
         @guest
@@ -90,8 +107,8 @@
                 arrows: false,
                 infinite: false,
                 speed: 300,
-                slidesToShow: 2,
-                slidesToScroll: 2,
+                slidesToShow: 3,
+                slidesToScroll: 3,
             });
         }
         

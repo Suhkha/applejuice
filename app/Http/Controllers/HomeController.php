@@ -40,13 +40,9 @@ class HomeController extends Controller
             $user = UserDetails::where('user_id', $id)->first();
 
             $expirationDate = Carbon::now()->addminutes(5);
-            $recipe = Cache::remember('recipe', $expirationDate, function () {
-                return Recipe::inRandomOrder()->first();
-            });
+            $recipe = Recipe::inRandomOrder()->first();
 
-            $product = Cache::remember('product', $expirationDate, function () {
-                return Product::inRandomOrder()->first();
-            });
+            $product = Product::inRandomOrder()->first();
         
             $data = Anthropometric::where('user_id', $id)->latest()->first();
             $agenda = Agenda::where('user_id', $id)->latest()->first();

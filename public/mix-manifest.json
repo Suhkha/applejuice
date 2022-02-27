@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/font/.DS_Store": "/font/.DS_Store",
     "/img/.DS_Store": "/img/.DS_Store",
     "/img/fat.svg": "/img/fat.svg",
     "/img/heart-beat.svg": "/img/heart-beat.svg",

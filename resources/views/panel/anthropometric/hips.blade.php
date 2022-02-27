@@ -1,10 +1,18 @@
 <div id="hips" class="first details-list mt-8 overflow-auto">
+    <div class="flex bg-teal-400 mb-4 rounded-lg ">
+        <div class="w-3/4 m-auto inline-block py-3">
+            <div class=" text-sm text-center self-center text-white">
+                Las caderas..
+            </div>
+        </div>
+    </div>
+
     <div id="hips_chart" style="height: 300px;"></div>
 
-    <div class="flex border-olive border-2 mb-4 rounded-lg ">
+    <div class="flex bg-teal-400 mb-4 rounded-lg ">
         <div class="w-3/4 m-auto inline-block py-3">
-            <div class="text-sm text-center self-center">
-                La cadera...
+            <div class=" text-sm text-center self-center text-white">
+                Las últimas consultas
             </div>
         </div>
     </div>
@@ -30,7 +38,7 @@
             url: "@chart('chart_route_hips')"+"?id={{ Auth::user()->id }}",
             hooks: new ChartisanHooks()
                 .legend()
-                .colors(['#6867AC'])
+                .colors(['#f97316'])
                 .tooltip()
                 .datasets([{ type: 'line'}]),
         });
