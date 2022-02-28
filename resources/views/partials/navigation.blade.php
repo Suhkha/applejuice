@@ -39,7 +39,7 @@
                     </li>
                     @if (isset($userDetail->user_id))
                         <li class="md:border-none border-b">
-                            <a href="{{ route('anthropometric', ['user_id' => $userDetail->user_id, 'type' => 'profile']) }}" class="bg-teal-400 text-white hover:text-white hover:bg-teal-300 md:p-4 py-2 block rounded outline-none focus:outline-none ease-linear transition-all duration-150">Nuevo historial</a>
+                            <a href="{{ route('anthropometric', ['user_id' => $userDetail->user_id, 'type' => 'profile']) }}" class="bg-gradient-to-r from-orange-500 to-pink-500 text-white md:p-4 py-2 block rounded outline-none focus:outline-none ease-linear transition-all duration-150">Nuevo historial</a>
                         </li>
                     @endif
                     <li>

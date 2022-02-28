@@ -20,13 +20,9 @@
                 <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#background">Antecedentes</a></li>
                 <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#hereditary">Antecedentes Familiares</a></li>
                 <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#medicines">Medicamentos</a></li>
-                @if ($gynecological)
-                    <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#gynecological-history">Ginecologicos</a></li>
-                @endif
+                <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#gynecological-history">Ginecologicos</a></li>
                 <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#goals">Objetivos</a></li>
-                @if ($treatment)
-                    <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#treatment">Tratamiento</a></li>
-                @endif
+                <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#treatment">Tratamiento</a></li>
                 <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#plans">Planes (PDF)</a></li>
             </ul>
             
@@ -45,19 +41,15 @@
             <div id="medicines">
                 @include('partials.admin-patient-profile.medicines')
             </div>
-            @if ($gynecological)
-                <div id="gynecological-history">
-                    @include('partials.admin-patient-profile.gynecological-history')
-                </div>
-            @endif
+            <div id="gynecological-history">
+                @include('partials.admin-patient-profile.gynecological-history')
+            </div>
             <div id="goals">
                 @include('partials.admin-patient-profile.goals')
             </div>
-            @if ($treatment)
-                <div id="treatment">
-                    @include('partials.admin-patient-profile.treatment')
-                </div>
-            @endif
+            <div id="treatment">
+                @include('partials.admin-patient-profile.treatment')
+            </div>
             <div id="plans">
                 @include('partials.admin-patient-profile.plans')
             </div>
