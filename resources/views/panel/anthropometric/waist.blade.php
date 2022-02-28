@@ -23,7 +23,7 @@
             <div class="w-4/5 inline-block ml-4">
                 <div class="text-sm mb-2 self-center">{{ \Carbon\Carbon::parse(strtotime($waistData->created_at))->formatLocalized('%d de %B de %Y') }}</div>
                     <div class="text-xs text-gray-500 mb-4">
-                        ¡Vamos bien!
+                        {!! $waistData->comments !!}
                     </div>
                 </div>
             
