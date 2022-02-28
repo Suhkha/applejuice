@@ -731,6 +731,9 @@ a[aria-selected="true"] {
   height: -moz-fit-content;
   height: fit-content;
 }
+.h-1\/2 {
+  height: 50%;
+}
 .w-full {
   width: 100%;
 }
@@ -762,6 +765,9 @@ a[aria-selected="true"] {
 }
 .w-1\/5 {
   width: 20%;
+}
+.w-1\/2 {
+  width: 50%;
 }
 .min-w-0 {
   min-width: 0px;
@@ -1230,6 +1236,10 @@ a[aria-selected="true"] {
 .text-gray-800 {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+.text-pink-500 {
+  --tw-text-opacity: 1;
+  color: rgb(236 72 153 / var(--tw-text-opacity));
 }
 .underline {
   text-decoration: underline;

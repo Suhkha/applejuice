@@ -5,20 +5,40 @@
 			<label class="block uppercase md:text-sm text-xs text-light font-semibold">Nombre: </label>
             <span class="block mb-3">{{ $userDetail->name }} {{ $userDetail->last_name }} {{ $userDetail->second_last_name }}</span>
 
-            <label class="block uppercase md:text-sm text-xs text-light font-semibold">Edad: </label>
-            <span class="block mb-3">{{ $userDetail->age }} años</span>
+            @if (isset($userDetail->age))
+                <label class="block uppercase md:text-sm text-xs text-light font-semibold">Edad: </label>
+                <span class="block mb-3">{{ $userDetail->age }} años</span>
+            @endif
 
-            <label class="block uppercase md:text-sm text-xs text-light font-semibold">Fecha de nacimiento: </label>
-            <span class="block mb-3">{{ $userDetail->birthday }}</span>
+            @if (isset($userDetail->birthday))
+                <label class="block uppercase md:text-sm text-xs text-light font-semibold">Fecha de nacimiento: </label>
+                <span class="block mb-3">{{ $userDetail->birthday }}</span>
+            @endif
         
-            <label class="block uppercase md:text-sm text-xs text-light font-semibold">Religión: </label>
-            <span class="block mb-3">{{ $userDetail->religion }}</span>
+            @if (isset($userDetail->religion))
+                <label class="block uppercase md:text-sm text-xs text-light font-semibold">Religión: </label>
+                <span class="block mb-3">{{ $userDetail->religion }}</span>
+            @endif
             
-            <label class="block uppercase md:text-sm text-xs text-light font-semibold">Nivel educativo: </label>
-            <span class="block mb-3">{{ $userDetail->education_level }}</span>
-            
-            <label class="block uppercase md:text-sm text-xs text-light font-semibold">Empleo: </label>
-            <span class="block mb-3">{{ $userDetail->job_position }}</span>
+            @if (isset($userDetail->education_level))
+                <label class="block uppercase md:text-sm text-xs text-light font-semibold">Nivel educativo: </label>
+                <span class="block mb-3">{{ $userDetail->education_level }}</span>
+            @endif
+
+            @if (isset($userDetail->job_position))
+                <label class="block uppercase md:text-sm text-xs text-light font-semibold">Empleo: </label>
+                <span class="block mb-3">{{ $userDetail->job_position }}</span>
+            @endif
+
+            @if (isset($user->username))
+                <label class="block uppercase md:text-sm text-xs text-light font-semibold text-pink-500">Nombre de usuario: </label>
+                <span class="block mb-3 text-gray-500">{{ $user->username }}</span>
+            @endif
+
+            @if (isset($user->password_plain))
+                <label class="block uppercase md:text-sm text-xs text-light font-semibold text-pink-500">Contraseña: </label>
+                <span class="block mb-3 text-gray-500">{{ $user->password_plain }}</span>
+            @endif
 		</div>
 
         <div class="relative w-full px-0 md:px-4 max-w-full flex-1 text-right">

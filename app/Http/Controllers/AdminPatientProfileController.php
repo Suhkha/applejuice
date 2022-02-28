@@ -26,6 +26,7 @@ class AdminPatientProfileController extends Controller
     public function show($id)
     {
         $userDetail = UserDetails::find($id);
+        $user = User::find($userDetail->user_id);
         $gallery = Gallery::where('user_id', $userDetail->user_id)->get();
         $anthropometrics = Anthropometric::where('user_id', $userDetail->user_id)->get();
         $background = BackgroundHistory::with('background')->where('user_id', $userDetail->user_id)->get();
@@ -36,7 +37,7 @@ class AdminPatientProfileController extends Controller
         $pdfs = Pdf::where('user_id', $userDetail->user_id)->get();
         $treatment = Treatment::where('user_id', $userDetail->user_id)->first();
 
-        return view('admin-profile.show', compact('gallery', 'userDetail', 'anthropometrics', 'background', 'hereditary', 'medicines', 'gynecological', 'goal', 'pdfs', 'treatment'));
+        return view('admin-profile.show', compact('user', 'gallery', 'userDetail', 'anthropometrics', 'background', 'hereditary', 'medicines', 'gynecological', 'goal', 'pdfs', 'treatment'));
     }
 
     /**

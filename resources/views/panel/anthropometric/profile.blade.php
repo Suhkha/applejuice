@@ -28,16 +28,13 @@
     </div>
 
     <div class="flex mb-4">
-        <div class="gallery-wrapper">
+        <div class="gallery-wrapper w-full">
             @if ($galleryOld)
                 <div class="swiper overflow-hidden relative">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <img class="w-full object-cover" src="{{url('/patients/'.$galleryOld->image)}}" alt="">
                         </div>
-                    </div>
-                    
-                    <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <img class="w-full object-cover" src="{{url('/patients/'.$galleryNow->image)}}" alt="">
                         </div>

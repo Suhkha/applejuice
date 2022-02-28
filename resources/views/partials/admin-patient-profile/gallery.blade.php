@@ -5,7 +5,7 @@
                 
                 @foreach ($gallery as $image)
                     <div class="swiper-slide">
-                        <img class="w-full object-cover" src="{{url('/patients/'.$image->image)}}" alt="">
+                        <img class="w-1/2 m-auto object-cover" src="{{url('/patients/'.$image->image)}}" alt="">
                     </div>
                 @endforeach
             </div>
