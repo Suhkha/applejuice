@@ -78,14 +78,13 @@ class BackgroundController extends Controller
             'name' => 'required',
             'details' => 'required',
             'type' => 'required',
-            'status' => 'required'
         ]);
 
         $background = Background::find($id);
         $background->name = request('name');
         $background->details = request('details');
         $background->type = request('type');
-        $background->status = request('status');
+        $background->status = 1;
 
         $background->save();
 

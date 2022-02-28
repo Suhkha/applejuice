@@ -16,8 +16,10 @@ class AdminSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'email' => 'admin@mail.com',
-            'password' => Hash::make('svelfit'),
+            'username' => 'admin',
+            'email' => 'admin@svelfit.com',
+            'password_plain' => '',
+            'password' => Hash::make('svelfit.2022'),
             'phone' => '1234567890',
             'role' => 'admin'
         ]);

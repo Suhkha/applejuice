@@ -22,13 +22,9 @@
 		</div>
 
         <div class="relative w-full px-0 md:px-4 max-w-full flex-1 text-right">
-            <a href="{{ route('gallery', $userDetail->id) }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"  >Añadir fotos</a>
-
-            @if (!$treatment)
-                <a href="{{ route('treatment', ['user_id' => $userDetail->user_id, 'type' => 'profile']) }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"  >Añadir tratamiento</a>
-            @endif
+            <a href="{{ route('gallery', $userDetail->id) }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 ease-linear transition-all duration-150 inline-block" >Añadir fotos</a>
             
-            <a href="{{ route('patients.edit', $userDetail->id) }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"  >Editar datos</a>
+            <a href="{{ route('patients.edit', $userDetail->id) }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 ease-linear transition-all duration-150 inline-block">Editar datos</a>
         </div>
 	</div>
 </div>

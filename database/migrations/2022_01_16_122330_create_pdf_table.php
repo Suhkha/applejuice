@@ -20,7 +20,7 @@ class CreatePdfTable extends Migration
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-            $table->string('pdf');
+            $table->string('pdf')->nullable();
             $table->timestamps();
         });
     }

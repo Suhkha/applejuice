@@ -46,8 +46,11 @@ class DropzoneController extends Controller
 
     public function pdf($id)
     {   
-        $name = UserDetails::find($id)->first(['name'])->name;
-        return view('admin-profile.pdf.index', compact('id', 'name'));
+        $userDetails = UserDetails::find($id)->first();
+        $name = $userDetails->name;
+        $userId = $userDetails->user_id;
+
+        return view('admin-profile.pdf.index', compact('id', 'name', 'userId'));
     }
 
     /**

@@ -3,13 +3,13 @@
 @section('content')
     @include('partials.hero-form', ['sectionTitle' => 'Editar receta'])
 
-    <form action="{{ route('recipes.update', $recipe->id) }}" method="POST" class="svelfit-form" data-parsley-validate="">
+    <form action="{{ route('recipes.update', $recipe->id) }}" method="POST" class="svelfit-form"  >
         @csrf
         @method('PUT')
 
         <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
             <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Titulo</label>
-            <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="title" placeholder="Titulo" value="{{ $recipe->title }}" required/>
+            <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="title" placeholder="Titulo" value="{{ $recipe->title }}"  />
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-3 md:mx-7">
@@ -25,12 +25,12 @@
 
         <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
             <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Ingredientes</label>
-            <textarea class="styled w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" name="ingredients" placeholder="Ingredientes" value="{{ $recipe->ingredients }}" required>{{ $recipe->ingredients }}</textarea>
+            <textarea class="styled w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" name="ingredients" placeholder="Ingredientes" value="{{ $recipe->ingredients }}"  >{{ $recipe->ingredients }}</textarea>
         </div>
 
         <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
             <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Preparación</label>
-            <textarea class="styled w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" name="preparation" placeholder="Preparación" value="{{ $recipe->preparation }}" required>{{ $recipe->preparation }}</textarea>
+            <textarea class="styled w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" name="preparation" placeholder="Preparación" value="{{ $recipe->preparation }}"  >{{ $recipe->preparation }}</textarea>
         </div>
 
         <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">

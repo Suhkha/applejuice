@@ -3,7 +3,7 @@
 @section('content')
     @include('partials.hero-form', ['sectionTitle' => 'Editar antecedente heredo familiares'])
 
-    <form action="{{ route('update-hereditary', $hereditary->id) }}" method="POST" class="svelfit-form" data-parsley-validate="">
+    <form action="{{ route('update-hereditary', $hereditary->id) }}" method="POST" class="svelfit-form"  >
         @csrf
 
         <input type="hidden" name="profile_id" value="{{ $profile_id }}">
@@ -12,7 +12,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Antecedentes heredo familiares</label>
-                    <select name="background_id" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" required>
+                    <select name="background_id" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300"  >
                         <option value="{{ $hereditary->hereditary[0]->id }}">{{ $hereditary->hereditary[0]->name }}</option>
                         @foreach ($pathologics as $item)
                             <option value="{{ $item->id }}">{{ $item->name }}</option>

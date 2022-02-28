@@ -25,13 +25,6 @@ class GoalsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'goal_weight' => 'required',
-            'favorite_aliments' => 'required',
-            'main_goal' => 'required',
-            'additional_method' => 'required',
-        ]);
-
         $goal = new Goal;
         $goal->user_id = request('user_id');
         $goal->goal_weight = request('goal_weight');
@@ -73,13 +66,6 @@ class GoalsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'goal_weight' => 'required',
-            'favorite_aliments' => 'required',
-            'main_goal' => 'required',
-            'additional_method' => 'required',
-        ]);
-
         $goal = Goal::find($id);
         $goal->goal_weight = request('goal_weight');
         $goal->favorite_aliments = request('favorite_aliments');

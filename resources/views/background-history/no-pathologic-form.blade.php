@@ -3,7 +3,7 @@
 @section('content')
     @include('partials.hero-form', ['sectionTitle' => 'Antecedentes no patológicos'])
 
-    <form action="{{ route('history.store') }}" class="svelfit-form" data-parsley-validate="" method="POST">
+    <form action="{{ route('history.store') }}" class="svelfit-form"   method="POST">
         @csrf
         
         <input type="hidden" name="user_id" value="{{ $user_id }}">
@@ -14,7 +14,7 @@
             <div class="list_var">
                 <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Antecedentes no patológicos disponibles</label>
-                    <select data-name-format="list-background_%d" name="" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" required>
+                    <select data-name-format="list-background_%d" name="" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300"  >
                         <option value="">Selecciona</option>
                         @foreach ($noPathologics as $noPathologic)
                             <option value="{{ $noPathologic->id }}">{{ $noPathologic->name }}</option>

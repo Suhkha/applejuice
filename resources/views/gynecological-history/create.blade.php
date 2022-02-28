@@ -3,7 +3,7 @@
 @section('content')
     @include('partials.hero-form', ['sectionTitle' => 'Antecedentes ginecológicos'])
 
-    <form action="{{ route('gynecological-history.store') }}" class="svelfit-form" data-parsley-validate="" method="POST">
+    <form action="{{ route('gynecological-history.store') }}" class="svelfit-form"   method="POST">
         @csrf
         
         <input type="hidden" name="user_id" value="{{ $user_id }}">
@@ -12,7 +12,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Menarca</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="menarche" placeholder="Menarca" required/>
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="menarche" placeholder="Menarca"  />
                 </div>
 
                 <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
@@ -24,7 +24,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Embarazos</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="pregnancies" placeholder="Embarazos" required/>
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="pregnancies" placeholder="Embarazos"  />
                 </div>
 
                 <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
@@ -36,7 +36,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Abortos</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="abortion" placeholder="Abortos" required/>
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="abortion" placeholder="Abortos"  />
                 </div>
 
                 <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
@@ -48,7 +48,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Menstruación</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="menstruation" placeholder="Menstruación" required/>
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="menstruation" placeholder="Menstruación"  />
                 </div>
 
                 <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
@@ -60,7 +60,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Método anticonceptivo</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="contraceptive_method" placeholder="Método anticonceptivo" required/>
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="contraceptive_method" placeholder="Método anticonceptivo"  />
                 </div>
 
                 <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
@@ -72,7 +72,7 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Productos</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="medicines" placeholder="Productos" required/>
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="medicines" placeholder="Productos"  />
                 </div>
             </div>
         </div>

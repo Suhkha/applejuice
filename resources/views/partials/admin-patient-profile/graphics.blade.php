@@ -15,6 +15,8 @@
 
     <div id="muscle" style="height: 300px;"></div>
 
+    <div id="metabolic" style="height: 300px;"></div>
+
     <div id="all_two" style="height: 300px;"></div>
 
     <div id="waist" style="height: 300px;"></div>
@@ -60,6 +62,16 @@
         const muscleChart = new Chartisan({
             el: '#muscle',
             url: "@chart('chart_route_muscle')"+"?id={{ $userDetail->user_id }}",
+            hooks: new ChartisanHooks()
+                .legend()
+                .colors(['#CE7BB0'])
+                .tooltip()
+                .datasets([{ type: 'line'}]),
+        });
+
+        const metabolicChart = new Chartisan({
+            el: '#metabolic',
+            url: "@chart('chart_route_metabolic_age')"+"?id={{ $userDetail->user_id }}",
             hooks: new ChartisanHooks()
                 .legend()
                 .colors(['#CE7BB0'])

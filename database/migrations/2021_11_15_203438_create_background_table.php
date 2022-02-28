@@ -15,10 +15,10 @@ class CreateBackgroundTable extends Migration
     {
         Schema::create('background', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->text('details')->nullable();
-            $table->boolean('type'); //1- pathology || 0- No pathology
-            $table->boolean('status');
+            $table->boolean('type')->nullable(); //1- pathology || 0- No pathology
+            $table->boolean('status')->nullable();
             $table->timestamps();
         });
     }

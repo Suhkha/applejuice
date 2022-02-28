@@ -20,9 +20,9 @@ class CreateGoalsTable extends Migration
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-            $table->string('goal_weight');
-            $table->text('favorite_aliments');
-            $table->text('main_goal');
+            $table->string('goal_weight')->nullable();
+            $table->text('favorite_aliments')->nullable();
+            $table->text('main_goal')->nullable();
             $table->text('additional_method')->nullable();
             $table->text('comments')->nullable();
             $table->timestamps();

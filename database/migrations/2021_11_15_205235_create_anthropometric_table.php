@@ -20,20 +20,20 @@ class CreateAnthropometricTable extends Migration
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-            $table->float('size');
-            $table->float('weight');
-            $table->float('average_fat');
-            $table->float('muscle_mass_kilo');
-            $table->string('muscle_quality');
-            $table->float('bone_mass');
-            $table->float('visceral');
-            $table->float('imc');
-            $table->float('water');
-            $table->integer('metabolic_age');
-            $table->float('waist');
-            $table->float('thigh');
-            $table->float('hips');
-            $table->float('biceps');
+            $table->float('size')->nullable();
+            $table->float('weight')->nullable();
+            $table->float('average_fat')->nullable();
+            $table->float('muscle_mass_kilo')->nullable();
+            $table->string('muscle_quality')->nullable();
+            $table->float('bone_mass')->nullable();
+            $table->float('visceral')->nullable();
+            $table->float('imc')->nullable();
+            $table->float('water')->nullable();
+            $table->integer('metabolic_age')->nullable();
+            $table->float('waist')->nullable();
+            $table->float('thigh')->nullable();
+            $table->float('hips')->nullable();
+            $table->float('biceps')->nullable();
             $table->timestamps();
         });
     }

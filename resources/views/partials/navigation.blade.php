@@ -1,4 +1,5 @@
 <nav class="flex flex-wrap justify-between px-3 lg:px-20 py-10 items-center text-lg text-gray-700 bg-white">
+
     <div>
         <a href="{{ route('home') }}">
             <img src="{{URL::asset('/img/svelfit-logo-small.jpeg')}}" width="100" alt="">
@@ -15,35 +16,67 @@
                     <a class="md:p-4 p-2 block text-teal-400 hover:bg-teal-400 hover:text-white ease-linear transition-all duration-150 rounded outline-none focus:outline-none" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
                 </li>
             @else
-                <li class="md:border-none border-b">
-                    <a class="md:p-4 py-2 block hover:text-teal-400" href="{{ route('patients.index') }}">
-                        Pacientes
-                    </a>
-                </li>
-                <li class="md:border-none border-b">
-                    <a class="md:p-4 py-2 block hover:text-teal-400" href="{{ route('background.index') }}">
-                        Antecedentes
-                    </a>
-                </li>
-                <li class="md:border-none border-b">
-                    <a class="md:p-4 py-2 block hover:text-teal-400" href="{{ route('recipes.index') }}">
-                        Recetas
-                    </a>
-                </li>
-                <li class="md:border-none border-b">
-                    <a class="md:p-4 py-2 block hover:text-teal-400" href="{{ route('products.index') }}">
-                        Productos
-                    </a>
-                </li>
-                <li>
-                    <a class="md:p-4 py-2 block text-teal-400" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">{{ __('Salir') }}</a>
-                    
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </li>
+                @if (Auth::user()->role == 'admin')
+                    <li class="md:border-none border-b">
+                        <a class="md:p-4 py-2 block hover:text-teal-400" href="{{ route('patients.index') }}">
+                            Pacientes
+                        </a>
+                    </li>
+                    <li class="md:border-none border-b">
+                        <a class="md:p-4 py-2 block hover:text-teal-400" href="{{ route('background.index') }}">
+                            Antecedentes
+                        </a>
+                    </li>
+                    <li class="md:border-none border-b">
+                        <a class="md:p-4 py-2 block hover:text-teal-400" href="{{ route('recipes.index') }}">
+                            Recetas
+                        </a>
+                    </li>
+                    <li class="md:border-none border-b">
+                        <a class="md:p-4 py-2 block hover:text-teal-400" href="{{ route('products.index') }}">
+                            Productos
+                        </a>
+                    </li>
+                    @if (isset($userDetail->user_id))
+                        <li class="md:border-none border-b">
+                            <a href="{{ route('anthropometric', ['user_id' => $userDetail->user_id, 'type' => 'profile']) }}" class="bg-gradient-to-r from-orange-500 to-pink-500 text-white md:p-4 py-2 block rounded outline-none focus:outline-none ease-linear transition-all duration-150">Nuevo historial</a>
+                        </li>
+                    @endif
+                    <li>
+                        <a class="md:p-4 py-2 block text-teal-400" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">{{ __('Salir') }}</a>
+                        
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
+                @else
+                    <li class="md:border-none border-b">
+                        <a class="md:p-4 py-2 block hover:text-teal-400" href="{{ route('history') }}">
+                            Progreso
+                        </a>
+                    </li>
+                    <li class="md:border-none border-b">
+                        <a class="md:p-4 py-2 block hover:text-teal-400" href="">
+                            Recetas
+                        </a>
+                    </li>
+                    <li class="md:border-none border-b">
+                        <a class="md:p-4 py-2 block hover:text-teal-400" href="">
+                            Productos
+                        </a>
+                    </li>
+                    <li>
+                        <a class="md:p-4 py-2 block text-teal-400" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">{{ __('Salir') }}</a>
+                        
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
+                @endif
             @endif
         </ul>
     </div>

@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
                 ->references('id')
                 ->on('categories_products')
                 ->onDelete('cascade');
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('image')->nullable();
             $table->text('comments')->nullable();
             $table->timestamps();
