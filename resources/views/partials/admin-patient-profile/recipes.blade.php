@@ -36,10 +36,12 @@
                         {{ $item->status == 0 ? 'No activo' : 'Activo' }}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700 ">
-                        <a href="{{ route('edit-custom-recipes', ['id' => $item->id, 'profile_id' => $userDetail->id]) }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"  >Editar</a>
+                        {{-- <a href="{{ route('edit-custom-recipes', ['id' => $item->id, 'profile_id' => $userDetail->id]) }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"  >Editar</a> --}}
+                        - In progress -
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700 ">
-                        <a href="#" data-delete="" data-toggle="tooltip" data-placement="top" title="Eliminar registro" class="delete-item bg-red-500 text-white hover:bg-red-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"  >Eliminar</a>
+                        {{-- <a href="#" data-delete="" data-toggle="tooltip" data-placement="top" title="Eliminar registro" class="delete-item bg-red-500 text-white hover:bg-red-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"  >Eliminar</a> --}}
+                        - In progress -
                     </td>
                 </tr>
             @endforeach
