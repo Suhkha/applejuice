@@ -55,17 +55,6 @@ class CustomRecipeController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -73,7 +62,12 @@ class CustomRecipeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $customRecipe = CustomRecipe::find($id);
+        $recipe = Recipe::find($customRecipe->recipe_id);
+        $user_id = $customRecipe->user_id;
+        $ingredients = IngredientsList::where('custom_recipe_id', $id)->get();
+
+        return view('custom-recipes.edit', compact('customRecipe', 'recipe', 'user_id', 'ingredients'));
     }
 
     /**
@@ -85,7 +79,40 @@ class CustomRecipeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->except('_token');
+
+        $recipe = CustomRecipe::find($id);
+        $recipe->comments = request('comments');
+        $recipe->status = request('status');
+            
+        $recipe->save();
+
+        foreach($request->ingredients_id as $index => $ingredient){
+            if($request->ingredients[$index] == "") {
+                $recipe = IngredientsList::find($request->ingredients_id[$index]);
+                $recipe->delete();
+            }else{
+                $ingredients = IngredientsList::find($request->ingredients_id[$index]);
+                $ingredients->ingredients = $request->ingredients[$index];
+                
+                $ingredients->save();
+            }    
+        }
+
+
+        for ($i=0; $i < (count($data) - 4); $i++) { 
+            if(request('list-ingredients_'.$i) !=  "") {
+                $ingredients = new IngredientsList;
+                $ingredients->custom_recipe_id = $id;
+                $ingredients->ingredients = request('list-ingredients_'.$i);
+                
+                $ingredients->save();
+            }
+        }
+
+        $userId = request('user_id');
+        $user = UserDetails::where('user_id', $userId)->first();
+        return redirect()->route('profile.show', $user->id);
     }
 
     /**
@@ -94,8 +121,11 @@ class CustomRecipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function deleteCustomRecipe($id)
     {
-        //
+        $recipe = CustomRecipe::find($id);
+        $recipe->delete();
+
+        return redirect()->back();
     }
 }

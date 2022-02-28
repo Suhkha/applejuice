@@ -109,7 +109,8 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
 
     Route::group(['prefix' => 'custom-recipes'], function () {
         Route::get('/create/{user_id}/{type}', [CustomRecipeController::class, 'create'])->name('create-custom-recipes');
-        Route::get('/edit/{id}/{profile_id}', [CustomRecipeController::class, 'edit'])->name('edit-custom-recipes');
+        Route::get('/edit/{id}', [CustomRecipeController::class, 'edit'])->name('edit-custom-recipes');
+        Route::get('/delete-custom-recipe/{id}', [CustomRecipeController::class, 'deleteCustomRecipe'])->name('delete-custom-recipes');
     });
     Route::resource('custom-recipes', CustomRecipeController::class);
 
