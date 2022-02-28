@@ -105,6 +105,6 @@ class UserDetailsController extends Controller
 
         $userDetail->save();
 
-        return redirect()->route('patients.index');
+        return redirect()->route('profile.show', $id);
     }
 }
