@@ -14,6 +14,7 @@ use App\Models\Goal;
 use App\Models\Gallery;
 use App\Models\Pdf;
 use App\Models\Treatment;
+use App\Models\CustomRecipe;
 
 class AdminPatientProfileController extends Controller
 {
@@ -36,8 +37,9 @@ class AdminPatientProfileController extends Controller
         $goal = Goal::with('goal')->where('user_id', $userDetail->user_id)->first();
         $pdfs = Pdf::where('user_id', $userDetail->user_id)->get();
         $treatment = Treatment::where('user_id', $userDetail->user_id)->first();
+        $recipes = CustomRecipe::with('recipe')->where('user_id', $userDetail->user_id)->groupBy('recipe_id')->get();
 
-        return view('admin-profile.show', compact('user', 'gallery', 'userDetail', 'anthropometrics', 'background', 'hereditary', 'medicines', 'gynecological', 'goal', 'pdfs', 'treatment'));
+        return view('admin-profile.show', compact('user', 'gallery', 'userDetail', 'anthropometrics', 'background', 'hereditary', 'medicines', 'gynecological', 'goal', 'pdfs', 'treatment', 'recipes'));
     }
 
     /**

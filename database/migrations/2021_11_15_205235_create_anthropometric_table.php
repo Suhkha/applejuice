@@ -34,6 +34,7 @@ class CreateAnthropometricTable extends Migration
             $table->float('thigh')->nullable();
             $table->float('hips')->nullable();
             $table->float('biceps')->nullable();
+            $table->text('comments')->nullable();
             $table->timestamps();
         });
     }
