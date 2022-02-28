@@ -8,6 +8,8 @@ use App\Models\User;
 use DB;
 use Hash;
 use Auth;
+use TaylorNetwork\UsernameGenerator\Facades\UsernameGenerator;
+use Illuminate\Support\Str;
 
 class UserDetailsController extends Controller
 {
@@ -41,10 +43,15 @@ class UserDetailsController extends Controller
     public function store(Request $request)
     {
         //Create User Account 
+        $password_random = "sv3".Str::random(8);
+        $username_random = UsernameGenerator::generate();
+
         $user = new User;
+        $user->username = $username_random.".club";
         $user->email = request('email');
         $user->phone = request('phone');
-        $user->password = Hash::make('pacientes.svelfit.2022');
+        $user->password_plain = $password_random;
+        $user->password = Hash::make($password_random);
         $user->role = 'patient';
         $user->save();
 
