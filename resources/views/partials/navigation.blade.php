@@ -1,9 +1,18 @@
 <nav class="flex flex-wrap justify-between px-3 lg:px-20 py-10 items-center text-lg text-gray-700 bg-white">
 
     <div>
-        <a href="{{ route('home') }}">
+        @guest
             <img src="{{URL::asset('/img/svelfit-logo-small.jpeg')}}" width="100" alt="">
-        </a>
+        @else
+            @if (Auth::user()->role == 'admin')
+                <a href="/admin/home">
+            @else
+                <a href="/patient/home">
+            @endif
+                <img src="{{URL::asset('/img/svelfit-logo-small.jpeg')}}" width="100" alt="">
+            </a>
+        @endif
+        
     </div>
 
     <svg xmlns="http://www.w3.org/2000/svg" id="menu-button" class="h-6 w-6 cursor-pointer md:hidden block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
