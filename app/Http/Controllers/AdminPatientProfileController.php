@@ -51,7 +51,7 @@ class AdminPatientProfileController extends Controller
     public function deleteUser($id)
     {
         $userDetail = UserDetails::find($id);
-        $user = User::find($userDetail->id);
+        $user = User::find($userDetail->user_id);
 
         $user->delete();
         $userDetail->delete();
