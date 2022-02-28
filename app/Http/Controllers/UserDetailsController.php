@@ -8,8 +8,8 @@ use App\Models\User;
 use DB;
 use Hash;
 use Auth;
-use TaylorNetwork\UsernameGenerator\Facades\UsernameGenerator;
 use Illuminate\Support\Str;
+use Luilliarcec\LaravelUsernameGenerator\Facades\Username;
 
 class UserDetailsController extends Controller
 {
@@ -44,10 +44,11 @@ class UserDetailsController extends Controller
     {
         //Create User Account 
         $password_random = "sv3".Str::random(8);
-        $username_random = UsernameGenerator::generate();
+        $random_chars = Str::random(3);
+        $username_random = Username::make(request('name').' '.request('last_name'));
 
         $user = new User;
-        $user->username = $username_random.".club";
+        $user->username = $username_random.$random_chars.".club";
         $user->email = request('email');
         $user->phone = request('phone');
         $user->password_plain = $password_random;

@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\URL;
 use ConsoleTVs\Charts\Registrar as Charts;
+use Luilliarcec\LaravelUsernameGenerator\Facades\Username;
 
 class AppServiceProvider extends ServiceProvider
 {
