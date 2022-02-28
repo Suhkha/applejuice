@@ -25,7 +25,7 @@
         </div>
         
         <div class='flex items-center justify-start pt-10 mx-7'>
-            <input   value="Añadir" class="bg-blue-400 text-white font-medium hover:bg-blue-300 text-md uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 list_add">
+            <input type="button" value="Añadir medicamento" class="bg-blue-400 text-white font-medium hover:bg-blue-300 text-md uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 list_add">
         </div>
 
         <div class='flex items-center justify-end md:gap-8 gap-4 pt-10 pb-10 mt-5 mx-3 md:mx-7'>

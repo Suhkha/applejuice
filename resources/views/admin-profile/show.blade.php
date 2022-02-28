@@ -24,6 +24,7 @@
                 <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#goals">Objetivos</a></li>
                 <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#treatment">Tratamiento</a></li>
                 <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#plans">Planes (PDF)</a></li>
+                <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#recipes">Recetas</a></li>
             </ul>
             
             <div id="graph">
@@ -52,6 +53,9 @@
             </div>
             <div id="plans">
                 @include('partials.admin-patient-profile.plans')
+            </div>
+            <div id="recipes">
+                @include('partials.admin-patient-profile.recipes')
             </div>
         </div>
     </div>

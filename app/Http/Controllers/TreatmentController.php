@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Treatment;
+use App\Models\UserDetails;
 
 class TreatmentController extends Controller
 {
@@ -32,7 +33,9 @@ class TreatmentController extends Controller
         $treatment->save();
 
         $userId = request('user_id');
-        return redirect()->route('profile.show', $userId);
+        $user = UserDetails::where('user_id', $userId)->first();
+
+        return redirect()->route('profile.show', $user->id);
     }
 
     /**

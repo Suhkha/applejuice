@@ -13,6 +13,7 @@ use App\Http\Controllers\DropzoneController;
 use App\Http\Controllers\TreatmentController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\CustomRecipeController;
 use App\Http\Controllers\CategoryProductsController;
 use App\Http\Controllers\ProductController;
 
@@ -105,6 +106,12 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
         Route::get('/create/{user_id}', [AgendaController::class, 'create'])->name('agenda');
     });
     Route::resource('agenda', AgendaController::class);
+
+    Route::group(['prefix' => 'custom-recipes'], function () {
+        Route::get('/create/{user_id}/{type}', [CustomRecipeController::class, 'create'])->name('create-custom-recipes');
+        Route::get('/edit/{id}/{profile_id}', [CustomRecipeController::class, 'edit'])->name('edit-custom-recipes');
+    });
+    Route::resource('custom-recipes', CustomRecipeController::class);
 
     Route::group(['prefix' => 'recipes'], function () {
         Route::get('/delete-recipe/{id}', [RecipeController::class, 'deleteRecipe'])->name('delete-recipe');
