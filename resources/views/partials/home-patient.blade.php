@@ -57,7 +57,7 @@
     <div class="mx-auto lg:mx-0">
         <div class="grid grid-cols-1 lg:grid-cols-2">
             @if (isset($recipe))
-                <a href="" class="m-2 bg-gradient-to-tl from-blue-400 to-blue-600 ">
+                <a href="" class="m-2 bg-gradient-to-tl from-blue-400 to-blue-600">
                     <div class="flex flex-col p-6 relative">
                         <p class="text-white font-bold text-xs uppercase">Receta del día</p>
                         <i class="iconsminds-chopsticks text-6xl text-white mt-4"></i>

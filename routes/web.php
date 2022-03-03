@@ -16,6 +16,9 @@ use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\CustomRecipeController;
 use App\Http\Controllers\CategoryProductsController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HistoryUserController;
+use App\Http\Controllers\CustomUserPlanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +38,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function () {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
     
     Route::resource('patients', UserDetailsController::class); 
     Route::resource('background', BackgroundController::class);  
@@ -131,6 +134,8 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
 });
 
 Route::group(['middleware' => ['auth', 'patient'], 'prefix' => 'patient'], function () {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/history', [App\Http\Controllers\HistoryUserController::class, 'index'])->name('history');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/history', [HistoryUserController::class, 'index'])->name('history');
+    Route::get('/plan', [CustomUserPlanController::class, 'index'])->name('custom-plan');
+    Route::get('/recipe/{id}', [CustomUserPlanController::class, 'show'])->name('custom-plan.show');
 });

@@ -69,7 +69,7 @@ table.dataTable thead th, table.dataTable thead td {
 }
 
 a[aria-selected="true"] {
-    background: #2dd4bf !important;
+    background: #14b8a6 !important;
 }
 
 .dz-button {
@@ -118,6 +118,11 @@ a[aria-selected="true"] {
 .recipes ul, .recipes ol{
     list-style: auto !important;
     margin-left: 25px !important;
+}
+
+.recipe ul, .recipe ol {
+    list-style: initial !important;
+    margin-left: 1rem !important;
 }
 
 @media only screen and (max-width: 768px) {

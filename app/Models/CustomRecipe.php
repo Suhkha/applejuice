@@ -22,4 +22,8 @@ class CustomRecipe extends Model
     public function recipe(){
         return $this->hasMany('App\Models\Recipe', 'id', 'recipe_id');
     }
+
+    public function ingredients(){
+        return $this->hasMany('App\Models\IngredientsList', 'custom_recipe_id', 'id');
+    }
 }
