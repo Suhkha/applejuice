@@ -57,7 +57,7 @@
     <div class="mx-auto lg:mx-0">
         <div class="grid grid-cols-1 lg:grid-cols-2">
             @if (isset($plan))
-                <div class="m-2 bg-cover bg-no-repeat relative" style="background-image: url('../img/breakfast-placeholder.jpg')">
+                <div class="m-2 bg-cover bg-no-repeat relative" style="background-image: url({{asset('/recipes/'.$plan->recipe[0]->image)}})">
                     <a href="{{ route('custom-plan.show', $plan->recipe[0]->id) }}">
                     <div class="flex flex-col p-6 relative z-10">
                         <p class="text-white font-bold text-xs uppercase">Receta recomendada</p>

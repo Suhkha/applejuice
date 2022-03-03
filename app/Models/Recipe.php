@@ -20,6 +20,7 @@ class Recipe extends Model
         'time',
         'ingredients',
         'preparation',
-        'video_id'
+        'video_id',
+        'image'
     ];
 }

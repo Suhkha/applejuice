@@ -11,14 +11,14 @@
         <div class="flex mb-4">
             <div class="w-full inline-block md:hidden ">
                 <a href="{{ route('custom-plan.show', $item->recipe[0]->id) }}">
-                    <img class="object-cover rounded-lg" src="{{URL::asset('/img/breakfast-placeholder.jpg')}}" alt="">
+                    <img class="object-cover rounded-lg" src="{{url('/recipes/'.$item->recipe[0]->image)}}" alt="">
                 </a>
             </div>
         </div>
         <div class="flex border-b border-gray-200 mb-4 md:items-center">
             <div class="w-1/2 md:inline-block mr-4 ml-2 hidden">
                 <a href="{{ route('custom-plan.show', $item->recipe[0]->id) }}">
-                    <img class="object-cover rounded-lg mb-4" src="{{URL::asset('/img/breakfast-placeholder.jpg')}}" alt="">
+                    <img class="object-cover rounded-lg mb-4" src="{{url('/recipes/'.$item->recipe[0]->image)}}" alt="">
                 </a>
             </div>
             <div class="w-4/5 inline-block ml-4">

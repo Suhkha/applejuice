@@ -3,7 +3,7 @@
 @section('content')
     @include('partials.hero-form', ['sectionTitle' => 'Nueva receta'])
 
-    <form action="{{ route('recipes.store') }}" class="svelfit-form"   method="POST">
+    <form action="{{ route('recipes.store') }}" class="svelfit-form" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
@@ -35,6 +35,11 @@
         <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
             <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">URL Video de YouTube</label>
             <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="video_id" placeholder="URL Video de YouTube" />
+        </div>
+
+        <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
+            <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Imagen de la receta</label>
+            <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="file" name="image" placeholder="Imagen de la receta"  />
         </div>
 
         <div class='flex items-center justify-end md:gap-8 gap-4 pt-10 pb-10 mt-5 mx-3 md:mx-7'>

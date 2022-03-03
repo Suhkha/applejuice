@@ -72,6 +72,10 @@ a[aria-selected="true"] {
     background: #14b8a6 !important;
 }
 
+a.item-recipe[aria-selected="true"] {
+    background: #f87316 !important;
+}
+
 .dz-button {
     color: #fff !important;
     border-radius: 0 !important;
