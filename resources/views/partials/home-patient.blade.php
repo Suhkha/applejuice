@@ -56,16 +56,19 @@
     
     <div class="mx-auto lg:mx-0">
         <div class="grid grid-cols-1 lg:grid-cols-2">
-            @if (isset($recipe))
-                <a href="" class="m-2 bg-gradient-to-tl from-blue-400 to-blue-600">
-                    <div class="flex flex-col p-6 relative">
-                        <p class="text-white font-bold text-xs uppercase">Receta del día</p>
+            @if (isset($plan))
+                <div class="m-2 bg-cover bg-no-repeat relative" style="background-image: url('../img/breakfast-placeholder.jpg')">
+                    <a href="{{ route('custom-plan.show', $plan->recipe[0]->id) }}">
+                    <div class="flex flex-col p-6 relative z-10">
+                        <p class="text-white font-bold text-xs uppercase">Receta recomendada</p>
                         <i class="iconsminds-chopsticks text-6xl text-white mt-4"></i>
-                        <p class="block mt-4 z-10 text-white text-2xl">
-                            {{ $recipe->title }}
+                        <p class="block mt-4 text-white text-2xl">
+                            {{ $plan->recipe[0]->title }}
                         </p>
                     </div>
-                </a>
+                    <div class="overlay absolute top-0 w-full h-full bg-gradient-to-tr from-black to-black opacity-50"></div>
+                    </a>
+                </div>
             @endif
             @if (isset($product))
                 <a href="" class="m-2 bg-gradient-to-tl from-pink-400 to-pink-600">
