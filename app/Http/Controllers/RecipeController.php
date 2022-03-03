@@ -42,6 +42,11 @@ class RecipeController extends Controller
             'preparation' => 'required',
         ]);
 
+        $file = $request->file('image');
+        $path = public_path() . '/recipes';
+        $fileName = uniqid() . $file->getClientOriginalName();
+        $file->move($path, $fileName);
+
         $recipe = new Recipe;
         $recipe->title = request('title');
         $recipe->difficulty = request('difficulty');
@@ -49,6 +54,7 @@ class RecipeController extends Controller
         $recipe->ingredients = request('ingredients');
         $recipe->preparation = request('preparation');
         $recipe->video_id = request('video_id');
+        $recipe->image = $fileName;
         $recipe->save();
 
         return redirect()->route('recipes.index');
@@ -93,7 +99,13 @@ class RecipeController extends Controller
             'preparation' => 'required',
         ]);
 
-        //Create User Account 
+        if($request->file('image')) {
+            $file = $request->file('image');
+            $path = public_path() . '/recipes';
+            $fileName = uniqid() . $file->getClientOriginalName();
+            $file->move($path, $fileName);
+        }
+
         $recipe = Recipe::find($id);
         $recipe->title = request('title');
         $recipe->difficulty = request('difficulty');
@@ -101,6 +113,10 @@ class RecipeController extends Controller
         $recipe->ingredients = request('ingredients');
         $recipe->preparation = request('preparation');
         $recipe->video_id = request('video_id');
+        if($request->file('image')) {
+            $recipe->image = $fileName;
+        }
+        
         $recipe->save();
 
         return redirect()->route('recipes.index');

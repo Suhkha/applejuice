@@ -5,7 +5,7 @@ use Cache;
 use Auth;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use App\Models\Recipe;
+use App\Models\CustomRecipe;
 use App\Models\UserDetails;
 use App\Models\Anthropometric;
 use App\Models\Agenda;
@@ -39,15 +39,18 @@ class HomeController extends Controller
             $id = Auth::user()->id;
             $user = UserDetails::where('user_id', $id)->first();
 
-            $expirationDate = Carbon::now()->addminutes(5);
-            $recipe = Recipe::inRandomOrder()->first();
+            $plan = CustomRecipe::with('recipe')
+                                ->where('user_id', $user->user_id)
+                                ->where('status', 1)
+                                ->inRandomOrder()
+                                ->first();
 
             $product = Product::inRandomOrder()->first();
         
             $data = Anthropometric::where('user_id', $id)->latest()->first();
             $agenda = Agenda::where('user_id', $id)->latest()->first();
 
-            return view('home', compact('user', 'recipe', 'product', 'data', 'agenda'));  
+            return view('home', compact('user', 'plan', 'product', 'data', 'agenda'));  
         }
     }
 }

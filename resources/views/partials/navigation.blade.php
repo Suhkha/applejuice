@@ -67,7 +67,7 @@
                         </a>
                     </li>
                     <li class="md:border-none border-b">
-                        <a class="md:p-4 py-2 block hover:text-teal-400" href="">
+                        <a class="md:p-4 py-2 block hover:text-teal-400" href="{{ route('custom-plan') }}">
                             Recetas
                         </a>
                     </li>

@@ -21,6 +21,7 @@ class CreateRecipesTable extends Migration
             $table->longText('ingredients')->nullable();
             $table->longText('preparation')->nullable();
             $table->string('video_id')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

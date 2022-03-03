@@ -99,6 +99,17 @@
                 slidesToScroll: 3,
             });
         }
+
+        if ($('.plans-wrapper').length) {
+            $('.plans').slick({
+                dots: false,
+                arrows: false,
+                infinite: false,
+                speed: 300,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            });
+        }
         
 </script>
 
