@@ -10,9 +10,9 @@
                             <h3 class="font-semibold text-base text-blueGray-700">Productos recomendados</h3>
                         </div>
                         <div class="relative w-full px-0 md:px-4 max-w-full flex-grow flex-1 text-right">
-                            <a href="{{ route('category-products.index') }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"  >Categorías</a>
+                            <a href="{{ route('category-products.index') }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">Categorías</a>
 
-                            <a href="{{ route('products.create') }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"  >Nuevo producto</a>
+                            <a href="{{ route('products.create') }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">Nuevo producto</a>
                         </div>
                     </div>
                 </div>
