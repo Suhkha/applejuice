@@ -59,27 +59,28 @@
             @if (isset($plan))
                 <div class="m-2 bg-cover bg-no-repeat relative" style="background-image: url({{asset('/recipes/'.$plan->recipe[0]->image)}})">
                     <a href="{{ route('custom-plan.show', $plan->recipe[0]->id) }}">
-                    <div class="flex flex-col p-6 relative z-10">
-                        <p class="text-white font-bold text-xs uppercase">Receta recomendada</p>
-                        <i class="iconsminds-chopsticks text-6xl text-white mt-4"></i>
-                        <p class="block mt-4 text-white text-2xl">
-                            {{ $plan->recipe[0]->title }}
-                        </p>
-                    </div>
-                    <div class="overlay absolute top-0 w-full h-full bg-gradient-to-tr from-black to-black opacity-50"></div>
+                        <div class="flex flex-col p-6 relative z-10">
+                            <p class="text-white font-bold text-xs uppercase">Receta recomendada</p>
+                            <i class="iconsminds-chopsticks text-6xl text-white mt-4"></i>
+                            <p class="block mt-4 text-white text-2xl">
+                                {{ $plan->recipe[0]->title }}
+                            </p>
+                        </div>
+                        <div class="overlay absolute top-0 w-full h-full bg-gradient-to-tr from-black to-black opacity-50"></div>
                     </a>
                 </div>
             @endif
             @if (isset($product))
-                <a href="" class="m-2 bg-gradient-to-tl from-pink-400 to-pink-600">
-                    <div class="flex flex-col p-6 relative">
+                <div class="m-2 bg-cover bg-no-repeat relative bg-center" style="background-image: url({{asset('/products/'.$product->image)}})">
+                    <div class="flex flex-col p-6 relative z-10">
                         <p class="text-white font-bold text-xs uppercase">Produto recomendado</p>
                         <i class="icon-Bar-Code text-6xl text-white mt-4"></i>
                         <p class="block mt-4 z-10 text-white text-2xl">
                             {{ $product->name }}
                         </p>
                     </div>
-                </a>
+                    <div class="overlay absolute top-0 w-full h-full bg-gradient-to-tr from-black to-black opacity-50"></div>
+                </div>
             @endif
         </div>
     </div>

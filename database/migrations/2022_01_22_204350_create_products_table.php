@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
                 ->onDelete('cascade');
             $table->string('name')->nullable();
             $table->string('image')->nullable();
+            $table->boolean('favorite')->nullable();
             $table->text('comments')->nullable();
             $table->timestamps();
         });

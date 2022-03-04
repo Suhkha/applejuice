@@ -19,6 +19,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HistoryUserController;
 use App\Http\Controllers\CustomUserPlanController;
+use App\Http\Controllers\ProductsUserPanelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -138,4 +139,8 @@ Route::group(['middleware' => ['auth', 'patient'], 'prefix' => 'patient'], funct
     Route::get('/history', [HistoryUserController::class, 'index'])->name('history');
     Route::get('/plan', [CustomUserPlanController::class, 'index'])->name('custom-plan');
     Route::get('/recipe/{id}', [CustomUserPlanController::class, 'show'])->name('custom-plan.show');
+
+    Route::get('/products', [ProductsUserPanelController::class, 'index'])->name('products');
+    Route::get('/products/{category_id}', [ProductsUserPanelController::class, 'showCategoryProducts'])->name('category.products');
+    Route::get('/product/{id}', [ProductsUserPanelController::class, 'show'])->name('product.show');
 });

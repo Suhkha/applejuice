@@ -73,7 +73,11 @@ a[aria-selected="true"] {
 }
 
 a.item-recipe[aria-selected="true"] {
-    background: #f87316 !important;
+    background: #f97316 !important;
+}
+
+a.item-product[aria-selected="true"] {
+    background: #ec489a !important;
 }
 
 .dz-button {

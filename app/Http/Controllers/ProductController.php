@@ -54,6 +54,13 @@ class ProductController extends Controller
         $product->category_id = request('category_id');
         $product->name = request('name');
         $product->image = $fileName;
+
+        if(request('favorite') == false) {
+            $product->favorite = 0;
+        }else{
+            $product->favorite = 1;
+        }
+
         $product->comments = request('comments');
         $product->save();
 
@@ -93,6 +100,13 @@ class ProductController extends Controller
         $product = Product::find($id);
         $product->category_id = request('category_id');
         $product->name = request('name');
+
+        if(request('favorite') == false) {
+            $product->favorite = 0;
+        }else{
+            $product->favorite = 1;
+        }
+
         $product->comments = request('comments');
 
         if($request->file('image')) {

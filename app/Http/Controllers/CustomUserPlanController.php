@@ -6,6 +6,7 @@ use Auth;
 use Illuminate\Http\Request;
 use App\Models\UserDetails;
 use App\Models\CustomRecipe;
+use App\Models\Pdf;
 
 class CustomUserPlanController extends Controller
 {
@@ -19,7 +20,9 @@ class CustomUserPlanController extends Controller
                                 ->groupBy('recipe_id')
                                 ->get();
         
-        return view('panel.custom-plan', compact('user', 'recipes'));  
+        $pdfs = Pdf::where('user_id', $user->user_id)->orderBy('created_at', 'desc')->get();
+
+        return view('panel.custom-plan', compact('user', 'recipes', 'pdfs'));  
         
     }
 
