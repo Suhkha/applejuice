@@ -25,6 +25,7 @@
                 <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#treatment">Tratamiento</a></li>
                 <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#plans">Planes (PDF)</a></li>
                 <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#recipes">Recetas</a></li>
+                <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#recommendations">Recomendaciones</a></li>
             </ul>
             
             <div id="graph">
@@ -56,6 +57,9 @@
             </div>
             <div id="recipes">
                 @include('partials.admin-patient-profile.recipes')
+            </div>
+            <div id="recommendations">
+                @include('partials.admin-patient-profile.recommendations')
             </div>
         </div>
     </div>

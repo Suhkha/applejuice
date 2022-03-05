@@ -525,6 +525,16 @@ a.item-product[aria-selected="true"] {
     background-color: #2dd4bf;
 }
 
+nav #menu ul, [data-tabs] {
+    list-style: none !important;
+    margin-left: 0 !important;
+}
+
+ul,ol{
+    list-style: initial !important;
+    margin-left: 25px !important;
+}
+
 .recipes ul, .recipes ol{
     list-style: auto !important;
     margin-left: 25px !important;
@@ -1366,6 +1376,13 @@ a.item-product[aria-selected="true"] {
 .hover\:bg-teal-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(45 212 191 / var(--tw-bg-opacity));
+}
+.hover\:from-pink-500:hover {
+  --tw-gradient-from: #ec4899;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(236 72 153 / 0));
+}
+.hover\:to-orange-500:hover {
+  --tw-gradient-to: #f97316;
 }
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
