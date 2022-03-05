@@ -43,7 +43,7 @@ class MedicineController extends Controller
 
         }else{
             $user = UserDetails::where('user_id', $userId)->first();
-            return redirect()->route('profile.show', $user->id);
+            return redirect()->route('profile.show', array($user->id, '#medicines'));
         }
     }
 
@@ -73,7 +73,7 @@ class MedicineController extends Controller
         $medicine->comments = request('comments') == "" ? "" : request('comments');
         $medicine->save();
 
-        return redirect()->route('profile.show', request('profile_id'));
+        return redirect()->route('profile.show', array(request('profile_id'), '#medicines'));
     }
 
     /**

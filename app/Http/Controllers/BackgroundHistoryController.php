@@ -79,7 +79,7 @@ class BackgroundHistoryController extends Controller
 
         }else{
             $user = UserDetails::where('user_id', $userId)->first();
-            return redirect()->route('profile.show', $user->id);
+            return redirect()->route('profile.show', array($user->id, '#background'));
         }
     }
 
@@ -109,7 +109,7 @@ class BackgroundHistoryController extends Controller
 
         }else{
             $user = UserDetails::where('user_id', $userId)->first();
-            return redirect()->route('profile.show', $user->id);
+            return redirect()->route('profile.show', array($user->id, '#hereditary'));
         }
     }
 
@@ -178,7 +178,7 @@ class BackgroundHistoryController extends Controller
         $background->comments = request('comments') == "" ? "" : request('comments');
         $background->save();
 
-        return redirect()->route('profile.show', request('profile_id'));
+        return redirect()->route('profile.show', array(request('profile_id'), '#background'));
     }
 
 
@@ -189,7 +189,7 @@ class BackgroundHistoryController extends Controller
         $hereditary->comments = request('comments') == "" ? "" : request('comments');
         $hereditary->save();
 
-        return redirect()->route('profile.show', request('profile_id'));
+        return redirect()->route('profile.show', array(request('profile_id'), '#hereditary'));
     }
 
     public function deleteBackground($id)

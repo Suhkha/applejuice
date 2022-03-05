@@ -35,7 +35,7 @@ class TreatmentController extends Controller
         $userId = request('user_id');
         $user = UserDetails::where('user_id', $userId)->first();
 
-        return redirect()->route('profile.show', $user->id);
+        return redirect()->route('profile.show', array($user->id, '#treatment'));
     }
 
     /**
@@ -64,6 +64,6 @@ class TreatmentController extends Controller
 
         $treatment->save();
 
-        return redirect()->route('profile.show', request('profile_id'));
+        return redirect()->route('profile.show', array(request('profile_id'), '#treatment'));
     }
 }

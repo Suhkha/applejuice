@@ -15,17 +15,17 @@
     <div class="grid grid-cols-1 gap-5 md:gap-8 mt-5">
         <div class="mt-16 tabs-section">
             <ul data-tabs class="flex mb-12 flex-wrap">
-                <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#graph" data-tabby-default>Gráficas</a></li>
-                <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#anthropometric">Antropométrico</a></li>
-                <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#background">Antecedentes</a></li>
-                <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#hereditary">Antecedentes Familiares</a></li>
-                <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#medicines">Medicamentos</a></li>
-                <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#gynecological-history">Ginecologicos</a></li>
-                <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#goals">Objetivos</a></li>
-                <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#treatment">Tratamiento</a></li>
-                <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#plans">Planes (PDF)</a></li>
-                <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#recipes">Recetas</a></li>
-                <li><a class="bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#recommendations">Recomendaciones</a></li>
+                <li><a class="outline-none bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#graph" data-tabby-default>Gráficas</a></li>
+                <li><a class="outline-none bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#anthropometric">Antropométrico</a></li>
+                <li><a class="outline-none bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#background">Antecedentes</a></li>
+                <li><a class="outline-none bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#hereditary">Antecedentes Familiares</a></li>
+                <li><a class="outline-none bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#medicines">Medicamentos</a></li>
+                <li><a class="outline-none bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#gynecological-history">Ginecologicos</a></li>
+                <li><a class="outline-none bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#goals">Objetivos</a></li>
+                <li><a class="outline-none bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#treatment">Tratamiento</a></li>
+                <li><a class="outline-none bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#plans">Planes (PDF)</a></li>
+                <li><a class="outline-none bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#recipes">Recetas</a></li>
+                <li><a class="outline-none bg-gray-400 text-white px-4 py-4 mx-1 block mb-3" href="#recommendations">Recomendaciones</a></li>
             </ul>
             
             <div id="graph">
