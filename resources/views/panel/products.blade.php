@@ -8,7 +8,7 @@
                     <li>
                         <a class="item item-product cursor-pointer active flex bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#categories" data-tabby-default>
                             <div class="self-center m-auto text-center">
-                                <i class="iconsminds-chopsticks text-3xl text-white block"></i>
+                                <i class="icon-Shop-2 text-3xl text-white block"></i>
                                 <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Categorías</span>
                             </div>
                         </a>
@@ -16,7 +16,7 @@
                     <li>
                         <a class="item item-product cursor-pointer flex bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#favorites">
                             <div class="self-center m-auto text-center">
-                                <i class="iconsminds-check text-3xl text-white block"></i>
+                                <i class="iconsminds-heart text-3xl text-white block"></i>
                                 <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Favoritos</span>
                             </div>
                         </a>
@@ -24,7 +24,7 @@
                     <li>
                         <a class="item item-product cursor-pointer flex bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#all">
                             <div class="self-center m-auto text-center">
-                                <i class="iconsminds-file-clipboard-file---text text-3xl text-white block"></i>
+                                <i class="icon-Bar-Code text-3xl text-white block"></i>
                                 <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Productos</span>
                             </div>
                         </a>

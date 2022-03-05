@@ -8,8 +8,10 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5">
             <div class="col-span-2 md:col-span-1 md:grid">
-                @if ($recipe->video_id)
-                    <iframe class="w-full" width="560" height="315" src="https://www.youtube.com/embed/{{ $recipe->video_id }}" title="{{ $recipe->title }}" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                @if ($recipe->video_id != "")
+                    <iframe class="w-full rounded-lg" width="560" height="315" src="https://www.youtube.com/embed/{{ $recipe->video_id }}" title="{{ $recipe->title }}" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                @else
+                    <img class="object-cover rounded-lg" src="{{url('/recipes/'.$recipe->image)}}" alt="">
                 @endif
             </div>
 

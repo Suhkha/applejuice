@@ -73,7 +73,7 @@
             @if (isset($product))
                 <div class="m-2 bg-cover bg-no-repeat relative bg-center" style="background-image: url({{asset('/products/'.$product->image)}})">
                     <div class="flex flex-col p-6 relative z-10">
-                        <p class="text-white font-bold text-xs uppercase">Produto recomendado</p>
+                        <p class="text-white font-bold text-xs uppercase">Producto recomendado</p>
                         <i class="icon-Bar-Code text-6xl text-white mt-4"></i>
                         <p class="block mt-4 z-10 text-white text-2xl">
                             {{ $product->name }}

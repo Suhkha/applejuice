@@ -21,7 +21,7 @@
                                 @if ($plan->recipe[0]->video_id != "")
                                     <iframe class="w-full rounded-lg" width="560" height="315" src="https://www.youtube.com/embed/{{ $plan->recipe[0]->video_id }}" title="{{ $plan->recipe[0]->title }}" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 @else
-                                    <img class="object-cover rounded-lg" src="{{URL::asset('/img/breakfast-placeholder.jpg')}}" alt="">
+                                    <img class="object-cover rounded-lg" src="{{url('/recipes/'.$plan->recipe[0]->image)}}" alt="">
                                 @endif
                             </div>
                         </div>

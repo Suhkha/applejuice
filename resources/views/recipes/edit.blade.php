@@ -3,7 +3,7 @@
 @section('content')
     @include('partials.hero-form', ['sectionTitle' => 'Editar receta'])
 
-    <form action="{{ route('recipes.update', $recipe->id) }}" method="POST" class="svelfit-form"  >
+    <form action="{{ route('recipes.update', $recipe->id) }}" method="POST" class="svelfit-form" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
