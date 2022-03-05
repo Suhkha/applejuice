@@ -7,7 +7,7 @@
             <div class="details-wrapper tabs-section relative max-w-screen-sm lg:max-w-screen-md m-auto overflow-x-hidden overflow-y-hidden">
                 <ul data-tabs class="details h-24 box-border whitespace-nowrap overflow-x-auto overflow-y-hidden flex flex-nowrap">
                     <li>
-                        <a class="item cursor-pointer active flex bg-gradient-to-b from-blue-500 to-teal-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#profile" data-tabby-default>
+                        <a class="item cursor-pointer outline-none active flex bg-gradient-to-b from-blue-500 to-teal-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#profile" data-tabby-default>
                             <div class="self-center m-auto text-center">
                                 <i class="icon-Profile text-3xl text-white block"></i>
                                 <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Perfil</span>
@@ -16,7 +16,7 @@
                     </li>
 
                     <li>
-                        <a class="item cursor-pointer flex bg-gradient-to-b from-blue-500 to-teal-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#weight">
+                        <a class="item cursor-pointer outline-none flex bg-gradient-to-b from-blue-500 to-teal-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#weight">
                             <div class="self-center m-auto text-center">
                                 <i class="iconsminds-footprint-2 text-3xl text-white block"></i>
                                 <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Peso</span>
@@ -25,7 +25,7 @@
                     </li>
 
                     <li>
-                        <a class="item cursor-pointer flex bg-gradient-to-b from-blue-500 to-teal-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#average_fat">
+                        <a class="item cursor-pointer outline-none flex bg-gradient-to-b from-blue-500 to-teal-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#average_fat">
                             <div class="self-center m-auto text-center">
                                 <i class="icon-Cardiovascular text-3xl text-white block"></i>
                                 <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Grasa</span>
@@ -34,7 +34,7 @@
                     </li>
 
                     <li>
-                        <a class="item cursor-pointer flex bg-gradient-to-b from-blue-500 to-teal-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#muscle_mass_kilo">
+                        <a class="item cursor-pointer outline-none flex bg-gradient-to-b from-blue-500 to-teal-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#muscle_mass_kilo">
                             <div class="self-center m-auto text-center">
                                 <i class="iconsminds-weight-lift text-3xl text-white block"></i>
                                 <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Músculo</span>
@@ -43,7 +43,7 @@
                     </li>
 
                     <li>
-                        <a class="item cursor-pointer flex bg-gradient-to-b from-blue-500 to-teal-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#metabolic_age">
+                        <a class="item cursor-pointer outline-none flex bg-gradient-to-b from-blue-500 to-teal-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#metabolic_age">
                             <div class="self-center m-auto text-center">
                                 <i class="iconsminds-clock-back text-3xl text-white block"></i>
                                 <span class="text-xxs leading-4 text-white lg:text-sm block m-auto whitespace-normal mt-2">Edad metabólica</span>
@@ -52,7 +52,7 @@
                     </li>
 
                     <li>
-                        <a class="item cursor-pointer flex bg-gradient-to-b from-blue-500 to-teal-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#waist">
+                        <a class="item cursor-pointer outline-none flex bg-gradient-to-b from-blue-500 to-teal-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#waist">
                             <div class="self-center m-auto text-center">
                                 <i class="icon-Aerobics-2 text-3xl text-white block"></i>
                                 <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Cintura</span>
@@ -61,7 +61,7 @@
                     </li>
 
                     <li>
-                        <a class="item cursor-pointer flex bg-gradient-to-b from-blue-500 to-teal-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#thigh">
+                        <a class="item cursor-pointer outline-none flex bg-gradient-to-b from-blue-500 to-teal-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#thigh">
                             <div class="self-center m-auto text-center">
                                 <i class="icon-Leg-2 text-3xl text-white block"></i>
                                 <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Muslo</span>
@@ -70,7 +70,7 @@
                     </li>
 
                     <li>
-                        <a class="item cursor-pointer flex bg-gradient-to-b from-blue-500 to-teal-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#hips">
+                        <a class="item cursor-pointer outline-none flex bg-gradient-to-b from-blue-500 to-teal-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#hips">
                             <div class="self-center m-auto text-center">
                                 <i class="icon-Aerobics-3 text-3xl text-white block"></i>
                                 <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Cadera</span>
@@ -79,7 +79,7 @@
                     </li>
 
                     <li>
-                        <a class="item cursor-pointer flex bg-gradient-to-b from-blue-500 to-teal-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#biceps">
+                        <a class="item cursor-pointer outline-none flex bg-gradient-to-b from-blue-500 to-teal-500 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#biceps">
                             <div class="self-center m-auto text-center">
                                 <i class="icon-Bodybuilding text-3xl text-white block"></i>
                                 <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Biceps</span>

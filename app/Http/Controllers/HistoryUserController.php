@@ -9,6 +9,7 @@ use App\Models\UserDetails;
 use App\Models\Anthropometric;
 use App\Models\Goal;
 use App\Models\Gallery;
+use App\Models\Fact;
 
 class HistoryUserController extends Controller
 {
@@ -33,7 +34,9 @@ class HistoryUserController extends Controller
         $hips = Anthropometric::select('hips', 'created_at', 'comments')->where('user_id', $id)->orderBy('created_at', 'desc')->take(5)->get();
         $biceps = Anthropometric::select('biceps', 'created_at', 'comments')->where('user_id', $id)->orderBy('created_at', 'desc')->take(5)->get();
 
-        return view('panel.history', compact('user', 'galleryNow', 'galleryOld', 'weight', 'fat', 'muscle', 'metabolic', 'waist', 'thigh', 'hips', 'biceps'));  
+        $facts = Fact::first();
+
+        return view('panel.history', compact('user', 'galleryNow', 'galleryOld', 'weight', 'fat', 'muscle', 'metabolic', 'waist', 'thigh', 'hips', 'biceps', 'facts'));  
         
     }
 }
