@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Recipe;
+use File; 
 
 class RecipeController extends Controller
 {
@@ -99,13 +100,6 @@ class RecipeController extends Controller
             'preparation' => 'required',
         ]);
 
-        if($request->file('image')) {
-            $file = $request->file('image');
-            $path = public_path() . '/recipes';
-            $fileName = uniqid() . $file->getClientOriginalName();
-            $file->move($path, $fileName);
-        }
-
         $recipe = Recipe::find($id);
         $recipe->title = request('title');
         $recipe->difficulty = request('difficulty');
@@ -113,7 +107,19 @@ class RecipeController extends Controller
         $recipe->ingredients = request('ingredients');
         $recipe->preparation = request('preparation');
         $recipe->video_id = request('video_id');
+        
         if($request->file('image')) {
+            if(File::exists(public_path('recipes/'.$recipe->image))){
+                File::delete(public_path('recipes/'.$recipe->image));
+            }else{
+                dd('File does not exists.');
+            }
+            
+            $file = $request->file('image');
+            $path = public_path() . '/recipes';
+            $fileName = uniqid() . $file->getClientOriginalName();
+            $file->move($path, $fileName);
+
             $recipe->image = $fileName;
         }
         
@@ -131,6 +137,11 @@ class RecipeController extends Controller
     public function deleteRecipe($id)
     {
         $recipe = Recipe::find($id);
+        if(File::exists(public_path('recipes/'.$recipe->image))){
+            File::delete(public_path('recipes/'.$recipe->image));
+        }else{
+            dd('File does not exists.');
+        }
         $recipe->delete();
 
         return redirect()->back();

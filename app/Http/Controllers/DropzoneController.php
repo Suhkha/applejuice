@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\UserDetails;
 use App\Models\Gallery;
 use App\Models\Pdf;
+use File;
 
 class DropzoneController extends Controller
 {
@@ -84,8 +85,13 @@ class DropzoneController extends Controller
     public function deletePdf($id)
     {
         $pdf = Pdf::find($id);
-        $pdf->delete();
+        if(File::exists(public_path('pdf/'.$pdf->pdf))){
+            File::delete(public_path('pdf/'.$pdf->pdf));
+        }else{
+            dd('File does not exists.');
+        }
 
+        $pdf->delete();
         return redirect()->back();
     }
 }

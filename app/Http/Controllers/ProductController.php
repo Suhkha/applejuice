@@ -90,13 +90,6 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if($request->file('image')) {
-            $file = $request->file('image');
-            $path = public_path() . '/products';
-            $fileName = uniqid() . $file->getClientOriginalName();
-            $file->move($path, $fileName);
-        }
-
         $product = Product::find($id);
         $product->category_id = request('category_id');
         $product->name = request('name');
@@ -110,6 +103,17 @@ class ProductController extends Controller
         $product->comments = request('comments');
 
         if($request->file('image')) {
+            if(File::exists(public_path('products/'.$product->image))){
+                File::delete(public_path('products/'.$product->image));
+            }else{
+                dd('File does not exists.');
+            }
+            
+            $file = $request->file('image');
+            $path = public_path() . '/products';
+            $fileName = uniqid() . $file->getClientOriginalName();
+            $file->move($path, $fileName);
+
             $product->image = $fileName;
         }
         
@@ -138,6 +142,12 @@ class ProductController extends Controller
     public function deleteProduct($id)
     {
         $product = Product::find($id);
+        if(File::exists(public_path('products/'.$product->image))){
+            File::delete(public_path('products/'.$product->image));
+        }else{
+            dd('File does not exists.');
+        }
+
         $product->delete();
 
         return redirect()->back();

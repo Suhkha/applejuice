@@ -75,17 +75,21 @@ class CategoryProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if($request->file('cover')) {
-            $file = $request->file('cover');
-            $path = public_path() . '/category-products';
-            $fileName = uniqid() . $file->getClientOriginalName();
-            $file->move($path, $fileName);
-        }
-
         $category = CategoryProduct::find($id);
         $category->name = request('name');
 
         if($request->file('cover')) {
+            if(File::exists(public_path('category-products/'.$category->cover))){
+                File::delete(public_path('category-products/'.$category->cover));
+            }else{
+                dd('File does not exists.');
+            }
+            
+            $file = $request->file('cover');
+            $path = public_path() . '/category-products';
+            $fileName = uniqid() . $file->getClientOriginalName();
+            $file->move($path, $fileName);
+
             $category->cover = $fileName;
         }
         
@@ -103,6 +107,12 @@ class CategoryProductsController extends Controller
     public function deleteCategoryProduct($id)
     {
         $category = CategoryProduct::find($id);
+        if(File::exists(public_path('category-products/'.$category->cover))){
+            File::delete(public_path('category-products/'.$category->cover));
+        }else{
+            dd('File does not exists.');
+        }
+
         $category->delete();
 
         return redirect()->back();
