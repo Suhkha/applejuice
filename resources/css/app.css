@@ -123,6 +123,16 @@ a.item-product[aria-selected="true"] {
     background-color: #2dd4bf;
 }
 
+nav #menu ul, [data-tabs] {
+    list-style: none !important;
+    margin-left: 0 !important;
+}
+
+ul,ol{
+    list-style: initial !important;
+    margin-left: 25px !important;
+}
+
 .recipes ul, .recipes ol{
     list-style: auto !important;
     margin-left: 25px !important;

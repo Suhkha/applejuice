@@ -18,3 +18,7 @@
         <img class="w-3/4 my-0 mx-auto block object-cover" src="{{URL::asset('/img/svelfit-logo-medium.png')}}" alt="">
     @endif
 </div>
+
+<div class="relative w-full px-0 md:px-4 max-w-full flex-1 text-right">
+    <a href="{{ route('gallery', $userDetail->id) }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 ease-linear transition-all duration-150 inline-block" >Añadir fotos</a>
+</div>

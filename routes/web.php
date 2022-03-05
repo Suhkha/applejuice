@@ -21,7 +21,7 @@ use App\Http\Controllers\HistoryUserController;
 use App\Http\Controllers\CustomUserPlanController;
 use App\Http\Controllers\ProductsUserPanelController;
 use App\Http\Controllers\FactController;
-
+use App\Http\Controllers\RecommendationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -136,6 +136,12 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
     Route::resource('products', ProductController::class);
 
     Route::resource('facts', FactController::class);
+
+    Route::group(['prefix' => 'recommendation'], function () {
+        Route::get('/create/{user_id}/{type}', [RecommendationController::class, 'create'])->name('recommendation');
+        Route::get('/edit/{id}/{profile_id}', [RecommendationController::class, 'edit'])->name('edit-recommendation');
+    });
+    Route::resource('recommendation', RecommendationController::class);
 });
 
 Route::group(['middleware' => ['auth', 'patient'], 'prefix' => 'patient'], function () {
