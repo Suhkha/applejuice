@@ -46,6 +46,11 @@
                             Productos
                         </a>
                     </li>
+                    <li class="md:border-none border-b">
+                        <a class="md:p-4 py-2 block hover:text-teal-400" href="{{ route('facts.index') }}">
+                            Datos de antropométrico
+                        </a>
+                    </li>
                     @if (isset($userDetail->user_id))
                         <li class="md:border-none border-b">
                             <a href="{{ route('anthropometric', ['user_id' => $userDetail->user_id, 'type' => 'profile']) }}" class="bg-gradient-to-r from-orange-500 to-pink-500 text-white md:p-4 py-2 block rounded outline-none focus:outline-none ease-linear transition-all duration-150">Nuevo historial</a>

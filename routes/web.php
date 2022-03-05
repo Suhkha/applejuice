@@ -20,6 +20,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HistoryUserController;
 use App\Http\Controllers\CustomUserPlanController;
 use App\Http\Controllers\ProductsUserPanelController;
+use App\Http\Controllers\FactController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -132,6 +134,8 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
         Route::get('/delete-product/{id}', [ProductController::class, 'deleteProduct'])->name('delete-product');
     });
     Route::resource('products', ProductController::class);
+
+    Route::resource('facts', FactController::class);
 });
 
 Route::group(['middleware' => ['auth', 'patient'], 'prefix' => 'patient'], function () {

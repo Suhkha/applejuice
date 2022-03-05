@@ -2,7 +2,7 @@
     <div class="flex bg-teal-400 mb-4 rounded-lg ">
         <div class="w-3/4 m-auto inline-block py-3">
             <div class=" text-sm text-center self-center text-white">
-                El músculo
+                {{ $facts->muscle != "" ? $facts->muscle : 'Svelfit' }}
             </div>
         </div>
     </div>

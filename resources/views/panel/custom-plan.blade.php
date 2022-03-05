@@ -6,7 +6,7 @@
             <div class="plans-wrapper tabs-section relative max-w-screen-sm lg:max-w-screen-md m-auto overflow-x-hidden overflow-y-hidden">
                 <ul data-tabs class="plans h-24 box-border whitespace-nowrap overflow-x-auto overflow-y-hidden flex flex-nowrap">
                     <li>
-                        <a class="item item-recipe cursor-pointer active flex bg-gradient-to-tl from-orange-500 to-pink-600 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#recipes" data-tabby-default>
+                        <a class="item item-recipe outline-none cursor-pointer active flex bg-gradient-to-tl from-orange-500 to-pink-600 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#recipes" data-tabby-default>
                             <div class="self-center m-auto text-center">
                                 <i class="iconsminds-chopsticks text-3xl text-white block"></i>
                                 <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Recetas</span>
@@ -14,7 +14,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="item item-recipe cursor-pointer flex bg-gradient-to-tl from-orange-500 to-pink-600 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#recommendations">
+                        <a class="item item-recipe outline-none cursor-pointer flex bg-gradient-to-tl from-orange-500 to-pink-600 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#recommendations">
                             <div class="self-center m-auto text-center">
                                 <i class="iconsminds-check text-3xl text-white block"></i>
                                 <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Recomendaciones</span>
@@ -22,7 +22,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="item item-recipe cursor-pointer flex bg-gradient-to-tl from-orange-500 to-pink-600 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#plans">
+                        <a class="item item-recipe outline-none cursor-pointer flex bg-gradient-to-tl from-orange-500 to-pink-600 rounded-lg mx-1 p-4 lg:p-2 box-border relative" href="#plans">
                             <div class="self-center m-auto text-center">
                                 <i class="iconsminds-file-clipboard-file---text text-3xl text-white block"></i>
                                 <span class="text-xs text-white lg:text-sm block m-auto whitespace-normal mt-2">Planes</span>
