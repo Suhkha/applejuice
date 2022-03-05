@@ -35,7 +35,7 @@ class RecommendationController extends Controller
         $userId = request('user_id');
         $user = UserDetails::where('user_id', $userId)->first();
 
-        return redirect()->route('profile.show', $user->id);
+        return redirect()->route('profile.show', array($user->id, '#recommendations'));
     }
 
     /**
@@ -64,6 +64,6 @@ class RecommendationController extends Controller
 
         $recommendation->save();
 
-        return redirect()->route('profile.show', request('profile_id'));
+        return redirect()->route('profile.show', array(request('profile_id'), '#recommendations'));
     }
 }

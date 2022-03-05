@@ -13,7 +13,7 @@
             
             <div class="col-span-2 md:col-span-1 md:grid">
                 <div class="card inline-block overflow-hidden">
-                    <div class="card__copy">
+                    <div class="card__copy pb-5">
                         <div class="card__body text-base pb-2">
                             <label class="block uppercase md:text-sm text-xs text-light font-semibold text-gray-700">Categoría: </label>
                             <span class="block mb-3">{{ $product->category->name }}</span>
@@ -24,6 +24,9 @@
 
                         <a href="{{ route('products.edit', $product->id) }}" class="bg-teal-400 text-white text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"  >Editar producto</a>
 
+                    </div>
+                    <div class='flex items-center justify-end pb-10 mx-3 md:mx-7'>
+                        <a href="{{ url()->previous() }}" class='text-teal-400'> < Regresar</a>
                     </div>
                 </div> 
             </div>

@@ -51,7 +51,7 @@ class CustomRecipeController extends Controller
 
         $userId = request('user_id');
         $user = UserDetails::where('user_id', $userId)->first();
-        return redirect()->route('profile.show', $user->id);
+        return redirect()->route('profile.show', array($user->id, '#recipes'));
     }
 
     /**
@@ -112,7 +112,7 @@ class CustomRecipeController extends Controller
 
         $userId = request('user_id');
         $user = UserDetails::where('user_id', $userId)->first();
-        return redirect()->route('profile.show', $user->id);
+        return redirect()->route('profile.show', array($user->id, '#recipes'));
     }
 
     /**

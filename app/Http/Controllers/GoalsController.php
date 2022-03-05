@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Goal;
+use App\Models\UserDetails;
 
 class GoalsController extends Controller
 {
@@ -41,7 +42,8 @@ class GoalsController extends Controller
             return redirect()->route('anthropometric', ['user_id' => $userId, 'type' => 'new']);
 
         }else{
-            return redirect()->route('profile.show', $userId);
+            $user = UserDetails::where('user_id', $userId)->first();
+            return redirect()->route('profile.show', array($user->id, '#goals'));
         }
     }
 
@@ -75,7 +77,7 @@ class GoalsController extends Controller
 
         $goal->save();
 
-        return redirect()->route('profile.show', request('profile_id'));
+        return redirect()->route('profile.show', array(request('profile_id'), '#goals'));
     }
 
     /**

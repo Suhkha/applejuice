@@ -50,7 +50,7 @@ class GynecologicalHistoryController extends Controller
                 
             }else{
                 $user = UserDetails::where('user_id', $userId)->first();
-                return redirect()->route('profile.show', $user->id);
+                return redirect()->route('profile.show', array($user->id, '#gynecological-history'));
             }
             
         }else{
@@ -94,7 +94,7 @@ class GynecologicalHistoryController extends Controller
 
         $gynecological->save();
 
-        return redirect()->route('profile.show', request('profile_id'));
+        return redirect()->route('profile.show', array(request('profile_id'), '#gynecological-history'));
     }
 
     /**
