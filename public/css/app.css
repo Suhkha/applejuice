@@ -722,6 +722,9 @@ ul,ol{
 .mb-8 {
   margin-bottom: 2rem;
 }
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
 .box-border {
   box-sizing: border-box;
 }

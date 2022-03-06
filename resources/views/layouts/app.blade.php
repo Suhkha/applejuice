@@ -110,6 +110,23 @@
                 slidesToScroll: 1,
             });
         }
+
+        if($('#recipe_id').length) {
+            $('#recipe_id').on('change', function(){
+                var id = $(this).val();
+                var url = '{{ url("/get-ingredients") }}' + "/" + id;
+            
+                $.ajax({
+                    type: "GET",
+                    async: false,
+                    cache: false,
+                    url: url,
+                    success:function(data){
+                        $('#ingredients_list').html('<div class="pt-5">' + data[0]['ingredients'] + '</div>')
+                    }
+                });
+            });
+        }
         
 </script>
 

@@ -39,6 +39,7 @@ use App\Http\Controllers\ResetPasswordAdminController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/get-ingredients/{id}', [CustomRecipeController::class, 'getIngredients'])->name('get-ingredients');
 
 Auth::routes();
 
