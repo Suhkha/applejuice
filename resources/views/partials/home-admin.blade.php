@@ -60,7 +60,7 @@
                     <div class="grid grid-cols-2 gap-5 md:gap-8">
                         <a class="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-pink-500 hover:to-orange-500 text-white md:p-4 py-2 block rounded outline-none focus:outline-none ease-linear transition-all duration-150" href="{{ route('facts.index') }}" title="Configura la información a mostrar del antropometrico aqui">Datos rápidos del antropométrico</a>
 
-                        <a class="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-pink-500 hover:to-orange-500 text-white md:p-4 py-2 block rounded outline-none focus:outline-none ease-linear transition-all duration-150" href="{{ route('facts.index') }}" title="Cambia tu contraseña aquí">Cambiar contraseña del admin</a>
+                        <a class="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-pink-500 hover:to-orange-500 text-white md:p-4 py-2 block rounded outline-none focus:outline-none ease-linear transition-all duration-150" href="{{ route('reset-admin-password') }}" title="Cambia tu contraseña aquí">Cambiar contraseña del admin</a>
                     </div>
                 </div>
             </div>

@@ -22,6 +22,8 @@ use App\Http\Controllers\CustomUserPlanController;
 use App\Http\Controllers\ProductsUserPanelController;
 use App\Http\Controllers\FactController;
 use App\Http\Controllers\RecommendationController;
+use App\Http\Controllers\ResetPasswordPanelController;
+use App\Http\Controllers\ResetPasswordAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -142,6 +144,11 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
         Route::get('/edit/{id}/{profile_id}', [RecommendationController::class, 'edit'])->name('edit-recommendation');
     });
     Route::resource('recommendation', RecommendationController::class);
+
+    Route::get('/random-user-password/{id}', [ResetPasswordAdminController::class, 'randomUserPassword'])->name('random-user-password');
+
+    Route::get('/reset-admin-password', [ResetPasswordAdminController::class, 'resetAdminPasswordForm'])->name('reset-admin-password');
+    Route::put('/update-admin-password', [ResetPasswordAdminController::class, 'resetAdminPassword'])->name('update-admin-password');
 });
 
 Route::group(['middleware' => ['auth', 'patient'], 'prefix' => 'patient'], function () {
@@ -153,4 +160,7 @@ Route::group(['middleware' => ['auth', 'patient'], 'prefix' => 'patient'], funct
     Route::get('/products', [ProductsUserPanelController::class, 'index'])->name('products');
     Route::get('/products/{category_id}', [ProductsUserPanelController::class, 'showCategoryProducts'])->name('category.products');
     Route::get('/product/{id}', [ProductsUserPanelController::class, 'show'])->name('product.show');
+
+    Route::get('/reset-password', [ResetPasswordPanelController::class, 'index'])->name('reset-password');
+    Route::put('/update-password', [ResetPasswordPanelController::class, 'updatePassword'])->name('update-password');
 });

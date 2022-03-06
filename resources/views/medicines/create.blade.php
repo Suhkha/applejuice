@@ -32,9 +32,11 @@
             <button class='bg-teal-400 text-white font-medium hover:bg-teal-300 text-md uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'>Guardar</button>
         </div>
 
-        <div class='flex items-center justify-end pb-10 mx-3 md:mx-7'>
-            <a href="{{ url()->previous() }}" class='text-teal-400'> < Regresar</a>
-        </div>
+        @if ($type == "profile")
+            <div class='flex items-center justify-end pb-10 mx-3 md:mx-7'>
+                <a href="{{ url()->previous() }}" class='text-teal-400'> < Regresar</a>
+            </div>
+        @endif
         
     </form>
 

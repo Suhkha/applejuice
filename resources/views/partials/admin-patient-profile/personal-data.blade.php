@@ -35,9 +35,12 @@
                 <span class="block mb-3 text-gray-500">{{ $user->username }}</span>
             @endif
 
-            @if (isset($user->password_plain))
+            @if ($user->password_plain != "")
                 <label class="block uppercase md:text-sm text-xs text-light font-semibold text-pink-500">Contraseña: </label>
                 <span class="block mb-3 text-gray-500">{{ $user->password_plain }}</span>
+            @else
+                {{-- } --}}
+                <a href="{{ route('random-user-password', ['id' => $user->id]) }}" class="bg-pink-400 text-white hover:bg-pink-300 text-xs font-bold uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 ease-linear transition-all duration-150 inline-block">Generar contraseña</a>
             @endif
 		</div>
 
