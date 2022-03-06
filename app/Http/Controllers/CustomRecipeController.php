@@ -22,6 +22,11 @@ class CustomRecipeController extends Controller
         return view('custom-recipes.create', compact('recipes', 'user_id', 'type'));
     }
 
+    public function getIngredients($id){
+        return Recipe::select('ingredients')->where('id', $id)->get();
+    }
+
+    
     /**
      * Store a newly created resource in storage.
      *

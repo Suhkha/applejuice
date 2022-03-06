@@ -11,12 +11,21 @@
 
         <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
             <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Selecciona la receta</label>
-            <select name="recipe" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" required>
+            <select id="recipe_id" name="recipe" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" required>
                 <option value="">Selecciona</option>
                 @foreach ($recipes as $recipe)
                     <option value="{{ $recipe->id }}">{{ $recipe->title }}</option>
                 @endforeach
             </select>
+        </div>
+
+        <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
+            <details open class="cursor-pointer w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300">
+                <summary class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">
+                    Checa los ingredientes base
+                </summary>
+                <div id="ingredients_list"></div>
+            </details>
         </div>
 
         <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
@@ -52,4 +61,5 @@
             </div>
         @endif
     </form>
+
 @endsection
