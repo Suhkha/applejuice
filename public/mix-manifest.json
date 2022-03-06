@@ -4,6 +4,7 @@
     "/font/.DS_Store": "/font/.DS_Store",
     "/img/.DS_Store": "/img/.DS_Store",
     "/img/breakfast-placeholder.jpg": "/img/breakfast-placeholder.jpg",
+    "/img/products-placeholder.jpg": "/img/products-placeholder.jpg",
     "/img/svelfit-logo-medium.png": "/img/svelfit-logo-medium.png",
     "/img/svelfit-logo-small.jpeg": "/img/svelfit-logo-small.jpeg",
     "/img/svelfit-logo.png": "/img/svelfit-logo.png",
@@ -13,6 +14,5 @@
     "/js/lib/jquery-3.6.0.min.js": "/js/lib/jquery-3.6.0.min.js",
     "/js/lib/jquery.add-input-area.min.js": "/js/lib/jquery.add-input-area.min.js",
     "/js/lib/jquery.dataTables.min.js": "/js/lib/jquery.dataTables.min.js",
-    "/js/lib/parsley.min.js": "/js/lib/parsley.min.js",
-    "/img/products-placeholder.jpg": "/img/products-placeholder.jpg"
+    "/js/lib/parsley.min.js": "/js/lib/parsley.min.js"
 }
