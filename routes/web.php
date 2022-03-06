@@ -146,6 +146,9 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
     Route::resource('recommendation', RecommendationController::class);
 
     Route::get('/random-user-password/{id}', [ResetPasswordAdminController::class, 'randomUserPassword'])->name('random-user-password');
+
+    Route::get('/reset-admin-password', [ResetPasswordAdminController::class, 'resetAdminPasswordForm'])->name('reset-admin-password');
+    Route::put('/update-admin-password', [ResetPasswordAdminController::class, 'resetAdminPassword'])->name('update-admin-password');
 });
 
 Route::group(['middleware' => ['auth', 'patient'], 'prefix' => 'patient'], function () {
