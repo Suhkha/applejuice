@@ -11,48 +11,64 @@
     </div>
 
     
-    @if (isset($data))
-        <div class="mx-auto lg:mx-0">
-            <div class="grid grid-cols-2 lg:grid-cols-4">
-                <div class="m-2 bg-gradient-to-tr from-blue-400 to-blue-600">
-                    <div class="flex flex-col p-6 relative">
-                        <p class="text-white font-bold text-xs uppercase">Peso</p>
-                        <i class="iconsminds-footprint-2 text-6xl text-white mt-4"></i>
-                        <p class="block mt-4 z-10 text-white ">
+    
+    <div class="mx-auto lg:mx-0">
+        <div class="grid grid-cols-2 lg:grid-cols-4">
+            <div class="m-2 bg-gradient-to-tr from-blue-400 to-blue-600">
+                <div class="flex flex-col p-6 relative">
+                    <p class="text-white font-bold text-xs uppercase">Peso</p>
+                    <i class="iconsminds-footprint-2 text-6xl text-white mt-4"></i>
+                    <p class="block mt-4 z-10 text-white ">
+                        @if (isset($data->weight))
                             <span class="text-3xl font-bold">{{ $data->weight }}</span>kg
-                        </p>
-                    </div>
+                        @else
+                            <span class="text-sm font-bold">Próximamente</span>
+                        @endif
+                    </p>
                 </div>
-                <div class="m-2 bg-gradient-to-tr from-pink-400 to-pink-600">
-                    <div class="flex flex-col p-6 relative">
-                        <p class="text-white font-bold text-xs uppercase">Grasa</p>
-                        <i class="icon-Cardiovascular text-6xl text-white mt-4"></i>
-                        <p class="block mt-4 z-10 text-white">
+            </div>
+            <div class="m-2 bg-gradient-to-tr from-pink-400 to-pink-600">
+                <div class="flex flex-col p-6 relative">
+                    <p class="text-white font-bold text-xs uppercase">Grasa</p>
+                    <i class="icon-Cardiovascular text-6xl text-white mt-4"></i>
+                    <p class="block mt-4 z-10 text-white">
+                        @if (isset($data->average_fat))
                             <span class="text-3xl font-bold">{{ $data->average_fat }}</span>%
-                        </p>
-                    </div>
+                        @else
+                            <span class="text-sm font-bold">Próximamente</span>
+                        @endif
+                    </p>
                 </div>
-                <div class="m-2 bg-gradient-to-tr from-orange-400 to-orange-600">
-                    <div class="flex flex-col p-6 relative">
-                        <p class="text-white font-bold text-xs uppercase">Músculo</p>
-                        <i class="iconsminds-weight-lift text-6xl text-white mt-4"></i>
-                        <p class="block mt-4 z-10 text-white">
+            </div>
+            <div class="m-2 bg-gradient-to-tr from-orange-400 to-orange-600">
+                <div class="flex flex-col p-6 relative">
+                    <p class="text-white font-bold text-xs uppercase">Músculo</p>
+                    <i class="iconsminds-weight-lift text-6xl text-white mt-4"></i>
+                    <p class="block mt-4 z-10 text-white">
+                        @if (isset($data->muscle_mass_kilo))
                             <span class="text-3xl font-bold">{{ $data->muscle_mass_kilo }}</span>kg
-                        </p>
-                    </div>
+                        @else
+                            <span class="text-sm font-bold">Próximamente</span>
+                        @endif
+                    </p>
                 </div>
-                <div class="m-2 bg-gradient-to-tr from-teal-400 to-teal-600">
-                    <div class="flex flex-col p-6 relative">
-                        <p class="text-white font-bold text-xs uppercase">Edad metabólica</p>
-                        <i class="iconsminds-clock-back text-6xl text-white mt-4"></i>
-                        <p class="block mt-4 z-10 text-white">
-                            <span class="text-3xl font-bold">{{ $data->metabolic_age }}</span> años
-                        </p>
-                    </div>
+            </div>
+            <div class="m-2 bg-gradient-to-tr from-teal-400 to-teal-600">
+                <div class="flex flex-col p-6 relative">
+                    <p class="text-white font-bold text-xs uppercase">Edad metabólica</p>
+                    <i class="iconsminds-clock-back text-6xl text-white mt-4"></i>
+                    <p class="block mt-4 z-10 text-white">
+                        @if (isset($data->metabolic_age))
+                            <span class="text-3xl font-bold">{{ $data->metabolic_age }}</span>años
+                        @else
+                            <span class="text-sm font-bold">Próximamente</span>
+                        @endif
+                    </p>
                 </div>
             </div>
         </div>
-    @endif
+    </div>
+    
     
     <div class="mx-auto lg:mx-0">
         <div class="grid grid-cols-1 lg:grid-cols-2">
@@ -69,7 +85,21 @@
                         <div class="overlay absolute top-0 w-full h-full bg-gradient-to-tr from-black to-black opacity-50"></div>
                     </a>
                 </div>
+            @else
+                <div class="m-2 bg-cover bg-no-repeat relative" style="background-image: url({{URL::asset('/img/breakfast-placeholder.jpg')}})">
+                    <div>
+                        <div class="flex flex-col p-6 relative z-10">
+                            <p class="text-white font-bold text-xs uppercase">Receta recomendada</p>
+                            <i class="iconsminds-chopsticks text-6xl text-white mt-4"></i>
+                            <p class="block mt-4 text-white text-2xl">
+                                Próximamente
+                            </p>
+                        </div>
+                        <div class="overlay absolute top-0 w-full h-full bg-gradient-to-tr from-black to-black opacity-50"></div>
+                    </div>
+                </div>
             @endif
+
             @if (isset($product))
                 <div class="m-2 bg-cover bg-no-repeat relative bg-center" style="background-image: url({{asset('/products/'.$product->image)}})">
                     <div class="flex flex-col p-6 relative z-10">
@@ -77,6 +107,17 @@
                         <i class="icon-Bar-Code text-6xl text-white mt-4"></i>
                         <p class="block mt-4 z-10 text-white text-2xl">
                             {{ $product->name }}
+                        </p>
+                    </div>
+                    <div class="overlay absolute top-0 w-full h-full bg-gradient-to-tr from-black to-black opacity-50"></div>
+                </div>
+            @else
+                <div class="m-2 bg-cover bg-no-repeat relative bg-center" style="background-image: url({{URL::asset('/img/products-placeholder.jpg')}})">
+                    <div class="flex flex-col p-6 relative z-10">
+                        <p class="text-white font-bold text-xs uppercase">Producto recomendado</p>
+                        <i class="icon-Bar-Code text-6xl text-white mt-4"></i>
+                        <p class="block mt-4 z-10 text-white text-2xl">
+                            Próximamente
                         </p>
                     </div>
                     <div class="overlay absolute top-0 w-full h-full bg-gradient-to-tr from-black to-black opacity-50"></div>

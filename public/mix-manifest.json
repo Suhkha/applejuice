@@ -13,5 +13,6 @@
     "/js/lib/jquery-3.6.0.min.js": "/js/lib/jquery-3.6.0.min.js",
     "/js/lib/jquery.add-input-area.min.js": "/js/lib/jquery.add-input-area.min.js",
     "/js/lib/jquery.dataTables.min.js": "/js/lib/jquery.dataTables.min.js",
-    "/js/lib/parsley.min.js": "/js/lib/parsley.min.js"
+    "/js/lib/parsley.min.js": "/js/lib/parsley.min.js",
+    "/img/products-placeholder.jpg": "/img/products-placeholder.jpg"
 }
