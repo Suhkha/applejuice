@@ -20,7 +20,11 @@ class BackgroundHistoryController extends Controller
         $pathologics = Background::where('type', 0)
                                 ->where('status', 1)
                                 ->get();
-        return view('background-history.pathologic-form', compact('pathologics', 'user_id', 'type'));
+        $deniedPathologics = Background::where('type', 0)
+                                ->where('status', 1)
+                                ->first();
+
+        return view('background-history.pathologic-form', compact('deniedPathologics', 'pathologics', 'user_id', 'type'));
     }
 
     /**
@@ -33,7 +37,11 @@ class BackgroundHistoryController extends Controller
         $pathologics = Background::where('type', 0)
                                 ->where('status', 1)
                                 ->get();
-        return view('background-history.hereditary-family-history-form', compact('pathologics', 'user_id', 'type'));
+
+        $deniedPathologics = Background::where('type', 0)
+                                ->where('status', 1)
+                                ->first();
+        return view('background-history.hereditary-family-history-form', compact('deniedPathologics', 'pathologics', 'user_id', 'type'));
     }
 
     /**
@@ -46,7 +54,12 @@ class BackgroundHistoryController extends Controller
         $noPathologics = Background::where('type', 1)
                                 ->where('status', 1)
                                 ->get();
-        return view('background-history.no-pathologic-form', compact('noPathologics', 'user_id', 'type'));
+
+        $deniedNoPathologics = Background::where('type', 1)
+                                ->where('status', 1)
+                                ->first();
+
+        return view('background-history.no-pathologic-form', compact('deniedNoPathologics', 'noPathologics', 'user_id', 'type'));
     }
 
     /**
