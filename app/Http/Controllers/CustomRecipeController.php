@@ -21,11 +21,6 @@ class CustomRecipeController extends Controller
         $recipes = Recipe::all();
         return view('custom-recipes.create', compact('recipes', 'user_id', 'type'));
     }
-
-    public function getIngredients($id){
-        return Recipe::select('ingredients')->where('id', $id)->get();
-    }
-
     
     /**
      * Store a newly created resource in storage.
@@ -35,25 +30,16 @@ class CustomRecipeController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->except('_token');
-
-        $recipe = new CustomRecipe;
-        $recipe->user_id = request('user_id');
-        $recipe->recipe_id = request('recipe');
-        $recipe->comments = request('comments');
-            
-        $recipe->save();
-
-        $lastId = DB::getPdo()->lastInsertId();
+        $recipes = $request->input('recipes');
         
-        for ($i=0; $i < (count($data) - 4); $i++) { 
-            $ingredients = new IngredientsList;
-            $ingredients->custom_recipe_id = $lastId;
-            $ingredients->ingredients = request('list-ingredients_'.$i);
+        foreach($recipes as $recipe_id){
+            $recipe = new CustomRecipe;
+            $recipe->user_id = request('user_id');
+            $recipe->recipe_id = $recipe_id;
             
-            $ingredients->save();
+            $recipe->save();
         }
-
+    
         $userId = request('user_id');
         $user = UserDetails::where('user_id', $userId)->first();
         return redirect()->route('profile.show', array($user->id, '#recipes'));
@@ -84,36 +70,11 @@ class CustomRecipeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->except('_token');
-
         $recipe = CustomRecipe::find($id);
         $recipe->comments = request('comments');
         $recipe->status = request('status');
             
         $recipe->save();
-
-        foreach($request->ingredients_id as $index => $ingredient){
-            if($request->ingredients[$index] == "") {
-                $recipe = IngredientsList::find($request->ingredients_id[$index]);
-                $recipe->delete();
-            }else{
-                $ingredients = IngredientsList::find($request->ingredients_id[$index]);
-                $ingredients->ingredients = $request->ingredients[$index];
-                
-                $ingredients->save();
-            }    
-        }
-
-
-        for ($i=0; $i < (count($data) - 4); $i++) { 
-            if(request('list-ingredients_'.$i) !=  "") {
-                $ingredients = new IngredientsList;
-                $ingredients->custom_recipe_id = $id;
-                $ingredients->ingredients = request('list-ingredients_'.$i);
-                
-                $ingredients->save();
-            }
-        }
 
         $userId = request('user_id');
         $user = UserDetails::where('user_id', $userId)->first();
