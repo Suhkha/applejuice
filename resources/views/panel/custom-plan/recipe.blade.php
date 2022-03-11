@@ -53,11 +53,7 @@
 
                                 <span class="font-bold uppercase text-sm mb-2 block">Ingredientes</span>
                                 <div class="text-sm text-gray-500 mb-4">
-                                    <ul class="">
-                                        @foreach ($plan->ingredients as $item)
-                                            <li>{{  $item->ingredients }}</li>
-                                        @endforeach
-                                    </ul>
+                                    {!! $plan->recipe[0]->ingredients !!}
                                 </div>
 
                                 <span class="font-bold uppercase text-sm mb-2 block">Procedimiento</span>

@@ -31,7 +31,6 @@ class CustomUserPlanController extends Controller
         $user_id = Auth::user()->id;
         $user = UserDetails::where('user_id', $user_id)->first();
         $plan = CustomRecipe::with('recipe')
-                                ->with('ingredients')
                                 ->where('recipe_id', $id)
                                 ->where('user_id', $user->user_id)
                                 ->where('status', 1)

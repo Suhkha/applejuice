@@ -11,44 +11,26 @@
 
         <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
             <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Selecciona la receta</label>
-            <select id="recipe_id" name="recipe" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" required>
-                <option value="">Selecciona</option>
-                @foreach ($recipes as $recipe)
-                    <option value="{{ $recipe->id }}">{{ $recipe->title }}</option>
-                @endforeach
-            </select>
-        </div>
-
-        <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
-            <details open class="cursor-pointer w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300">
-                <summary class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">
-                    Checa los ingredientes base
-                </summary>
-                <div id="ingredients_list"></div>
-            </details>
-        </div>
-
-        <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
-            <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Ingredientes y porciones personalizados</label>
-        </div>
-        <div id="list">
-            <div class="list_var">
-                <div class="grid grid-cols-1 mx-3 md:mx-7">
-                    <input type="text" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300"  data-name-format="list-ingredients_%d" name="ingredients[]" placeholder="Detalles"/>
+            <style>
+                .recipe-checkbox:checked {
+                    @apply: right-0 border-teal-400;
+                    right: 0;
+                    border-color: #2dd4bf;
+                }
+                .recipe-checkbox:checked + .recipe-label {
+                    @apply: bg-teal-400;
+                    background-color: #2dd4bf;
+                }
+            </style>
+            @foreach ($recipes as $recipe)
+            <div class="flex items-center mt-4">
+                <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                    <input type="checkbox" name="recipes[]" id="recipe-{{ $recipe->id }}" class="recipe-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" value="{{ $recipe->id }}"/>
+                    <label for="recipe-{{ $recipe->id }}" class="recipe-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
                 </div>
-                <div class='flex items-center justify-end pb-5 pt-3 mx-7'>
-                    <button class="bg-red-500 text-white hover:bg-red-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 list_del">Eliminar</button>
-                </div>
+                <label for="recipe-{{ $recipe->id }}" class=" inline-block md:text-sm text-xs text-light font-semibold">{{ $recipe->title }}</label>
             </div>
-        </div>
-        
-        <div class='flex items-center justify-start pt-5 pb-3 mx-7'>
-            <input value="Añadir ingrediente" type="button" class="bg-blue-400 text-white font-medium hover:bg-blue-300 text-xs uppercase md:px-6 px-3 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 cursor-pointer list_add">
-        </div>
-
-        <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
-            <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Comentarios</label>
-            <textarea class="styled w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" name="comments" placeholder="Comentarios"></textarea>
+            @endforeach
         </div>
 
         <div class='flex items-center justify-end md:gap-8 gap-4 pt-10 pb-5 mt-5 mx-3 md:mx-7'>
