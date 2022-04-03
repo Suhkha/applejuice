@@ -16,6 +16,6 @@
             </div>
         </form>
 
-        <a href="{{ route('profile.show', [$id]) }}" class="text-teal-400 mt-4">Regresar al perfil</a>
+        <a href="{{ route('profile.show', $id) }}" class="text-teal-400 mt-4">Regresar al perfil</a>
     </div>
 @endsection

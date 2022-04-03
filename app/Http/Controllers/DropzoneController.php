@@ -15,11 +15,11 @@ class DropzoneController extends Controller
      *
      * @return void
      */
-    public function gallery($id)
+    public function gallery($userId)
     {   
-        $userDetails = UserDetails::find($id)->first();
+        $userDetails = UserDetails::where('user_id', $userId)->first();
         $name = $userDetails->name;
-        $userId = $userDetails->user_id;
+        $id = $userDetails->id;
 
         return view('admin-profile.gallery.index', compact('id', 'name', 'userId'));
     }
@@ -45,11 +45,11 @@ class DropzoneController extends Controller
         return "yes";
     }
 
-    public function pdf($id)
+    public function pdf($userId)
     {   
-        $userDetails = UserDetails::find($id)->first();
+        $userDetails = UserDetails::where('user_id', $userId)->first();
         $name = $userDetails->name;
-        $userId = $userDetails->user_id;
+        $id = $userDetails->id;
 
         return view('admin-profile.pdf.index', compact('id', 'name', 'userId'));
     }
