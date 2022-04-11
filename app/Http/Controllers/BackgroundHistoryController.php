@@ -7,6 +7,7 @@ use App\Models\Background;
 use App\Models\BackgroundHistory;
 use App\Models\HereditaryFamilyHistory;
 use App\Models\UserDetails;
+use DB;
 
 class BackgroundHistoryController extends Controller
 {
@@ -20,11 +21,8 @@ class BackgroundHistoryController extends Controller
         $pathologics = Background::where('type', 0)
                                 ->where('status', 1)
                                 ->get();
-        $deniedPathologics = Background::where('type', 0)
-                                ->where('status', 1)
-                                ->first();
 
-        return view('background-history.pathologic-form', compact('deniedPathologics', 'pathologics', 'user_id', 'type'));
+        return view('background-history.pathologic-form', compact('pathologics', 'user_id', 'type'));
     }
 
     /**
@@ -55,11 +53,7 @@ class BackgroundHistoryController extends Controller
                                 ->where('status', 1)
                                 ->get();
 
-        $deniedNoPathologics = Background::where('type', 1)
-                                ->where('status', 1)
-                                ->first();
-
-        return view('background-history.no-pathologic-form', compact('deniedNoPathologics', 'noPathologics', 'user_id', 'type'));
+        return view('background-history.no-pathologic-form', compact('noPathologics', 'user_id', 'type'));
     }
 
     /**
@@ -70,16 +64,34 @@ class BackgroundHistoryController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->except('_token');
-
-        for ($i=0; $i < (((count($data) - 3) / 2)); $i++) { 
+        
+        $pathologicIDS = $request->input('pathologicIDS');
+        foreach($pathologicIDS as $i => $background_id){
             $pathologic = new BackgroundHistory;
             $pathologic->user_id = request('user_id');
-            $pathologic->background_id = request('list-background_'.$i);
-            $pathologic->comments = request('list-comments_'.$i) == "" ? "" : request('list-comments_'.$i);
+            $pathologic->background_id = $background_id;
+            $pathologic->comments = request('comments')[$i];
+            
             $pathologic->save();
         }
 
+        $data = $request->except('_token');
+        if(request('list-name_0') != null) {
+            for ($i=0; $i < (((count($data) - 5) / 2)); $i++) { 
+                $background = new Background;
+                $background->name = request('list-name_'.$i) == "" ? "" : request('list-name_'.$i);
+                $background->details = 'Sin comentarios';
+                $background->type = request('no-pathologic-form') == 'true' ? 1 : 0; 
+                $background->status = 0; // Si es 0 entonces el antecedente no saldra en los predeterminados
+                $background->save();
+            
+                $pathologic = new BackgroundHistory;
+                $pathologic->user_id = request('user_id');
+                $pathologic->background_id = DB::getPdo()->lastInsertId();
+                $pathologic->comments = request('list-comments_'.$i) == "" ? "" : request('list-comments_'.$i);
+                $pathologic->save();
+            }
+        }
         $userId = request('user_id');
 
         if(request('type') == 'new') {
