@@ -32,14 +32,11 @@ class BackgroundHistoryController extends Controller
      */
     public function createHereditaryFamilyHistory($user_id, $type)
     {
-        $pathologics = Background::where('type', 0)
+        $historyPathologics = Background::where('type', 2)
                                 ->where('status', 1)
                                 ->get();
 
-        $deniedPathologics = Background::where('type', 0)
-                                ->where('status', 1)
-                                ->first();
-        return view('background-history.hereditary-family-history-form', compact('deniedPathologics', 'pathologics', 'user_id', 'type'));
+        return view('background-history.hereditary-family-history-form', compact('historyPathologics', 'user_id', 'type'));
     }
 
     /**
@@ -116,19 +113,36 @@ class BackgroundHistoryController extends Controller
      */
     public function storeHereditaryFamilyHistory(Request $request)
     {
-        $data = $request->except('_token');
-
-        for ($i=0; $i < (((count($data) - 3) / 2)); $i++) { 
-            $pathologic = new HereditaryFamilyHistory;
+        
+        $pathologicIDS = $request->input('pathologicIDS');
+        foreach($pathologicIDS as $i => $background_id){
+            $pathologic = new BackgroundHistory;
             $pathologic->user_id = request('user_id');
-            $pathologic->name = "Heredado";
-            $pathologic->background_id = request('list-background_'.$i);
-            $pathologic->comments = request('list-comments_'.$i) == "" ? "" : request('list-comments_'.$i);
+            $pathologic->background_id = $background_id;
+            $pathologic->comments = request('comments')[$i];
+            
             $pathologic->save();
         }
 
+        $data = $request->except('_token');
+        if(request('list-name_0') != null) {
+            for ($i=0; $i < (((count($data) - 5) / 2)); $i++) { 
+                $background = new Background;
+                $background->name = request('list-name_'.$i) == "" ? "" : request('list-name_'.$i);
+                $background->details = 'Sin comentarios';
+                $background->type = 2; 
+                $background->status = 0; // Si es 0 entonces el antecedente no saldra en los predeterminados
+                $background->save();
+            
+                $pathologic = new BackgroundHistory;
+                $pathologic->user_id = request('user_id');
+                $pathologic->background_id = DB::getPdo()->lastInsertId();
+                $pathologic->comments = request('list-comments_'.$i) == "" ? "" : request('list-comments_'.$i);
+                $pathologic->save();
+            }
+        }
         $userId = request('user_id');
-        
+
         if(request('type') == 'new') {
             return redirect()->route('no-pathologic', ['user_id' => $userId, 'type' => 'new']);
 
@@ -180,9 +194,9 @@ class BackgroundHistoryController extends Controller
      */
     public function editHereditary($id, $profile_id)
     {
-        $hereditary = HereditaryFamilyHistory::with('hereditary')->where('id', $id)->first();
+        $hereditary = BackgroundHistory::with('background')->where('id', $id)->first();
 
-        $pathologics = Background::where('type', 1)
+        $pathologics = Background::where('type', 2)
                                 ->where('status', 1)
                                 ->get();
                                 
@@ -209,7 +223,7 @@ class BackgroundHistoryController extends Controller
 
     public function updateHereditary(Request $request, $id)
     {
-        $hereditary = HereditaryFamilyHistory::find($id);
+        $hereditary = BackgroundHistory::find($id);
         $hereditary->background_id = request('background_id');
         $hereditary->comments = request('comments') == "" ? "" : request('comments');
         $hereditary->save();

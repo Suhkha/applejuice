@@ -31,25 +31,27 @@
         </thead>
         <tbody>
             @foreach ($hereditary as $item)
-                <tr>
-                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700 ">
-                        {{ $item->hereditary[0]->name }}
-                    </td>
-                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700 ">
-                        {{ $item->hereditary[0]->type == 0 ? 'Patológico' : 'No patológico' }}
-                    </td>
+                @if (isset($item->hereditary_background[0]))
+                    <tr>
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700 ">
+                            {{ $item->hereditary_background[0]->name }}
+                        </td>
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700 ">
+                            <span class="text-pink-600 text-center text-sm uppercase">Heredo Familiar</span>
+                        </td>
 
-                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700 ">
-                        {!! $item->comments ? $item->comments : "Sin comentarios" !!}
-                    </td>
-                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700 ">
-                        <a href="{{ route('edit-hereditary', ['id' => $item->id, 'profile_id' => $userDetail->id]) }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"  >Editar</a>
-                    </td>
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700 ">
+                            {!! $item->comments ? $item->comments : "Sin comentarios" !!}
+                        </td>
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700 ">
+                            <a href="{{ route('edit-hereditary', ['id' => $item->id, 'profile_id' => $userDetail->id]) }}" class="bg-teal-400 text-white hover:bg-teal-300 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"  >Editar</a>
+                        </td>
 
-                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700 ">
-                        <a href="#" data-delete="{{ route('delete-hereditary', $item->id) }}" data-toggle="tooltip" data-placement="top" title="Eliminar registro" class="delete-item bg-red-500 text-white hover:bg-red-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">Eliminar</a>
-                    </td>
-                </tr>
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700 ">
+                            <a href="#" data-delete="{{ route('delete-hereditary', $item->id) }}" data-toggle="tooltip" data-placement="top" title="Eliminar registro" class="delete-item bg-red-500 text-white hover:bg-red-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">Eliminar</a>
+                        </td>
+                    </tr>
+                @endif
             @endforeach
         </tbody>
     </table>

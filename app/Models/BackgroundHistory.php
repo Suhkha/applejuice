@@ -23,4 +23,13 @@ class BackgroundHistory extends Model
     public function background(){
         return $this->hasMany('App\Models\Background', 'id', 'background_id');
     }
+
+    public function normal_background() {
+        return $this->background()->where('type','!=', 2);
+    }
+
+    public function hereditary_background() {
+        return $this->background()->where('type','=', 2);
+    }
+    
 }

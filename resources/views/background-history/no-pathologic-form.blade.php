@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('partials.hero-form', ['sectionTitle' => 'Antecedents patológicos'])
+    @include('partials.hero-form', ['sectionTitle' => 'Antecedentes no patológicos'])
 
     <form action="{{ route('history.store') }}" class="svelfit-form"   method="POST">
         @csrf
