@@ -81,8 +81,6 @@ class CategoryProductsController extends Controller
         if($request->file('cover')) {
             if(File::exists(public_path('category-products/'.$category->cover))){
                 File::delete(public_path('category-products/'.$category->cover));
-            }else{
-                dd('File does not exists.');
             }
             
             $file = $request->file('cover');
@@ -109,8 +107,6 @@ class CategoryProductsController extends Controller
         $category = CategoryProduct::find($id);
         if(File::exists(public_path('category-products/'.$category->cover))){
             File::delete(public_path('category-products/'.$category->cover));
-        }else{
-            dd('File does not exists.');
         }
 
         $category->delete();

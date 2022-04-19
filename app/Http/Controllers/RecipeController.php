@@ -111,8 +111,6 @@ class RecipeController extends Controller
         if($request->file('image')) {
             if(File::exists(public_path('recipes/'.$recipe->image))){
                 File::delete(public_path('recipes/'.$recipe->image));
-            }else{
-                dd('File does not exists.');
             }
             
             $file = $request->file('image');
@@ -139,9 +137,8 @@ class RecipeController extends Controller
         $recipe = Recipe::find($id);
         if(File::exists(public_path('recipes/'.$recipe->image))){
             File::delete(public_path('recipes/'.$recipe->image));
-        }else{
-            dd('File does not exists.');
         }
+        
         $recipe->delete();
 
         return redirect()->back();
