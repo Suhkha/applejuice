@@ -37,15 +37,15 @@ class BackgroundSeeder extends Seeder
             $noPathologic->save();
         }
 
-        $history = ["DM","HTA", "Cáncer"];
+        $histories = ["DM","HTA", "Cáncer"];
 
-        for ($i=0; $i < count($history); $i++) { 
-            $pathologic = new Background;
-            $pathologic->name = $history[$i];
-            $pathologic->details = 'Sin comentarios';
-            $pathologic->type = 2;
-            $pathologic->status = 1;
-            $pathologic->save();
+        for ($i=0; $i < count($histories); $i++) { 
+            $history = new Background;
+            $history->name = $history[$i];
+            $history->details = 'Sin comentarios';
+            $history->type = 2;
+            $history->status = 1;
+            $history->save();
         }
     }
 }
