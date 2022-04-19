@@ -87,8 +87,6 @@ class DropzoneController extends Controller
         $pdf = Pdf::find($id);
         if(File::exists(public_path('pdf/'.$pdf->pdf))){
             File::delete(public_path('pdf/'.$pdf->pdf));
-        }else{
-            dd('File does not exists.');
         }
 
         $pdf->delete();
