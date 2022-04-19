@@ -41,7 +41,7 @@ class BackgroundSeeder extends Seeder
 
         for ($i=0; $i < count($histories); $i++) { 
             $history = new Background;
-            $history->name = $history[$i];
+            $history->name = $histories[$i];
             $history->details = 'Sin comentarios';
             $history->type = 2;
             $history->status = 1;
