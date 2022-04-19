@@ -1,4 +1,18 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/font/.DS_Store": "/font/.DS_Store",
+    "/img/.DS_Store": "/img/.DS_Store",
+    "/img/breakfast-placeholder.jpg": "/img/breakfast-placeholder.jpg",
+    "/img/products-placeholder.jpg": "/img/products-placeholder.jpg",
+    "/img/svelfit-logo-medium.png": "/img/svelfit-logo-medium.png",
+    "/img/svelfit-logo-small.jpeg": "/img/svelfit-logo-small.jpeg",
+    "/img/svelfit-logo.png": "/img/svelfit-logo.png",
+    "/img/svelfit-success.svg": "/img/svelfit-success.svg",
+    "/js/lib/chartisan_echarts.js": "/js/lib/chartisan_echarts.js",
+    "/js/lib/echarts.min.js": "/js/lib/echarts.min.js",
+    "/js/lib/jquery-3.6.0.min.js": "/js/lib/jquery-3.6.0.min.js",
+    "/js/lib/jquery.add-input-area.min.js": "/js/lib/jquery.add-input-area.min.js",
+    "/js/lib/jquery.dataTables.min.js": "/js/lib/jquery.dataTables.min.js",
+    "/js/lib/parsley.min.js": "/js/lib/parsley.min.js"
 }
