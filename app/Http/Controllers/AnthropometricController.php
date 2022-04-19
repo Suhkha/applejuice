@@ -15,7 +15,8 @@ class AnthropometricController extends Controller
      */
     public function create($user_id, $type)
     {
-        return view('anthropometric.create', compact('user_id', 'type'));
+        $lastAnthropometric = Anthropometric::where('user_id', $user_id)->latest('id')->first();
+        return view('anthropometric.create', compact('lastAnthropometric', 'user_id', 'type'));
     }
 
     /**
