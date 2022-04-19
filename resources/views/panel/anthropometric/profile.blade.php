@@ -15,7 +15,7 @@
             </div>
         
         <div class="w-1/5 inline-block mr-4 ml-2 self-start">
-            <span class="text-sm text-right block pb-2 mr-1">{{ $user->age }} años</span>
+            <span class="text-sm text-right block pb-2 mr-1">{{ isset($user->age) ? $user->age . ' años' : '' }} </span>
         </div>
     </div>
 

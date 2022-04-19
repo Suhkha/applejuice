@@ -110,6 +110,13 @@
                 slidesToScroll: 1,
             });
         }
+
+        $('form input').keydown(function (e) {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                return false;
+            }
+        });
 </script>
 
 </body>
