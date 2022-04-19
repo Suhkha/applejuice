@@ -15,7 +15,7 @@ class BackgroundSeeder extends Seeder
      */
     public function run()
     {
-        $pathologics = ["Negado", "DM","HTA","Colitis","Gastritis","Deposiciones","Diarrea","Agruras","Estreñimiento","Vómito","Hipertiroidismo","Hipotiroidismo","Otros","Quirúrgicos","Cáncer"];
+        $pathologics = ["Negado", "DM","HTA","Colitis","Gastritis","Deposiciones","Diarrea","Agruras","Estreñimiento","Vómito","Hipertiroidismo","Hipotiroidismo","Otros","Quirúrgicos"];
 
         for ($i=0; $i < count($pathologics); $i++) { 
             $pathologic = new Background;
@@ -26,7 +26,7 @@ class BackgroundSeeder extends Seeder
             $pathologic->save();
         }
 
-        $noPathologics = ["Negado","Cigarros","Drogas","Alcohol","Actividad física","Horas de sueño","Lugar de alimentos","Quién los prepara?","Alergías"];
+        $noPathologics = ["Cigarros","Drogas","Alcohol","Actividad física","Horas de sueño","Lugar de alimentos","Quién los prepara?","Alergías"];
 
         for ($j=0; $j < count($noPathologics); $j++) {
             $noPathologic = new Background;
@@ -35,6 +35,17 @@ class BackgroundSeeder extends Seeder
             $noPathologic->type = 1;
             $noPathologic->status = 1;
             $noPathologic->save();
+        }
+
+        $history = ["DM","HTA", "Cáncer"];
+
+        for ($i=0; $i < count($history); $i++) { 
+            $pathologic = new Background;
+            $pathologic->name = $history[$i];
+            $pathologic->details = 'Sin comentarios';
+            $pathologic->type = 2;
+            $pathologic->status = 1;
+            $pathologic->save();
         }
     }
 }

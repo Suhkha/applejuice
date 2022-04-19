@@ -105,8 +105,6 @@ class ProductController extends Controller
         if($request->file('image')) {
             if(File::exists(public_path('products/'.$product->image))){
                 File::delete(public_path('products/'.$product->image));
-            }else{
-                dd('File does not exists.');
             }
             
             $file = $request->file('image');
@@ -144,8 +142,6 @@ class ProductController extends Controller
         $product = Product::find($id);
         if(File::exists(public_path('products/'.$product->image))){
             File::delete(public_path('products/'.$product->image));
-        }else{
-            dd('File does not exists.');
         }
 
         $product->delete();
