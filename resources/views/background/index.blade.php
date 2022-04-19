@@ -48,7 +48,19 @@
                                     {!! $item->details !!}
                                 </td>
                                 <td class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    {{ $item->type == 0 ? 'Patológico' : 'No patológico' }}
+                                    @switch($item->type)
+                                        @case(0)
+                                            <span class="text-orange-600 text-center uppercase">Patológico</span>
+                                            @break
+                                        @case(1)
+                                            <span class="text-cyan-600 text-center uppercase">No Patológico</span>
+                                            @break
+                                        @case(2)
+                                            <span class="text-pink-600 text-center uppercase">Heredo Familiar</span>
+                                            @break
+                                        @default
+                                            
+                                    @endswitch
                                 </td>
                                 <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                     {{ $item->status == 0 ? 'No activo' : 'Activo' }}

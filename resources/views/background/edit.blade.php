@@ -24,6 +24,7 @@
                     <option value="{{ $background->type }}">{{ $background->type == 0 ? 'Patológico' : 'No patológico' }}</option>
                     <option value="0">Patológico</option>
                     <option value="1">No patológico</option>
+                    <option value="2">Heredo familiar</option>
                 </select>
             </div>
 

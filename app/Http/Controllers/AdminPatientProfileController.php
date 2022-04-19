@@ -31,8 +31,8 @@ class AdminPatientProfileController extends Controller
         $user = User::find($userDetail->user_id);
         $gallery = Gallery::where('user_id', $userDetail->user_id)->get();
         $anthropometrics = Anthropometric::where('user_id', $userDetail->user_id)->get();
-        $background = BackgroundHistory::with('background')->where('user_id', $userDetail->user_id)->get();
-        $hereditary = HereditaryFamilyHistory::with('hereditary')->where('user_id', $userDetail->user_id)->get();
+        $backgrounds = BackgroundHistory::with('normal_background')->where('user_id', $userDetail->user_id)->get();
+        $hereditary = BackgroundHistory::with('hereditary_background')->where('user_id', $userDetail->user_id)->get();
         $medicines = Medicine::where('user_id', $userDetail->user_id)->get();
         $gynecological = GynecologicalHistory::with('gynecological')->where('user_id', $userDetail->user_id)->first();
         $goal = Goal::with('goal')->where('user_id', $userDetail->user_id)->first();
@@ -40,8 +40,8 @@ class AdminPatientProfileController extends Controller
         $treatment = Treatment::where('user_id', $userDetail->user_id)->first();
         $recipes = CustomRecipe::with('recipe')->where('user_id', $userDetail->user_id)->groupBy('recipe_id')->get();
         $recommendation = Recommendation::where('user_id', $userDetail->user_id)->first();
-
-        return view('admin-profile.show', compact('user', 'gallery', 'userDetail', 'anthropometrics', 'background', 'hereditary', 'medicines', 'gynecological', 'goal', 'pdfs', 'treatment', 'recipes', 'recommendation'));
+        //return $hereditary; exit;
+        return view('admin-profile.show', compact('user', 'gallery', 'userDetail', 'anthropometrics', 'backgrounds', 'hereditary', 'medicines', 'gynecological', 'goal', 'pdfs', 'treatment', 'recipes', 'recommendation'));
     }
 
     /**
