@@ -2,7 +2,7 @@
     <div class="flex bg-teal-400 mb-4 rounded-lg ">
         <div class="w-3/4 m-auto inline-block py-3">
             <div class=" text-sm text-center self-center text-white">
-                {{ $facts->metabolic_age != "" ? $facts->metabolic_age : 'Svelfit' }}
+                {{ isset($facts->metabolic_age) ? $facts->metabolic_age : 'Svelfit' }}
             </div>
         </div>
     </div>
