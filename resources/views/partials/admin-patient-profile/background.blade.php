@@ -38,7 +38,11 @@
                             {{ $item->normal_background[0]->name }}
                         </td>
                         <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700 ">
-                        {{ $item->normal_background[0]->type}}
+                            @if($item->normal_background[0]->type == 0)
+                                <span class="text-teal-400 text-center text-sm uppercase">Patológico</span>
+                            @elseif($item->normal_background[0]->type == 1)
+                                <span class="text-orange-600 text-center text-sm uppercase">No patológico</span>
+                            @endif
                         </td>
 
                         <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700 ">

@@ -1,8 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/font/.DS_Store": "/font/.DS_Store",
-    "/img/.DS_Store": "/img/.DS_Store",
     "/img/breakfast-placeholder.jpg": "/img/breakfast-placeholder.jpg",
     "/img/products-placeholder.jpg": "/img/products-placeholder.jpg",
     "/img/svelfit-logo-medium.png": "/img/svelfit-logo-medium.png",

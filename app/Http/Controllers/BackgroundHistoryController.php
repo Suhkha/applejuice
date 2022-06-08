@@ -241,7 +241,7 @@ class BackgroundHistoryController extends Controller
 
     public function deleteHereditary($id)
     {
-        $hereditary = HereditaryFamilyHistory::find($id);
+        $hereditary = BackgroundHistory::find($id);
         $hereditary->delete();
 
         return redirect()->back();
