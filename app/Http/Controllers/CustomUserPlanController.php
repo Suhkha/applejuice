@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\UserDetails;
 use App\Models\CustomRecipe;
 use App\Models\Pdf;
+use App\Models\Recommendation;
 
 class CustomUserPlanController extends Controller
 {
@@ -19,10 +20,11 @@ class CustomUserPlanController extends Controller
                                 ->where('status', 1)
                                 ->groupBy('recipe_id')
                                 ->get();
-        
+        $recommendations = Recommendation::where('user_id', $user->user_id)->first();
+
         $pdfs = Pdf::where('user_id', $user->user_id)->orderBy('created_at', 'desc')->get();
 
-        return view('panel.custom-plan', compact('user', 'recipes', 'pdfs'));  
+        return view('panel.custom-plan', compact('user', 'recipes', 'recommendations', 'pdfs'));  
         
     }
 
