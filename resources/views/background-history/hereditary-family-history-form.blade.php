@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('partials.hero-form', ['sectionTitle' => 'Antecedents heredo familiares'])
+    @include('partials.hero-form', ['sectionTitle' => 'Antecedentes heredo familiares'])
 
     <form action="{{ route('history.store-hereditary-family-history') }}" class="svelfit-form"   method="POST">
         @csrf
@@ -30,7 +30,7 @@
         <div id="list">
             <div class="list_var">
                 <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
-                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Nombre del antecedente patologico</label>
+                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Nombre del antecedente heredo familiar</label>
                     <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" data-name-format="list-name_%d" name="name[]" placeholder="Nombre"  />
                 </div>
 

@@ -22,10 +22,10 @@
                     <span class="block text-light mb-3">{{ $goal->favorite_aliments }}</span>
         
                     <label class="block uppercase text-light font-semibold">Objetivos: </label>
-                    <span class="block text-light mb-3">{{ $goal->main_goals }}</span>
+                    <span class="block text-light mb-3">{{ $goal->main_goal }}</span>
                 
                     <label class="block uppercase text-light font-semibold">Métodos adicionales: </label>
-                    <span class="block text-light mb-3">{{ $goal->additional_methods }}</span>
+                    <span class="block text-light mb-3">{{ $goal->additional_method }}</span>
                     
                     <label class="block uppercase text-light font-semibold">Comentarios: </label>
                     <span class="block text-light mb-3">{!! $goal->comments !!}</span>

@@ -11,13 +11,7 @@
         <div class="w-4/5 inline-block ml-4">
             <div class="text-sm md:text-base mb-2 self-center">Recomendaciones</div>
             <div class="text-sm md:text-base text-gray-500 mb-4">
-                <ul>
-                    <li>Consumir probióticos</li>
-                    <li>Tomar suficiente agua</li>
-                    <li>Puedes acompañar tus comidas con agua de sabor: jamaica, pepino, limon, menta, hierbabuena, endulzada con stevia o fruto del monje</li>
-                    <li>Descanso de 7 a 8 hrs</li>
-                    <li>Masticar mas lento 25 veces</li>
-                </ul>
+               {!! $recommendations->recommendation !!} 
             </div>
         </div>
             
