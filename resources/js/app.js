@@ -5,6 +5,7 @@ import Gallery from './components/gallery'
 import Pdf from './components/pdf'
 import GenericDelete from './components/generic-delete'
 import CustomTextarea from './components/custom-textarea'
+import CancelAppointment from './components/cancel-appointment'
 
 function main() {
     PicturesProfile()
@@ -13,6 +14,7 @@ function main() {
     Pdf()
     GenericDelete()
     CustomTextarea()
+    CancelAppointment()
 }
 
 $(document).ready(main)

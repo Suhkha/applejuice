@@ -112,6 +112,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
 
     Route::group(['prefix' => 'agenda'], function () {
         Route::get('/create/{user_id}', [AgendaController::class, 'create'])->name('agenda');
+        Route::get('/cancel-appointment/{user_id}', [AgendaController::class, 'cancelAppointment'])->name('cancel-appointment');
     });
     Route::resource('agenda', AgendaController::class);
 

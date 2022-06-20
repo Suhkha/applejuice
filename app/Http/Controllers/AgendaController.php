@@ -65,4 +65,12 @@ class AgendaController extends Controller
 
         return redirect()->route('patients.index');
     }
+
+    public function cancelAppointment($user_id)
+    {
+        $agenda = Agenda::where('user_id',$user_id)->first();
+        $agenda->delete();
+
+        return redirect()->back();
+    }
 }
