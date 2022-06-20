@@ -15,7 +15,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_pdf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/pdf */ "./resources/js/components/pdf.js");
 /* harmony import */ var _components_generic_delete__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/generic-delete */ "./resources/js/components/generic-delete.js");
 /* harmony import */ var _components_custom_textarea__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/custom-textarea */ "./resources/js/components/custom-textarea.js");
+/* harmony import */ var _components_cancel_appointment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/cancel-appointment */ "./resources/js/components/cancel-appointment.js");
 //require('./bootstrap');
+
 
 
 
@@ -30,9 +32,55 @@ function main() {
   (0,_components_pdf__WEBPACK_IMPORTED_MODULE_3__["default"])();
   (0,_components_generic_delete__WEBPACK_IMPORTED_MODULE_4__["default"])();
   (0,_components_custom_textarea__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  (0,_components_cancel_appointment__WEBPACK_IMPORTED_MODULE_6__["default"])();
 }
 
 $(document).ready(main);
+
+/***/ }),
+
+/***/ "./resources/js/components/cancel-appointment.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/cancel-appointment.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var sweetalert2_src_sweetalert2_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sweetalert2/src/sweetalert2.scss */ "./node_modules/sweetalert2/src/sweetalert2.scss");
+
+
+
+var init = function init() {
+  $(document).ready(function () {
+    $('.cancel-appointment').on('click', onClickCancelAppointment);
+  });
+
+  function onClickCancelAppointment() {
+    var urlDelete = $(this).data('delete');
+    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+      icon: 'error',
+      title: '¿Desea cancelar esta cita?',
+      text: "La cita no se podrá recuperar y se deberá re-agendar.",
+      type: 'error',
+      showCancelButton: true,
+      confirmButtonColor: '#ef4444',
+      cancelButtonText: 'No cancelar cita',
+      confirmButtonText: 'Sí, cancelar cita'
+    }).then(function (result) {
+      if (result.value) {
+        location.href = urlDelete;
+      }
+    });
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (init);
 
 /***/ }),
 

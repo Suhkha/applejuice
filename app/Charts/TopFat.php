@@ -21,18 +21,18 @@ class TopFat extends BaseChart
 
     public function handler(Request $request): Chartisan
     {
-        $fat = Anthropometric::select('user_id', 'average_fat', 'created_at')
-                    ->whereMonth('created_at', date('m'))
-                    ->whereYear('created_at', date('Y'))
+        $fat = Anthropometric::select('user_id', 'average_fat', 'appointment')
+                    ->whereMonth('appointment', date('m'))
+                    ->whereYear('appointment', date('Y'))
                     ->groupBy('user_id')
                     ->orderBy('average_fat', 'ASC')
                     ->pluck('average_fat')
                     ->take(5)
                     ->toArray();
 
-        $dataPatient = Anthropometric::select('user_id', 'average_fat', 'created_at')
-                    ->whereMonth('created_at', date('m'))
-                    ->whereYear('created_at', date('Y'))
+        $dataPatient = Anthropometric::select('user_id', 'average_fat', 'appointment')
+                    ->whereMonth('appointment', date('m'))
+                    ->whereYear('appointment', date('Y'))
                     ->groupBy('user_id')
                     ->orderBy('average_fat', 'ASC')
                     ->pluck('user_id')

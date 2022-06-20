@@ -21,20 +21,20 @@ class TopMuscle extends BaseChart
 
     public function handler(Request $request): Chartisan
     {
-        $muscle = Anthropometric::select('user_id', 'muscle_mass_kilo', 'created_at')
-                    ->whereMonth('created_at', date('m'))
-                    ->whereYear('created_at', date('Y'))
+        $muscle = Anthropometric::select('user_id', 'muscle_mass_kilo', 'appointment')
+                    ->whereMonth('appointment', date('m'))
+                    ->whereYear('appointment', date('Y'))
                     ->groupBy('user_id')
-                    ->orderBy('created_at', 'DESC')
+                    ->orderBy('appointment', 'DESC')
                     ->pluck('muscle_mass_kilo')
                     ->take(5)
                     ->toArray();
 
-        $dataPatient = Anthropometric::select('user_id', 'muscle_mass_kilo', 'created_at')
-                    ->whereMonth('created_at', date('m'))
-                    ->whereYear('created_at', date('Y'))
+        $dataPatient = Anthropometric::select('user_id', 'muscle_mass_kilo', 'appointment')
+                    ->whereMonth('appointment', date('m'))
+                    ->whereYear('appointment', date('Y'))
                     ->groupBy('user_id')
-                    ->orderBy('created_at', 'DESC')
+                    ->orderBy('appointment', 'DESC')
                     ->pluck('user_id')
                     ->take(5)
                     ->toArray();

@@ -20,7 +20,7 @@
     @foreach ($fat as $fatData)
         <div class="flex border-b border-gray-200 mb-4">
             <div class="w-4/5 inline-block ml-4">
-                <div class="text-sm mb-2 self-center">{{ \Carbon\Carbon::parse(strtotime($fatData->created_at))->formatLocalized('%d de %B de %Y') }}</div>
+                <div class="text-sm mb-2 self-center">{{ $fatData->appointment }}</div>
                     <div class="text-xs text-gray-500 mb-4">
                         {!! $fatData->comments !!}
                     </div>

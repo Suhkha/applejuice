@@ -20,7 +20,7 @@
     @foreach ($biceps as $bicepsData)
         <div class="flex border-b border-gray-200 mb-4">
             <div class="w-4/5 inline-block ml-4">
-                <div class="text-sm mb-2 self-center">{{ \Carbon\Carbon::parse(strtotime($bicepsData->created_at))->formatLocalized('%d de %B de %Y') }}</div>
+                <div class="text-sm mb-2 self-center">{{ $bicepsData->appointment }}</div>
                     <div class="text-xs text-gray-500 mb-4">
                         {!! $bicepsData->comments !!}
                     </div>
