@@ -12,9 +12,9 @@
     @foreach ($imc as $imcData)
         <div class="flex border-b border-gray-200 mb-4">
             <div class="w-4/5 inline-block ml-4">
-                <div class="text-sm mb-2 self-center">{{ $history_data->appointment }}</div>
+                <div class="text-sm mb-2 self-center">{{ $imcData->appointment }}</div>
                     <div class="text-xs text-gray-500 mb-4">
-                        {!! $history_data->comments !!}
+                        {!! $imcData->comments !!}
                     </div>
                 </div>
             

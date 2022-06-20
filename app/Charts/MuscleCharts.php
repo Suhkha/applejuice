@@ -31,6 +31,7 @@ class MuscleCharts extends BaseChart
 
         $datesPatient = Anthropometric::where('user_id', $request->id)
                         ->select('appointment')
+                        ->orderBy('appointment', 'ASC')
                         ->pluck('appointment')
                         ->toArray();
 
