@@ -24,15 +24,15 @@ class HistoryUserController extends Controller
         $galleryNow = Gallery::where('user_id', $id)->orderBy('created_at', 'desc')->first();
         $galleryOld = Gallery::where('user_id', $id)->orderBy('created_at', 'asc')->first();
 
-        $weight = Anthropometric::select('weight', 'created_at', 'comments')->where('user_id', $id)->orderBy('created_at', 'desc')->take(5)->get();
-        $fat = Anthropometric::select('average_fat', 'created_at', 'comments')->where('user_id', $id)->orderBy('created_at', 'desc')->take(5)->get();
-        $muscle = Anthropometric::select('muscle_mass_kilo', 'created_at', 'comments')->where('user_id', $id)->orderBy('created_at', 'desc')->take(5)->get();
-        $metabolic = Anthropometric::select('metabolic_age', 'created_at', 'comments')->where('user_id', $id)->orderBy('created_at', 'desc')->take(5)->get();
+        $weight = Anthropometric::select('weight', 'appointment', 'comments')->where('user_id', $id)->orderBy('appointment', 'desc')->take(5)->get();
+        $fat = Anthropometric::select('average_fat', 'appointment', 'comments')->where('user_id', $id)->orderBy('appointment', 'desc')->take(5)->get();
+        $muscle = Anthropometric::select('muscle_mass_kilo', 'appointment', 'comments')->where('user_id', $id)->orderBy('appointment', 'desc')->take(5)->get();
+        $metabolic = Anthropometric::select('metabolic_age', 'appointment', 'comments')->where('user_id', $id)->orderBy('appointment', 'desc')->take(5)->get();
 
-        $waist = Anthropometric::select('waist', 'created_at', 'comments')->where('user_id', $id)->orderBy('created_at', 'desc')->take(5)->get();
-        $thigh = Anthropometric::select('thigh', 'created_at', 'comments')->where('user_id', $id)->orderBy('created_at', 'desc')->take(5)->get();
-        $hips = Anthropometric::select('hips', 'created_at', 'comments')->where('user_id', $id)->orderBy('created_at', 'desc')->take(5)->get();
-        $biceps = Anthropometric::select('biceps', 'created_at', 'comments')->where('user_id', $id)->orderBy('created_at', 'desc')->take(5)->get();
+        $waist = Anthropometric::select('waist', 'appointment', 'comments')->where('user_id', $id)->orderBy('appointment', 'desc')->take(5)->get();
+        $thigh = Anthropometric::select('thigh', 'appointment', 'comments')->where('user_id', $id)->orderBy('appointment', 'desc')->take(5)->get();
+        $hips = Anthropometric::select('hips', 'appointment', 'comments')->where('user_id', $id)->orderBy('appointment', 'desc')->take(5)->get();
+        $biceps = Anthropometric::select('biceps', 'appointment', 'comments')->where('user_id', $id)->orderBy('appointment', 'desc')->take(5)->get();
 
         $facts = Fact::first();
 

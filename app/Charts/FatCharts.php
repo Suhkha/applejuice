@@ -30,8 +30,8 @@ class FatCharts extends BaseChart
                 ->toArray();
 
         $datesPatient = Anthropometric::where('user_id', $request->id)
-                        ->select('created_at')
-                        ->pluck('created_at')
+                        ->select('appointment')
+                        ->pluck('appointment')
                         ->toArray();
         $dates = [];
         foreach( $datesPatient as $value){

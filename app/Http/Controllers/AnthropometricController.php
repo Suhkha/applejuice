@@ -44,7 +44,8 @@ class AnthropometricController extends Controller
         $anthropometric->hips = request('hips');
         $anthropometric->biceps = request('biceps');
         $anthropometric->comments = request('comments');
-
+        $anthropometric->appointment = request('appointment');
+        
         $anthropometric->save();
 
         $userId = request('user_id');
@@ -96,6 +97,7 @@ class AnthropometricController extends Controller
         $anthropometric->hips = request('hips');
         $anthropometric->biceps = request('biceps');
         $anthropometric->comments = request('comments');
+        $anthropometric->appointment = request('appointment');
 
         $anthropometric->save();
 
