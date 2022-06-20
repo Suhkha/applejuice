@@ -11,6 +11,13 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-3 md:mx-7">
             <div class="grid grid-cols-1">
+                <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Fecha de consulta</label>
+                <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="date" name="appointment" value="{{ Carbon\Carbon::now()->addDays(7)->format('Y-m-d') }}" placeholder="Fecha de nacimiento"  />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-3 md:mx-7">
+            <div class="grid grid-cols-1">
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Talla</label>
                 <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="size" value="{{ isset($lastAnthropometric->size) ? $lastAnthropometric->size : '' }}" placeholder="Talla"/>
             </div>

@@ -80,7 +80,7 @@
             @foreach ($anthropometrics as $anthropometric)
                 <tr>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700 ">
-                        {{ $anthropometric->created_at->isoFormat('DD-MMMM-Y') }}
+                    {{ $anthropometric->appointment }}
                     </td>
 
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700 ">

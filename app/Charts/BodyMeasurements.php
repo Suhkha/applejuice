@@ -41,8 +41,9 @@ class BodyMeasurements extends BaseChart
                     ->toArray();
 
         $datesPatient = Anthropometric::where('user_id', $request->id)
-                        ->select('created_at')
-                        ->pluck('created_at')
+                        ->select('appointment')
+                        ->orderBy('appointment', 'ASC')
+                        ->pluck('appointment')
                         ->toArray();
 
         $dates = [];

@@ -56,8 +56,9 @@ class UserCharts extends BaseChart
         $muscle = Anthropometric::where('user_id', $request->id)->select('muscle_mass_kilo')->pluck('muscle_mass_kilo')->toArray();
 
         $datesPatient = Anthropometric::where('user_id', $request->id)
-                        ->select('created_at')
-                        ->pluck('created_at')
+                        ->select('appointment')
+                        ->orderBy('appointment', 'ASC')
+                        ->pluck('appointment')
                         ->toArray();
 
         $dates = [];

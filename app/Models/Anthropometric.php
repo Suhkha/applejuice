@@ -29,6 +29,7 @@ class Anthropometric extends Model
         'waist',
         'thigh',
         'hips',
-        'biceps'
+        'biceps',
+        'appointment'
     ];
 }
