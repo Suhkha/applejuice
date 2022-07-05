@@ -24,12 +24,12 @@
             <div>
                 <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Embarazos</label>
-                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="pregnancies" placeholder="Embarazos" value="{{ $gynecological->pregnancies }}"  />
+                    <input class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" type="text" name="pregnancies" placeholder="Embarazos" value="{{ $gynecological->pregnacies }}"  />
                 </div>
 
                 <div class="grid grid-cols-1 mt-5 mx-3 md:mx-7">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Comentarios</label>
-                    <textarea class="styled w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" name="pregnancies_comments" placeholder="Comentarios" value="{{ $gynecological->pregnancies_comments }}">{{ $gynecological->pregnancies_comments }}</textarea>
+                    <textarea class="styled w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-teal-300" name="pregnancies_comments" placeholder="Comentarios" value="{{ $gynecological->pregnacies_comments }}">{{ $gynecological->pregnancies_comments }}</textarea>
                 </div>
             </div>
 
