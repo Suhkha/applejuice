@@ -20,8 +20,8 @@
                     <span class="block text-light mb-3">{!! $gynecological->menarche_comments !!}</span>
         
                     <label class="block uppercase text-light font-semibold">Embarazos: </label>
-                    <span class="block text-light">{{ $gynecological->pregnancies }}</span>
-                    <span class="block text-light mb-3">{!! $gynecological->pregnancies_comments !!}</span>
+                    <span class="block text-light">{{ $gynecological->pregnacies }}</span>
+                    <span class="block text-light mb-3">{!! $gynecological->pregnacies_comments !!}</span>
         
                     <label class="block uppercase text-light font-semibold">Abortos: </label>
                     <span class="block text-light">{{ $gynecological->abortion }}</span>
