@@ -20,7 +20,7 @@ class UserDetailsController extends Controller
      */
     public function index()
     {
-        $users = UserDetails::with('agenda')->get();
+        $users = UserDetails::with('agenda')->with('patient')->get();
         return view('patients.index', compact('users'));
     }
 

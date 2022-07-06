@@ -29,4 +29,12 @@ class UserDetails extends Model
     public function agenda(){
         return $this->hasOne('App\Models\Agenda', 'user_id', 'user_id');
     }
+
+    public function users(){
+        return $this->hasOne('App\Models\User', 'id', 'user_id');
+    }
+
+    public function patient() {
+        return $this->users()->where('role','!=', 'admin');
+    }
 }
