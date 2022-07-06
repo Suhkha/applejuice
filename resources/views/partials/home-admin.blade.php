@@ -1,10 +1,16 @@
 <div class="w-full  mb-12 xl:mb-0">
+    
+    <div class="relative flex flex-col min-w-0 mb-8">
+
+        <p class="text-3xl">¡Hola <span class="text-pink-500 underline underline-offset-2 font-bold cursor-pointer hover:text-teal-500">{{ $name }}</span>, vamos con todo! ✨</p>
+    </div>
 
     <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
         <div class="rounded-t mb-0 px-4 py-3 border-0">
             <div class="flex flex-wrap items-center">
+                
                 <div class="relative w-full px-0 md:px-4 max-w-full flex-grow flex-1">
-                    <h3 class="font-semibold text-xl text-blueGray-700">Top 5 de pacientes con <span class="bold text-teal-400">mejor porcentaje de grasa</span> en {{ now()->isoFormat('MMMM-Y')}}</h3>
+                    <h3 class="font-semibold text-xl text-blueGray-700">Top 5 de pacientes con <span class="bold text-teal-400 cursor-pointer hover:text-orange-500">mejor porcentaje de grasa</span> en {{ now()->isoFormat('MMMM-Y')}}</h3>
                 </div>
             </div>
         </div>
@@ -30,7 +36,7 @@
         <div class="rounded-t mb-0 px-4 py-3 border-0">
             <div class="flex flex-wrap items-center">
                 <div class="relative w-full px-0 md:px-4 max-w-full flex-grow flex-1">
-                    <h3 class="font-semibold text-xl text-blueGray-700">Top 5 de pacientes con <span class="bold text-teal-400">mejor masa muscular</span> en {{ now()->isoFormat('MMMM-Y')}}</h3>
+                    <h3 class="font-semibold text-xl text-blueGray-700">Top 5 de pacientes con <span class="bold text-teal-400 cursor-pointer hover:text-orange-500">mejor masa muscular</span> en {{ now()->isoFormat('MMMM-Y')}}</h3>
                 </div>
             </div>
         </div>

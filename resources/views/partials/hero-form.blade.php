@@ -1,7 +1,7 @@
 <div class="grid bg-white rounded-lg shadow-xl w-11/12 md:w-9/12 lg:w-1/2">
     <div class="flex justify-center py-4">
-        <div class="mb-6">
-            <img src="{{URL::asset('/img/svelfit-logo.png')}}" width="100" alt="">
+        <div class="">
+            <img src="{{URL::asset('/img/svelfit-logo-medium-negro.jpeg')}}" width="200" alt="">
     </div>
 </div>
 
