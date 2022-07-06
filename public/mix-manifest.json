@@ -12,5 +12,9 @@
     "/js/lib/jquery-3.6.0.min.js": "/js/lib/jquery-3.6.0.min.js",
     "/js/lib/jquery.add-input-area.min.js": "/js/lib/jquery.add-input-area.min.js",
     "/js/lib/jquery.dataTables.min.js": "/js/lib/jquery.dataTables.min.js",
-    "/js/lib/parsley.min.js": "/js/lib/parsley.min.js"
+    "/js/lib/parsley.min.js": "/js/lib/parsley.min.js",
+    "/img/logo-1-rosa.jpeg": "/img/logo-1-rosa.jpeg",
+    "/img/svelfit-logo-small-rosa.jpeg": "/img/svelfit-logo-small-rosa.jpeg",
+    "/img/.DS_Store": "/img/.DS_Store",
+    "/img/svelfit-logo-medium-negro.jpeg": "/img/svelfit-logo-medium-negro.jpeg"
 }

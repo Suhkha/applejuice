@@ -31,7 +31,9 @@ class HomeController extends Controller
     public function index()
     {
         if( Auth::user()->role == "admin" ) {
-            return view('home'); 
+            $user = UserDetails::where('user_id', Auth::user()->id)->first();
+            $name = $user->name;
+            return view('home', compact('name')); 
 
         }else{
             setlocale(LC_ALL, 'es_ES');

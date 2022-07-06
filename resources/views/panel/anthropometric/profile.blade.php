@@ -44,7 +44,7 @@
                     <div class="swiper-button-next"></div>
                 </div>
             @else
-                <img class="w-3/4 my-0 mx-auto block object-cover" src="{{URL::asset('/img/svelfit-logo-medium.png')}}" alt="">
+                <img class="w-3/4 my-0 mx-auto block object-cover" src="{{URL::asset('/img/svelfit-logo-medium-negro.jpeg')}}" alt="">
             @endif
         </div>
     </div>
