@@ -2,14 +2,14 @@
 
     <div>
         @guest
-            <img src="{{URL::asset('/img/svelfit-logo-small-rosa.jpeg')}}" width="100" alt="">
+            <img src="{{URL::asset('/img/svelfit-logo-small-rosa.jpeg')}}" width="150" alt="">
         @else
             @if (Auth::user()->role == 'admin')
                 <a href="/admin/home">
             @else
                 <a href="/patient/home">
             @endif
-                <img src="{{URL::asset('/img/svelfit-logo-small-rosa.jpeg')}}" width="100" alt="">
+                <img src="{{URL::asset('/img/svelfit-logo-small-rosa.jpeg')}}" width="150" alt="">
             </a>
         @endif
         
