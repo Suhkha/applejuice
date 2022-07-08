@@ -3,8 +3,8 @@
 @section('content')
     <section class="relative pt-12 bg-blueGray-50">
         <div class="items-center flex flex-wrap">
-            <div class="w-full md:w-4/12 ml-auto mr-auto px-4">
-                <img alt="..." class="max-w-full rounded-lg shadow-lg" src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80">
+            <div class="w-full md:w-1/2 ml-auto mr-auto px-4">
+                <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{URL::asset('/img/svelfit-kariana-nutriologa.jpeg')}}">
             </div>
 
             <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
@@ -14,7 +14,7 @@
                     </div>
                     <h3 class="text-3xl font-semibold">Svelfit</h3>
                     <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
-                        "¡Si te ves bien, te sientes bien!".
+                        "¡Si te sientes bien, te ves bien!".
                     </p>
                     <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
                         En este portal podrás encontrar información sobre:
