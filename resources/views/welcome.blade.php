@@ -12,9 +12,8 @@
                     <div class="text-white p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-teal-300 mt-8">
                         <i class="fas fa-heart text-xl"></i>
                     </div>
-                    <h3 class="text-3xl font-semibold">Svelfit</h3>
-                    <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
-                        "¡Si te sientes bien, te ves bien!".
+                    <p class="mt-2 text-2xl font-extrabold  leading-relaxed text-blueGray-500">
+                        "¡Si te sientes bien, te ves bien!" 
                     </p>
                     <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
                         En este portal podrás encontrar información sobre:

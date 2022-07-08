@@ -656,6 +656,9 @@ ul,ol{
 .mt-8 {
   margin-top: 2rem;
 }
+.mt-2 {
+  margin-top: 0.5rem;
+}
 .mt-4 {
   margin-top: 1rem;
 }
@@ -676,9 +679,6 @@ ul,ol{
 }
 .mb-3 {
   margin-bottom: 0.75rem;
-}
-.mt-2 {
-  margin-top: 0.5rem;
 }
 .mr-1 {
   margin-right: 0.25rem;
@@ -710,6 +710,9 @@ ul,ol{
 .mb-32 {
   margin-bottom: 8rem;
 }
+.mb-8 {
+  margin-bottom: 2rem;
+}
 .ml-4 {
   margin-left: 1rem;
 }
@@ -721,9 +724,6 @@ ul,ol{
 }
 .ml-2 {
   margin-left: 0.5rem;
-}
-.mb-8 {
-  margin-bottom: 2rem;
 }
 .box-border {
   box-sizing: border-box;
@@ -1227,9 +1227,9 @@ ul,ol{
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 .text-lg {
   font-size: 1.125rem;
@@ -1247,9 +1247,9 @@ ul,ol{
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 .text-xxs {
   font-size: 0.55rem;
@@ -1261,6 +1261,9 @@ ul,ol{
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
+}
+.font-extrabold {
+  font-weight: 800;
 }
 .font-semibold {
   font-weight: 600;
@@ -1418,6 +1421,10 @@ ul,ol{
   --tw-text-opacity: 1;
   color: rgb(20 184 166 / var(--tw-text-opacity));
 }
+.hover\:text-orange-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(249 115 22 / var(--tw-text-opacity));
+}
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1425,10 +1432,6 @@ ul,ol{
 .hover\:text-teal-400:hover {
   --tw-text-opacity: 1;
   color: rgb(45 212 191 / var(--tw-text-opacity));
-}
-.hover\:text-orange-500:hover {
-  --tw-text-opacity: 1;
-  color: rgb(249 115 22 / var(--tw-text-opacity));
 }
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
@@ -1486,8 +1489,8 @@ ul,ol{
     display: none;
   }
 
-  .md\:w-4\/12 {
-    width: 33.333333%;
+  .md\:w-1\/2 {
+    width: 50%;
   }
 
   .md\:w-5\/12 {
@@ -1500,10 +1503,6 @@ ul,ol{
 
   .md\:w-auto {
     width: auto;
-  }
-
-  .md\:w-1\/2 {
-    width: 50%;
   }
 
   .md\:grid-cols-2 {
