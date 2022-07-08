@@ -43,7 +43,6 @@ class ProductController extends Controller
             'category_id' => 'required',
             'name' => 'required',
             'image' => 'required',
-            'comments' => 'required',
         ]);
 
         $file = $request->file('image');
