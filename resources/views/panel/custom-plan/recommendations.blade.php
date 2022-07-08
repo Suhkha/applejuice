@@ -7,18 +7,14 @@
         </div>
     </div>
 
-    <div class="flex border-b border-gray-200 mb-4 md:items-center">
-        <div class="w-4/5 inline-block ml-4">
-            <div class="text-sm md:text-base mb-2 self-center">Recomendaciones</div>
-            <div class="text-sm md:text-base text-gray-500 mb-4">
-               {!! $recommendations->recommendation !!} 
+    @if (isset($recommendations))
+        <div class="flex border-b border-gray-200 mb-4 md:items-center">
+            <div class="w-4/5 inline-block ml-4">
+                <div class="text-sm md:text-base mb-2 self-center">Recomendaciones</div>
+                <div class="text-sm md:text-base text-gray-500 mb-4">
+                    {!! $recommendations->recommendation !!}
+                </div>
             </div>
         </div>
-            
-        {{-- <div class="w-1/5 inline-block mr-4 ml-2 self-center">
-            <span class="text-xs md:text-base text-right block pb-2 mr-1">
-                <i class="iconsminds-file-clipboard-file---text text-3xl block"></i>
-            </span>
-        </div> --}}
-    </div>
+     @endif
 </div>
